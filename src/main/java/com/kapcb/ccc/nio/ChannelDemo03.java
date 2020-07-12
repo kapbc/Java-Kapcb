@@ -15,7 +15,6 @@ import java.nio.channels.FileChannel;
  * @date 2020/7/12 22:57
  */
 public class ChannelDemo03 {
-
     public static final int CAPACITY = 10;
 
     /**
