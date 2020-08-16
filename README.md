@@ -5,7 +5,6 @@
 - 记录自己关于`Java`的学习笔记还有`Demo`，笔记均在`Demo`注释部分，后续会整理成`MarkDown`格式的文件发布在博客上。
 - 如果觉得对您有帮助，您的`Start`就是对我最大的认同。
 - 欢迎互相学习交流，如果项目中有问题的部分可以用邮箱联系我`eircccallroot@163.com`。
-- 欢迎翻阅我的私人博客`https.www.ccaizx.cn`,记录日常学习中的一些自己对相关技术的学习笔记等。
 
 ### 其他项目
 
@@ -51,9 +50,5 @@
     <tr>
     	<td><a style="text-decoration: none;" href="#" target="_blank"><strong>Vue-Kapcb</strong></a></td>
         <td><a style="text-decoration: none;" href="#" target="_blank"><strong>Web前端Vue.js学习项目(规划中、含笔记)</strong></a></td>
-    </tr>
-    <tr>
-        <td><a style="text-decoration: none;" href="https://www.ccaizx.cn" target="_blank" ><b>个人博客</b><a</td>
-        <td><a style="text-decoration: none;" href="https://www.ccaizx.cn" target="_blank" ><b>https://www.ccaizx.cn</b></a></td>
     </tr>
 </table>
