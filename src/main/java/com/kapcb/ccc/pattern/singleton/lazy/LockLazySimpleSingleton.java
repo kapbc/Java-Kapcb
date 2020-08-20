@@ -1,4 +1,4 @@
-package com.kapcb.ccc.pattern.lazy;
+package com.kapcb.ccc.pattern.singleton.lazy;
 
 /**
  * <a>Title:LockLazySimpleSingleton</a>

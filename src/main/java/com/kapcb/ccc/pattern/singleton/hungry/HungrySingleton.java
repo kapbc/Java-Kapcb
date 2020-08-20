@@ -1,4 +1,4 @@
-package com.kapcb.ccc.pattern.hungry;
+package com.kapcb.ccc.pattern.singleton.hungry;
 
 /**
  * <a>Title:HungrySingleton</a>

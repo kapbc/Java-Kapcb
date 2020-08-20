@@ -1,4 +1,4 @@
-package com.kapcb.ccc.pattern.inner;
+package com.kapcb.ccc.pattern.singleton.inner;
 
 /**
  * <a>Title:LazyInnerClassSafeSingleton</a>

@@ -1,6 +1,4 @@
-package com.kapcb.ccc.pattern.inner;
-
-import java.util.Calendar;
+package com.kapcb.ccc.pattern.singleton.inner;
 
 /**
  * <a>Title:LazyInnerClassSingleton</a>
