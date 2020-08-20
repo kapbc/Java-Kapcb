@@ -52,3 +52,7 @@
         <td><a style="text-decoration: none;" href="#" target="_blank"><strong>Web前端Vue.js学习项目(规划中、含笔记)</strong></a></td>
     </tr>
 </table>
+
+### 后期计划
+
+这个项目我会一直进行维护，由于目前还比较菜，萌新阶段，所以我会花更多的时间去学习。我已经有一个关于`Spring`的相关项目，也是我自己写的，喜欢的欢迎大家互相交流学习，如果觉得对您有帮助，您的`Start`就是对我的最大认可。
