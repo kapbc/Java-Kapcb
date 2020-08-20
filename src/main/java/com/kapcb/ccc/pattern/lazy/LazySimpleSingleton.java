@@ -12,10 +12,13 @@ package com.kapcb.ccc.pattern.lazy;
  */
 public class LazySimpleSingleton {
 
-    private static LazySimpleSingleton lazySimpleSingleton = null;
-
     private LazySimpleSingleton() {
     }
+
+    /**
+     * 静态块，公共内存区域
+     */
+    private static LazySimpleSingleton lazySimpleSingleton = null;
 
     public static LazySimpleSingleton getInstance() {
         if (lazySimpleSingleton == null) {
