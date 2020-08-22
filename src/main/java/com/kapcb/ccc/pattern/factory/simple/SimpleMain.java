@@ -11,7 +11,15 @@ package com.kapcb.ccc.pattern.factory.simple;
  */
 public class SimpleMain {
     public static void main(String[] args) {
-        JavaWorker coderWorker = new JavaWorker();
-        coderWorker.work();
+        /*JavaWorker coderWorker = new JavaWorker();
+        coderWorker.work();*/
+
+        /*WorkFactory workFactory = new WorkFactory();
+        IWork iWork = workFactory.create("com.kapcb.ccc.pattern.factory.simple.JavaWorker");
+        iWork.work();*/
+
+        WorkFactory workFactory = new WorkFactory();
+        IWork iWork = workFactory.create(JavaWorker.class);
+        iWork.work();
     }
 }

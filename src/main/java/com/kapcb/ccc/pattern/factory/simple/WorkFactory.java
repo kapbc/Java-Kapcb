@@ -13,7 +13,7 @@ public class WorkFactory {
     private static final String JAVA_WORKER = "Java";
     private static final String PYTHON_WORKER = "Python";
 
-    public IWork create(String name) {
+/*    public IWork create(String name) {
         if (JAVA_WORKER.equals(name)) {
             return new JavaWorker();
         } else if (PYTHON_WORKER.equals(name)) {
@@ -21,5 +21,27 @@ public class WorkFactory {
         } else {
             return null;
         }
+    }*/
+
+/*    public IWork create(String clazz) {
+        try {
+            if (!(clazz == null || "".equals(clazz))) {
+                return (IWork) Class.forName(clazz).newInstance();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }*/
+
+    public IWork create(Class<? extends IWork> clazz) {
+        try {
+            if (null != clazz) {
+                return clazz.newInstance();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
