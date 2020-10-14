@@ -1,6 +1,7 @@
 package com.kapcb.ccc.algorithm;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -15,7 +16,12 @@ import java.util.List;
 public class VampireNumber {
 
     public static void main(String[] args) throws Exception {
+        Date startDate = new Date();
+        long start = startDate.getTime();
         List<String> vampireNumber = getVampireNumber(4);
+        Date endDate = new Date();
+        long end = endDate.getTime();
+        System.out.println("Time:" + (end - start));
         System.out.println("vampireNumber = " + vampireNumber);
     }
 
