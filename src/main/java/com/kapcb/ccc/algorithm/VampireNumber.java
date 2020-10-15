@@ -18,20 +18,22 @@ public class VampireNumber {
 
     public static void main(String[] args) {
         Date startDate = new Date();
-        long start = startDate.getTime();
         List<String> vampireNumberMethodOne = getVampireNumberMethodOne(4);
         Date endDate = new Date();
-        long end = endDate.getTime();
-        System.out.println("Method>>vampireNumberMethodOne Time:" + (end - start));
+        System.out.println("Method>>vampireNumberMethodOne Time:" + (endDate.getTime() - startDate.getTime()));
         System.out.println("vampireNumberMethodOne = " + vampireNumberMethodOne);
 
         Date startTime = new Date();
-        long timeStart = startTime.getTime();
         List<String> vampireNumberMethodTwo = getVampireNumberMethodTwo(4);
         Date endTime = new Date();
-        long timeEnd = endTime.getTime();
-        System.out.println("Method>>vampireNumberMethodTwo Time:" + (timeEnd - timeStart));
+        System.out.println("Method>>vampireNumberMethodTwo Time:" + (endTime.getTime() - startTime.getTime()));
         System.out.println("vampireNumberMethodTwo = " + vampireNumberMethodTwo);
+
+        Date date = new Date();
+        List<String> vampireNumberMethodThree = getVampireNumberMethodThree(4);
+        Date date2 = new Date();
+        System.out.println("Method>>vampireNumberMethodThree Time:" + (date2.getTime() - date.getTime()));
+        System.out.println("vampireNumberMethodThree = " + vampireNumberMethodThree);
     }
 
     /**
@@ -69,8 +71,8 @@ public class VampireNumber {
                         }
                     }
                     if (tempString.isEmpty()) {
-                        String s = targetNumber + "=" + elementOne + "*" + elementTwo;
-                        elementList.add(s);
+                        String vampireNumber = targetNumber + "=" + elementOne + "*" + elementTwo;
+                        elementList.add(vampireNumber);
                     }
                 }
             }
@@ -104,6 +106,39 @@ public class VampireNumber {
                     Arrays.sort(resultNumber);
                     if (Arrays.equals(resultNumber, operationNumber)) {
                         String vampireNumber = elementResult + "=" + elementOne + "*" + elementTwo;
+                        elementList.add(vampireNumber);
+                    }
+                }
+            }
+        }
+        return elementList;
+    }
+
+    /**
+     * @param target int
+     * @return List<String>
+     */
+    private static List<String> getVampireNumberMethodThree(int target) {
+        if (target <= 0 || target % 2 != 0) {
+            System.out.println("输入的参数有误");
+            return null;
+        }
+        List<String> elementList = new ArrayList<>();
+        for (int i = 10; i < 100; i++) {
+            for (int j = 10; j < 100; j++) {
+                if ((i * j) % 9 != (i + j) % 9) {
+                    continue;
+                } else {
+                    String resultNumber = String.valueOf(i * j);
+                    String[] resultArray = resultNumber.split("");
+                    Arrays.sort(resultArray);
+                    String elementNumberOne = i + "";
+                    String elementNumberTwo = j + "";
+                    String operationNumber = elementNumberOne.concat(elementNumberTwo);
+                    String[] operationArray = operationNumber.split("");
+                    Arrays.sort(operationArray);
+                    if (Arrays.equals(resultArray, operationArray)) {
+                        String vampireNumber = resultNumber + "=" + elementNumberOne + "*" + elementNumberTwo;
                         elementList.add(vampireNumber);
                     }
                 }
