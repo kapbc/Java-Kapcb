@@ -1,6 +1,5 @@
 package com.kapcb.ccc.test;
 
-import java.util.Comparator;
 import java.util.Scanner;
 
 /**

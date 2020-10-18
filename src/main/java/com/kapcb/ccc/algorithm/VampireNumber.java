@@ -16,6 +16,9 @@ import java.util.List;
  */
 public class VampireNumber {
 
+    private static final int LOOP_START = 10;
+    private static final int LOOP_END = 100;
+
     public static void main(String[] args) {
         Date startDate = new Date();
         List<String> vampireNumberMethodOne = getVampireNumberMethodOne(4);
@@ -47,13 +50,13 @@ public class VampireNumber {
         }
         List<String> elementList = new ArrayList<>();
         loop1:
-        for (int i = 10; i < 100; i++) {
+        for (int i = LOOP_START; i < LOOP_END; i++) {
             loop2:
-            for (int j = 10; j < 100; j++) {
+            for (int j = LOOP_START; j < LOOP_END; j++) {
                 boolean flag = true;
                 int result = i * j;
                 String targetNumber = result + "";
-                if (targetNumber.length() < 4) {
+                if (targetNumber.length() < target) {
                     flag = false;
                     continue loop2;
                 }
