@@ -22,8 +22,9 @@ public class FileListUtil {
 
     public static final int CAPACITY_CHANNEL = 1024;
 
-    public static final String reg = "^D.*";
-    public static final String enterStr = "\n";
+    public static final String REG = "^D.*";
+    public static final String ENTER_STR = "\n";
+    public static final String PREFIX = "D";
 
     private FileListUtil() {
     }
@@ -45,10 +46,10 @@ public class FileListUtil {
                 if (str.indexOf("\\\\") > 0) {
                     str = str.replaceAll("\\\\", "/");
                 }
-                String[] split = str.split(enterStr);
+                String[] split = str.split(ENTER_STR);
                 for (int i = 0; i < split.length; i++) {
-                    if (!split[i].startsWith("D")) {
-                        split[i] = "D" + split[i];
+                    if (!split[i].startsWith(PREFIX)) {
+                        split[i] = PREFIX + split[i];
                     }
                     treeSet.add(split[i]);
                 }
