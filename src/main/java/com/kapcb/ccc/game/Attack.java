@@ -1,13 +1,16 @@
-package com.kapcb.basic.monsterGame;
+package com.kapcb.ccc.game;
 
 /**
- * @author kapcb
+ * <a>Title:Attack</a>
+ * <a>Author：ccc<a>
+ * <a>Description：<a>
+ *
+ * @author ccc
  * @version 1.0.0
- * @classname Attack
- * @description TODO
- * @date 2020/10/10 14:41
+ * @date 2020/10/20 20:15
  */
 public class Attack {
+
     public static final String KILL_SELF = "自杀了!!!";
     public static final String BEAT = "打败了";
     public static final String NO_MONEY = "经费不足，不打了";

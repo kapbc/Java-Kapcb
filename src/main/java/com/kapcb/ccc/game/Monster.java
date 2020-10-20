@@ -1,13 +1,16 @@
-package com.kapcb.basic.monsterGame;
+package com.kapcb.ccc.game;
 
 /**
- * @author kapcb
+ * <a>Title:Monster</a>
+ * <a>Author：ccc<a>
+ * <a>Description：<a>
+ *
+ * @author ccc
  * @version 1.0.0
- * @classname Monster
- * @description TODO
- * @date 2020/10/10 14:26
+ * @date 2020/10/20 20:16
  */
 public class Monster {
+
     private String name = "黑暗扎基";
     private Integer age = 1;
     private Double height = 10.00;
@@ -16,7 +19,7 @@ public class Monster {
     private Float attackSpeed = 1.0F;
     private Boolean isLive = true;
 
-    public Monster(){
+    public Monster() {
 
     }
 

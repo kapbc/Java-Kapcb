@@ -1,11 +1,13 @@
-package com.kapcb.basic.monsterGame;
+package com.kapcb.ccc.game;
 
 /**
- * @author kapcb
+ * <a>Title:MonsterGameMain</a>
+ * <a>Author：ccc<a>
+ * <a>Description：<a>
+ *
+ * @author ccc
  * @version 1.0.0
- * @classname MonsterGameMain
- * @description TODO
- * @date 2020/10/10 14:47
+ * @date 2020/10/20 20:17
  */
 public class MonsterGameMain {
     public static void main(String[] args) {

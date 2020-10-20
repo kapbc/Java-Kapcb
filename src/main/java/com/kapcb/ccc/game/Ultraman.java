@@ -1,13 +1,16 @@
-package com.kapcb.basic.monsterGame;
+package com.kapcb.ccc.game;
 
 /**
- * @author kapcb
+ * <a>Title:Ultraman</a>
+ * <a>Author：ccc<a>
+ * <a>Description：<a>
+ *
+ * @author ccc
  * @version 1.0.0
- * @classname Ultraman
- * @description TODO
- * @date 2020/10/10 14:26
+ * @date 2020/10/20 20:16
  */
 public class Ultraman {
+
     private String name = "雷欧";
     private Integer age = 1;
     private Double height = 10.00;
