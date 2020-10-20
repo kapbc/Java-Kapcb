@@ -63,10 +63,12 @@ public class FileListUtil {
                     e.printStackTrace();
                 }
             }
-            try {
-                channel.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+            if (channel != null) {
+                try {
+                    channel.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
         return treeSet;
