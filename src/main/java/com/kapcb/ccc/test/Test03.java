@@ -19,8 +19,12 @@ public class Test03 {
         String demo01 = "D:\\Develop-Tools\\IDEA-KEY\\__MACOSX";
         String reg = "^D.*";
         boolean matches = Pattern.matches(reg, demo01);
+        StringBuilder stringBuilder = new StringBuilder(demo01);
+        String substring = stringBuilder.substring(0, 2);
+        System.out.println("substring = " + substring);
+        System.out.println("stringBuilder = " + stringBuilder);
         System.out.println(matches);
-        if (demo.indexOf("\\") > 0) {
+        if (demo01.indexOf("\\") > 0) {
             String s = demo.replaceAll("\\\\", "/");
             System.out.println(s);
         }
