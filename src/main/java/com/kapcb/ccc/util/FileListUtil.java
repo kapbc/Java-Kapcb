@@ -5,8 +5,8 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
-import java.util.Comparator;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 /**
@@ -15,43 +15,44 @@ import java.util.TreeSet;
  * <a>Description：<a>
  *
  * @author ccc
- * @version 1.0.0
+ * @version 1.0.2
  * @date 2020/10/20 20:19
  */
 public class FileListUtil {
 
-    public static final int CAPACITY_CHANNEL = 1024;
+    public static final String PATH_NAME = "D:\\filelist.txt";
+    private static final String FILE_LIST_LOCATION_HEARD = "enigma3/";
 
-    public static final String reg = "^D.*";
-    public static final String enterStr = "\n";
+    public static final String ILLEGAL_CHARACTERS = "\\\\";
+    public static final String ILLEGAL_CHARACTERS_REPLACEMENT = "/";
+    public static final String LINE_BREAK_REGEX = "\n";
+    public static final String READ_MODE = "r";
+    public static final int INITIAL_CAPACITY = 1024 * 5;
 
     private FileListUtil() {
     }
 
-    public static Set getFileListSort(String pathName) {
-        FileChannel channel = null;
+    public static TreeMap<Integer, Set<String>> getFileList(String pathName) {
+        if ("".equals(pathName)) {
+            pathName = PATH_NAME;
+        }
         RandomAccessFile randomAccessFile = null;
-        Comparator<String> fileListStringCompare = new FileListStringCompare();
-        Set<String> treeSet = new TreeSet<>(fileListStringCompare);
+        FileChannel channel = null;
+        TreeMap<Integer, Set<String>> packageMap = null;
         try {
-            randomAccessFile = new RandomAccessFile(pathName, "r");
+            randomAccessFile = new RandomAccessFile(pathName, READ_MODE);
             channel = randomAccessFile.getChannel();
-            ByteBuffer byteBuffer = ByteBuffer.allocate(CAPACITY_CHANNEL);
+            ByteBuffer byteBuffer = ByteBuffer.allocate(INITIAL_CAPACITY);
             while (channel.read(byteBuffer) != -1) {
                 int position = byteBuffer.position();
                 byteBuffer.clear();
                 byte[] bytes = byteBuffer.array();
                 String str = new String(bytes, 0, position);
-                if (str.indexOf("\\\\") > 0) {
-                    str = str.replaceAll("\\\\", "/");
+                if (str.contains(ILLEGAL_CHARACTERS)) {
+                    str = str.replaceAll(ILLEGAL_CHARACTERS, ILLEGAL_CHARACTERS_REPLACEMENT);
                 }
-                String[] split = str.split(enterStr);
-                for (int i = 0; i < split.length; i++) {
-                    if (!split[i].startsWith("D")) {
-                        split[i] = "D" + split[i];
-                    }
-                    treeSet.add(split[i]);
-                }
+                String[] elementArray = str.split(LINE_BREAK_REGEX);
+                packageMap = getPackageMap(elementArray);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -71,7 +72,35 @@ public class FileListUtil {
                 }
             }
         }
-        return treeSet;
+        return packageMap;
+    }
+
+    private static TreeMap<Integer, Set<String>> getPackageMap(String[] array) {
+        TreeMap<Integer, Set<String>> map = new TreeMap<>();
+        Set<String> treeSet = null;
+        FileListStringCompare fileListStringCompare = new FileListStringCompare();
+        for (int i = 0; i < array.length; i++) {
+            if (!array[i].startsWith(FILE_LIST_LOCATION_HEARD)) {
+                StringBuilder stringBuilder = new StringBuilder(array[i]);
+                stringBuilder.insert(0, FILE_LIST_LOCATION_HEARD);
+                array[i] = stringBuilder.toString();
+            }
+            int Hierarchy = getPackageHierarchy(array[i]);
+            if (!map.containsKey(Hierarchy)) {
+                treeSet = new TreeSet<>(fileListStringCompare);
+                treeSet.add(array[i]);
+                map.put(Hierarchy, treeSet);
+            } else {
+                Set<String> strings = map.get(Hierarchy);
+                strings.add(array[i]);
+                map.put(Hierarchy,strings);
+            }
+        }
+        return map;
+    }
+
+    public static int getPackageHierarchy(String location){
+        return (location.split(ILLEGAL_CHARACTERS_REPLACEMENT).length-1);
     }
 }
 
