@@ -32,24 +32,12 @@
         <td><a style="text-decoration: none;" href="https://github.com/Eircc/H5-CSS3-Kapcb" target="_blank"><b>Web前端H5与CSS3的基础入门学习项目(更新中、含笔记)</b></a></td>
     </tr>
     <tr>
-    	<td><a style="text-decoration: none;" href="#" target="_blank"><strong>Jquery-Kapcb</strong></a></td>
-        <td><a style="text-decoration: none;" href="#" target="_blank"><strong>Web前端Jquery基础学习(更新中、含笔记)</strong></a></td>
-    </tr>
-    <tr>
     	<td><a style="text-decoration: none;" href="https://github.com/Eircc/JavaScript-Kapcb" target="_blank"><strong>JavaScript-Kapcb</strong></a></td>
         <td><a style="text-decoration: none;" href="https://github.com/Eircc/JavaScript-Kapcb" target="_blank"><b>Web前端JavaScript学习项目(更新中、含笔记)</b></a></td>
     </tr>
      <tr>
     	<td><a style="text-decoration: none;" href="#" target="_blank"><strong>ES6-Kapcb</strong></a></td>
         <td><a style="text-decoration: none;" href="#" target="_nlank"><strong>Web前端ES6学习项目(规划中、含笔记)</strong></a></td>
-    </tr>
-    <tr>
-    	<td><a style="text-decoration: none;" href="#" target="_blank"><strong>Node-Kapcb</strong></a></td>
-        <td><a style="text-decoration: none;" href="#" target="_nlank"><strong>Web前端Node.js学习项目(规划中、含笔记)</strong></a></td>
-    </tr>
-    <tr>
-    	<td><a style="text-decoration: none;" href="#" target="_blank"><strong>Vue-Kapcb</strong></a></td>
-        <td><a style="text-decoration: none;" href="#" target="_blank"><strong>Web前端Vue.js学习项目(规划中、含笔记)</strong></a></td>
     </tr>
 </table>
 
