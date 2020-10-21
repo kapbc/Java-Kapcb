@@ -1,12 +1,12 @@
-## Java-Kapcb
+## # 1、Java-Kapcb
 
-### 前言
+### # 2、前言
 
 - 记录自己关于`Java`的学习笔记还有`Demo`，笔记均在`Demo`注释部分，后续会整理成`MarkDown`格式的文件发布在博客上。
 - 如果觉得对您有帮助，您的`Start`就是对我最大的认同。
 - 欢迎互相学习交流，如果项目中有问题的部分可以用邮箱联系我`eircccallroot@163.com`。
 
-### 其他项目
+### # 3、其他项目
 
 > 目前在维护的其它学习项目
 
@@ -53,9 +53,22 @@
     </tr>
 </table>
 
-### 后期计划
+### # 4、项目简介
+<table>
+    <tr>
+        <td><a style="text-decoration: none;" href="https://github.com/Eircc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/algorithm/VampireNumber.java" target="_blank><strong>VampireNumber</strong><td/>
+            <td><a style="text-decoration: none;" href="https://github.com/Eircc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/algorithm/VampireNumber.java" target="_blank><strong>吸血鬼数</strong><td/>
+    </tr>
+    <tr>
+    	<td><a style="text-decoration: none;" href="https://github.com/Eircc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/algorithm/Fibonacci.java" target="_blank"><strong>Fibonacci</strong></a></td>
+        <td><a style="text-decoration: none;" href="https://github.com/Eircc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/algorithm/Fibonacci.java" target="_blank"><strong>斐波拉契数列</strong></a></td>   
+    </tr>       
+    <tr>
+    	<td><a style="text-decoration: none;" href="https://github.com/Eircc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/algorithm/PrimeNumber" target="_blank"><strong>质数</strong></a></td>
+        <td><a style="text-decoration: none;" href="https://github.com/Eircc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/algorithm/PrimeNumber" target="_blank"><strong>PrimeNumber</strong></a></td>
+    </tr>
+</table>
 
-我会花更多的时间去学习。喜欢的欢迎大家互相交流学习，如果觉得对您有帮助，您的`Start`就是对我的最大认可。
+### # 5、后期计划
 
-### 感言
 可以一次一次去撞南墙，但不能一个一个失去理想！
