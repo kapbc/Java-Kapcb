@@ -15,7 +15,7 @@ import java.util.TreeSet;
  * <a>Description：<a>
  *
  * @author ccc
- * @version 1.0.4
+ * @version 1.0.5
  * @date 2020/10/20 20:19
  */
 public class FileListUtil {
@@ -54,20 +54,8 @@ public class FileListUtil {
                 byteBuffer.clear();
                 byte[] bytes = byteBuffer.array();
                 String str = new String(bytes, 0, position);
-
-                if (str.indexOf("\\\\") > 0) {
-                    str = str.replaceAll("\\\\", "/");
-                }
-                String[] split = str.split(ENTER_STR);
-                for (int i = 0; i < split.length; i++) {
-                    if (!split[i].startsWith(PREFIX)) {
-                        split[i] = PREFIX + split[i];
-                    }
-                    treeSet.add(split[i]);
-
                 if (str.contains(ILLEGAL_CHARACTERS)) {
                     str = str.replaceAll(ILLEGAL_CHARACTERS, ILLEGAL_CHARACTERS_REPLACEMENT);
-
                 }
                 String[] elementArray = str.split(LINE_BREAK_REGEX);
                 packageMap = getPackageMap(elementArray);
