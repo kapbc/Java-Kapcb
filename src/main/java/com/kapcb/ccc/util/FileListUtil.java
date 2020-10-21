@@ -20,14 +20,13 @@ import java.util.TreeSet;
  */
 public class FileListUtil {
 
-    public static final String PATH_NAME = "D:\\filelist.txt";
+    private static final String PATH_NAME = "D:\\filelist.txt";
     private static final String FILE_LIST_LOCATION_HEARD = "enigma3/";
-
-    public static final String ILLEGAL_CHARACTERS = "\\\\";
-    public static final String ILLEGAL_CHARACTERS_REPLACEMENT = "/";
-    public static final String LINE_BREAK_REGEX = "\n";
-    public static final String READ_MODE = "r";
-    public static final int INITIAL_CAPACITY = 1024 * 5;
+    private static final String ILLEGAL_CHARACTERS = "\\\\";
+    private static final String ILLEGAL_CHARACTERS_REPLACEMENT = "/";
+    private static final String LINE_BREAK_REGEX = "\n";
+    private static final String READ_MODE = "r";
+    private static final int INITIAL_CAPACITY = 1024 * 5;
 
     private FileListUtil() {
     }
