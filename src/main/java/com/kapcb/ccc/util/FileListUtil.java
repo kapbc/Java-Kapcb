@@ -15,7 +15,7 @@ import java.util.TreeSet;
  * <a>Description：<a>
  *
  * @author ccc
- * @version 1.0.2
+ * @version 1.0.4
  * @date 2020/10/20 20:19
  */
 public class FileListUtil {
@@ -92,15 +92,14 @@ public class FileListUtil {
             } else {
                 Set<String> strings = map.get(Hierarchy);
                 strings.add(array[i]);
-                map.put(Hierarchy,strings);
+                map.put(Hierarchy, strings);
             }
         }
         return map;
     }
 
-    public static int getPackageHierarchy(String location){
-        return (location.split(ILLEGAL_CHARACTERS_REPLACEMENT).length-1);
+    public static int getPackageHierarchy(String location) {
+        return (location.split(ILLEGAL_CHARACTERS_REPLACEMENT).length - 1);
     }
 }
-
 
