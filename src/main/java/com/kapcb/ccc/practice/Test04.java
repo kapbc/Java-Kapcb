@@ -1,4 +1,4 @@
-package com.kapcb.ccc.test;
+package com.kapcb.ccc.practice;
 
 /**
  * <a>Title:Test04</a>

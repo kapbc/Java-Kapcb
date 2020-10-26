@@ -1,3 +1,7 @@
+package com.kapcb.ccc.practice.think;
+
+import com.kapcb.ccc.practice.Villain;
+
 public class Orc extends Villain {
     private int orcNumber;
 
