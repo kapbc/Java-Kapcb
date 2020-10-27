@@ -55,6 +55,22 @@
     	<td><a style="text-decoration: none;" href="https://github.com/Eircc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/algorithm/PrimeNumber" target="_blank"><strong>PrimeNumber</strong></a></td>
         <td><a style="text-decoration: none;" href="https://github.com/Eircc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/algorithm/PrimeNumber" target="_blank"><strong>质数</strong></a></td>
     </tr>
+    <tr>
+    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/util/FileListUtil.java" target="_blank"><strong>FileListUtil</strong></a></td>
+        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/util/FileListUtil.java" target="_blank"><strong>文件路径排序工具类</strong></a></td>
+    </tr>
+    <tr>
+    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/pattern/singleton/hungry" target="_blank"><strong>单例模式</strong></a></td>
+        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/pattern/singleton/hungry" target="_blank"><strong>饿汉式</strong></a></td>
+    </tr>
+    <tr>
+    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/pattern/singleton/lazy" target="_blank"><strong>单例模式</strong></a></td>
+        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/pattern/singleton/lazy" target="_blank"><strong>懒汉式</strong></a></td>
+    </tr>
+    <tr>
+    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/pattern/singleton/inner" target="_blank"><strong>单例模式</strong></a></td>
+        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/pattern/singleton/inner" target="_blank"><strong>静态内部内</strong></a></td>
+    </tr>
 </table>
 
 ### # 5、后期计划
