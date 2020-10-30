@@ -11,7 +11,7 @@ public final class Dinosaur {
     int i = 7;
     int j = 1;
 
-    SmallBrain smallBrain = new SmallBrain();
+//    SmallBrain smallBrain = new SmallBrain();
 
     public void f(){
     }
