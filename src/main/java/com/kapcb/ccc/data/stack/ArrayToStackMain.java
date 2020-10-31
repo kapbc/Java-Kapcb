@@ -33,7 +33,6 @@ public class ArrayToStackMain {
                 do {
                     System.out.println("正在自定义初始化容量");
                     System.out.println("请输入一个正整数，定义您的初始化容量!");
-
                     int i = scanner.nextInt();
                     loop = i <= 0;
                     if (loop) {
