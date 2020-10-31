@@ -8,7 +8,7 @@ import java.util.Scanner;
  * <a>Description：<a>
  *
  * @author ccc
- * @version 1.0.0
+ * @version 1.0.1
  * @date 2020/10/31 8:08
  */
 public class ArrayToStackMain {
@@ -51,7 +51,6 @@ public class ArrayToStackMain {
 
             if (arrayToStack == null) {
                 System.out.println("初始化失败,请重新初始化");
-                continue;
             }
         } while (arrayToStack == null);
 
