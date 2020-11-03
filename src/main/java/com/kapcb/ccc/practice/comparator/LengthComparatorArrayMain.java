@@ -15,6 +15,8 @@ public class LengthComparatorArrayMain {
         strings[1] = new String("ccc");
         strings[2] = new String("eirc");
         Arrays.sort(strings, new LengthComparator());
+        // Comparator 就是只有一个方法的接口，所以可以使用lambda表达式替换
+        Arrays.sort(strings, (first, second) -> first.length() - second.length());
         System.out.println(Arrays.toString(strings));
     }
 }
