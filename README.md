@@ -71,6 +71,10 @@
     	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/pattern/singleton/inner" target="_blank"><strong>单例模式</strong></a></td>
         <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/pattern/singleton/inner" target="_blank"><strong>静态内部内</strong></a></td>
     </tr>
+    <tr>
+    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/data/stack" target="_blank"><strong>数组模拟栈</strong></a></td>
+        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/data/stack" target="_blank"><strong>ArrayToStack</strong></a></td>
+    </tr>
 </table>
 
 ### # 5、后期计划
