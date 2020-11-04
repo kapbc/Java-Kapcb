@@ -23,6 +23,7 @@ import java.util.List;
 public class TwoLinkListSum {
 
     public static void main(String[] args) {
+
         List<Integer> integers = new LinkedList<>();
         List<Integer> integers2 = new LinkedList<>();
         integers.add(1);
