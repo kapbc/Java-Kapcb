@@ -48,7 +48,7 @@ public class TwoLinkListSum {
                 String next = String.valueOf(iterator.next());
                 num += next;
             }
-            String s = new StringBuffer(num).toString();
+            String s = new StringBuffer(num).reverse().toString();
             Integer.valueOf(s);
             number += Integer.valueOf(s);
         }
