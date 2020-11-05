@@ -27,10 +27,10 @@ public class Interval {
         int[][] interval = {{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}};
         int[] newInterval = {4, 8};
 
-        int[][] interval1 = {{1,3}, {6,9}};
+        int[][] interval1 = {{1, 3}, {6, 9}};
         int[] newInterval1 = {2, 5};
 
-        List<int[]> intervalResult = getIntervalResult(interval1, newInterval1);
+        List<int[]> intervalResult = getIntervalResult(interval, newInterval);
         for (int[] ints : intervalResult) {
             System.out.println(Arrays.toString(ints));
         }
@@ -38,47 +38,28 @@ public class Interval {
 
     private static List<int[]> getIntervalResult(int[][] interval, int[] newInterval) {
 
-        int len = interval.length;
-        int index = 0;
-        List<int[]> newElement = new ArrayList<>();
-        if (newInterval[0] > interval[len - 1][1]) {
-            for (int i = 0; i < interval.length; i++) {
-                newElement.add(interval[i]);
-            }
-            newElement.add(newInterval);
-        } else if (interval[index][0] > newInterval[1]) {
-            newElement.add(newInterval);
-            for (int i = 1; i <= interval.length; i++) {
-                newElement.add(interval[i]);
-            }
-        } else {
-            while (index < len) {
-                if (interval[index][1] < newInterval[0]) {
-                    newElement.add(interval[index]);
-                    index++;
-                } else if (interval[index][1] >= newInterval[0]) {
-                    newInterval[0] = Math.min(newInterval[0], interval[index][0]);
-                    index++;
-                    break;
+        int leftIndex = newInterval[0];
+        int rightIndex = newInterval[1];
+        boolean flag = false;
+        List<int[]> elementList = new ArrayList<>();
+        for (int[] ints : interval) {
+            if (ints[0] > rightIndex) {
+                if (!flag) {
+                    elementList.add(new int[]{leftIndex, rightIndex});
+                    flag = true;
                 }
+                elementList.add(ints);
+            } else if (ints[1] < leftIndex) {
+                elementList.add(ints);
+            } else {
+                leftIndex = Math.min(leftIndex, ints[0]);
+                rightIndex = Math.max(rightIndex, ints[1]);
             }
-            while (index < len) {
-                if (interval[index][0] < newInterval[1]) {
-                    index++;
-                } else if (interval[index][0] >= newInterval[1]) {
-                    newInterval[1] = Math.max(newInterval[1], interval[index][1]);
-                    index++;
-                    break;
-                }
-            }
-            System.out.println(Arrays.toString(newInterval));
-            newElement.add(newInterval);
         }
-        while (index < len) {
-            newElement.add(interval[index]);
-            index++;
+        if (!flag) {
+            elementList.add(new int[]{leftIndex, rightIndex});
         }
-        return newElement;
+        return elementList;
     }
 }
 
