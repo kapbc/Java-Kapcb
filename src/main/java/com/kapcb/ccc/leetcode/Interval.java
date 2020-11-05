@@ -26,12 +26,31 @@ public class Interval {
     public static void main(String[] args) {
         int[][] interval = {{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}};
         int[] newInterval = {4, 8};
-        int[][] result = getInterval(interval, newInterval);
-
+        List<int[]> result = getInterval(interval, newInterval);
+        for (int[] ints : result) {
+            System.out.println(Arrays.toString(ints));
+        }
     }
 
-    private static int[][] getInterval(int[][] interval, int[] newInterval) {
+    private static List<int[]> getInterval(int[][] interval, int[] newInterval) {
+        List<int[]> list = new ArrayList<>();
+        int len = interval.length;
+        int index = 0;
+        while (index < len && interval[index][1] < newInterval[0]) {
+            list.add(interval[index]);
+            index++;
+        }
+        while (index < len && interval[index][0] >= newInterval[1]) {
+            newInterval[0] = Math.min(newInterval[0], interval[index][0]);
+            newInterval[1] = Math.max(newInterval[1], interval[index][1]);
+        }
+        list.add(newInterval);
+        while (index<len){
+            list.add(interval[index]);
+            index++;
+        }
 
-        return null;
+        return list;
     }
 }
+
