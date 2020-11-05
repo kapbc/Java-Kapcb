@@ -26,31 +26,59 @@ public class Interval {
     public static void main(String[] args) {
         int[][] interval = {{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}};
         int[] newInterval = {4, 8};
-        List<int[]> result = getInterval(interval, newInterval);
-        for (int[] ints : result) {
+
+        int[][] interval1 = {{1,3}, {6,9}};
+        int[] newInterval1 = {2, 5};
+
+        List<int[]> intervalResult = getIntervalResult(interval1, newInterval1);
+        for (int[] ints : intervalResult) {
             System.out.println(Arrays.toString(ints));
         }
     }
 
-    private static List<int[]> getInterval(int[][] interval, int[] newInterval) {
-        List<int[]> list = new ArrayList<>();
+    private static List<int[]> getIntervalResult(int[][] interval, int[] newInterval) {
+
         int len = interval.length;
         int index = 0;
-        while (index < len && interval[index][1] < newInterval[0]) {
-            list.add(interval[index]);
+        List<int[]> newElement = new ArrayList<>();
+        if (newInterval[0] > interval[len - 1][1]) {
+            for (int i = 0; i < interval.length; i++) {
+                newElement.add(interval[i]);
+            }
+            newElement.add(newInterval);
+        } else if (interval[index][0] > newInterval[1]) {
+            newElement.add(newInterval);
+            for (int i = 1; i <= interval.length; i++) {
+                newElement.add(interval[i]);
+            }
+        } else {
+            while (index < len) {
+                if (interval[index][1] < newInterval[0]) {
+                    newElement.add(interval[index]);
+                    index++;
+                } else if (interval[index][1] >= newInterval[0]) {
+                    newInterval[0] = Math.min(newInterval[0], interval[index][0]);
+                    index++;
+                    break;
+                }
+            }
+            while (index < len) {
+                if (interval[index][0] < newInterval[1]) {
+                    index++;
+                } else if (interval[index][0] >= newInterval[1]) {
+                    newInterval[1] = Math.max(newInterval[1], interval[index][1]);
+                    index++;
+                    break;
+                }
+            }
+            System.out.println(Arrays.toString(newInterval));
+            newElement.add(newInterval);
+        }
+        while (index < len) {
+            newElement.add(interval[index]);
             index++;
         }
-        while (index < len && interval[index][0] >= newInterval[1]) {
-            newInterval[0] = Math.min(newInterval[0], interval[index][0]);
-            newInterval[1] = Math.max(newInterval[1], interval[index][1]);
-        }
-        list.add(newInterval);
-        while (index<len){
-            list.add(interval[index]);
-            index++;
-        }
-
-        return list;
+        return newElement;
     }
 }
 
