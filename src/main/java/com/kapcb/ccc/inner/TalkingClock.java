@@ -26,6 +26,9 @@ public class TalkingClock {
     public void start() {
     }
 
+    /**
+     * 一个内部类方法可以访问自身的数据字段，也可以访问创建它的外围类对象的数据字段
+     */
     public class TimePrinter implements ActionListener {
 
         @Override
