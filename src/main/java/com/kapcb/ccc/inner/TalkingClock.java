@@ -1,7 +1,9 @@
 package com.kapcb.ccc.practice.inner;
 
+import javax.swing.Timer;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.time.Instant;
 
 /**
@@ -24,6 +26,9 @@ public class TalkingClock {
     }
 
     public void start() {
+        TimePrinter timePrinter = new TimePrinter();
+        Timer timer = new Timer(interval, timePrinter);
+        timer.start();
     }
 
     /**
