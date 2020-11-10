@@ -9,7 +9,7 @@ package com.kapcb.ccc.practice.exception;
 public class ExceptionTest {
 
     public static void main(String[] args) throws FileFormatException {
-    testException("exception");
+        testException("exception");
     }
 
     private static void testException(String test) throws FileFormatException {
@@ -20,3 +20,4 @@ public class ExceptionTest {
         }
     }
 }
+
