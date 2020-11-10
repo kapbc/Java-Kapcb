@@ -51,6 +51,8 @@ public class IntegerReverse {
     }
 
     /**
+     * NotRecommended
+     * 
      * int 类型转换为 String 是否存在精度丢失？？？
      *
      * @param target int
@@ -75,3 +77,4 @@ public class IntegerReverse {
         }
     }
 }
+
