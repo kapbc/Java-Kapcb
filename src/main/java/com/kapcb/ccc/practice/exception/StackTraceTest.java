@@ -16,6 +16,8 @@ public class StackTraceTest {
             System.out.println("Pls Entry an number:");
             int i = scanner.nextInt();
             factorial(i);
+        } finally {
+            System.out.println("Kapcb awesome man!!!");
         }
     }
 
@@ -33,3 +35,4 @@ public class StackTraceTest {
         return temp;
     }
 }
+
