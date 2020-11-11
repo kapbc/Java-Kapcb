@@ -22,6 +22,8 @@ import java.util.logging.Logger;
  * [-1, -1, 2],
  * [-1, 0, 1]
  * ]
+ *
+ * link: https://leetcode-cn.com/problems/3sum/
  */
 public class ThreeElementSum {
 
