@@ -14,7 +14,7 @@ package com.kapcb.ccc.leetcode;
  * <p>
  * link: https://leetcode-cn.com/problems/reverse-integer/
  */
-public class IntegerReverse {
+public class ReverseInteger {
 
     public static void main(String[] args) {
         // [-2147483648, 2147483647]

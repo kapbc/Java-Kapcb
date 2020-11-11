@@ -1,3 +1,9 @@
+package com.kapcb.ccc.algorithm;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class PrimeNumber {
     private static final int BASE_LOOP_NUMBER = 2;
 
