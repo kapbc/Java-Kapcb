@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 /**
  * @author kapcb
  * @version 1.0.0
- * @classname ThreeElementSum
+ * @classname ElementSumThree
  * @date 2020/11/11 16:08
  * <p>
  * 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有满足条件且不重复的三元组。
@@ -25,9 +25,9 @@ import java.util.logging.Logger;
  *
  * link: https://leetcode-cn.com/problems/3sum/
  */
-public class ThreeElementSum {
+public class ElementSumThree {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(ThreeElementSum.class), "logmessage_en");
+    private static final Logger logger = Logger.getLogger(String.valueOf(ElementSumThree.class), "logmessage_en");
 
     public static void main(String[] args) {
         int[] array = {-1, 0, 1, 2, -1, -4};

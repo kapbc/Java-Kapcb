@@ -7,7 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <a>Title:FourElementSum</a>
+ * <a>Title:ElementSumFour</a>
  * <a>Author：ccc<a>
  * <a>Description：<a>
  *
@@ -27,9 +27,9 @@ import java.util.logging.Logger;
  * <p>
  * link: https://leetcode-cn.com/problems/4sum/
  */
-public class FourElementSum {
+public class ElementSumFour {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(FourElementSum.class), "logmessage_en");
+    private static final Logger logger = Logger.getLogger(String.valueOf(ElementSumFour.class), "logmessage_en");
 
     public static void main(String[] args) {
         int[] array = {1, 0, -1, 0, -2, 2};
