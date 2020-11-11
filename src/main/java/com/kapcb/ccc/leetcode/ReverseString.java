@@ -32,6 +32,12 @@ public class ReverseString {
         }
     }
 
+    /**
+     * 双指针交换法
+     *
+     * @param arrayStr char[]
+     * @return char[]
+     */
     private static char[] getReverseString(char[] arrayStr) {
         int right = arrayStr.length - 1;
         for (int left = 0; left < right; left++, right--) {
