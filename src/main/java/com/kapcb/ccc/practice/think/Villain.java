@@ -1,4 +1,4 @@
-package com.kapcb.ccc.practice;
+package com.kapcb.ccc.practice.think;
 
 public class Villain {
     private String name;
