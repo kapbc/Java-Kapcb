@@ -38,6 +38,14 @@ public class FourElementSum {
 
     }
 
+    /**
+     * 双层循环双指针，先固定两个数
+     * 去重，找到后面一个与当前相同直接跳过
+     *
+     * @param array  int[]
+     * @param target int
+     * @return List<List < Integer>>
+     */
     private static List<List<Integer>> getFourElementSum(int[] array, int target) {
         if (array == null || array.length < 4) {
             logger.log(Level.WARNING, "leetcode.error.message");
