@@ -3,8 +3,8 @@ package com.kapcb.ccc.practice.genericClass;
 import java.util.logging.Logger;
 
 /**
- * <a>Title:ArrayAlg </a>
- * <a>Author：kapcb <a>
+ * <a>Title: ArrayAlg </a>
+ * <a>Author: kapcb <a>
  * <a>Description：<a>
  *
  * @author kapcb
@@ -24,10 +24,10 @@ public class ArrayAlg {
      * @param array String[]
      * @return Pair<String>
      */
-    public static Pair<String> minAndMax(String[] array) {
+    public static <T extends Comparable> Pair<T> minAndMax(T[] array) {
         boolean legal = isLegal(array);
-        String min = array[0];
-        String max = array[0];
+        T min = array[0];
+        T max = array[0];
         for (int i = 0; i < array.length; i++) {
             if (min.compareTo(array[i]) > 0) {
                 min = array[i];
