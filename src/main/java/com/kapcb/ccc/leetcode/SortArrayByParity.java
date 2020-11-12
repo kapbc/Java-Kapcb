@@ -29,11 +29,57 @@ public class SortArrayByParity {
 
     public static void main(String[] args) {
         int[] array = {4, 2, 5, 7};
-        List<Integer> sortArrayByParity = getSortArrayByParity(array);
-        System.out.println(sortArrayByParity);
+//        List<Integer> sortArrayByParity = getSortArrayByParityNotRecommended(array);
+//        System.out.println(sortArrayByParity);
+
+        int[] sortArrayByParity = getSortArrayByParity(array);
+        System.out.println(Arrays.toString(sortArrayByParity));
     }
 
-    private static List<Integer> getSortArrayByParity(int[] array) {
+    /**
+     * 两次遍历，先找 index 为偶数的，再找index为奇数的
+     *
+     * @param array int[]
+     * @return List<Integer>
+     */
+    private static int[] getSortArrayByParity(int[] array) {
+        if (array.length % 2 != 0 || array.length < 2 || array.length > 20000) {
+            logger.warning("leetcode.error.message");
+            return null;
+        }
+        Arrays.sort(array);
+        if (array[0] < 0) {
+            logger.warning("leetcode.error.message");
+            return null;
+        }
+        int len = array.length;
+        int[] result = new int[len];
+        int indexForEven = 0;
+        for (int i : array) {
+            if (i % 2 == 0) {
+                result[indexForEven] = i;
+                indexForEven += 2;
+            }
+        }
+
+        int indexForOdd = 1;
+        for (int i : array) {
+            if (i % 2 != 0) {
+                result[indexForOdd] = i;
+                indexForOdd += 2;
+            }
+        }
+        return result;
+    }
+
+    /**
+     * Not Recommended
+     * 分别拿到奇数和偶数，然后间隔放入
+     *
+     * @param array int[]
+     * @return List<Integer>
+     */
+    private static List<Integer> getSortArrayByParityNotRecommended(int[] array) {
         if (array.length % 2 != 0 || array.length < 2 || array.length > 20000) {
             logger.warning("leetcode.error.message");
             return null;
