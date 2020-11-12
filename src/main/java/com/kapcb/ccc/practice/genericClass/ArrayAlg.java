@@ -18,11 +18,14 @@ public class ArrayAlg {
     private ArrayAlg() {
     }
 
+    /**
+     * 获取最大和最小值
+     *
+     * @param array String[]
+     * @return Pair<String>
+     */
     public static Pair<String> minAndMax(String[] array) {
-        if (array == null || array.length <= 0) {
-            logger.warning("kapcb.system.practice.error");
-            return null;
-        }
+        boolean legal = isLegal(array);
         String min = array[0];
         String max = array[0];
         for (int i = 0; i < array.length; i++) {
@@ -34,5 +37,40 @@ public class ArrayAlg {
             }
         }
         return new Pair<>(min, max);
+    }
+
+    /**
+     * 获取数组中的最小值
+     * 对类型变量进行限定，否则无法使用 compareTo 方法
+     *
+     * @param array T[]
+     * @param <T>   <T extends Comparable>
+     * @return T
+     */
+    public static <T extends Comparable> T min(T[] array) {
+        boolean legal = isLegal(array);
+        T smallest = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (smallest.compareTo(array[i]) > 0) {
+                smallest = array[i];
+            }
+        }
+        return smallest;
+    }
+
+    /**
+     * judge
+     *
+     * @param array T[]
+     * @param <T>   <T>
+     * @return boolean
+     */
+    private static <T> boolean isLegal(T[] array) {
+        if (array == null || array.length <= 0) {
+            logger.warning("kapcb.system.practice.error");
+            return false;
+        } else {
+            return true;
+        }
     }
 }
