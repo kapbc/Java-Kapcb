@@ -21,7 +21,4 @@ public class ContainerWithMostWater {
         System.out.println(containerWithMostWater);
     }
 
-    private static int getContainerWithMostWater(int[] array) {
-
-    }
 }
