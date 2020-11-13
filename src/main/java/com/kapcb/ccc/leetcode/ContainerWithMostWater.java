@@ -23,7 +23,6 @@ public class ContainerWithMostWater {
 
     private static int getContainerWithMostWater(int[] array) {
         int maxX = 0;
-        int maxY = 0;
 
     }
 }
