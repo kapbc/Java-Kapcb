@@ -16,9 +16,6 @@ package com.kapcb.ccc.leetcode;
 public class ContainerWithMostWater {
 
     public static void main(String[] args) {
-        int[] array = {1, 8, 6, 2, 5, 4, 8, 3, 7};
-//        int containerWithMostWater = getContainerWithMostWater(array);
-//        System.out.println(containerWithMostWater);
     }
 
 }
