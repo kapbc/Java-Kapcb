@@ -1,5 +1,7 @@
 package com.kapcb.ccc.leetcode;
 
+import java.util.Stack;
+
 /**
  * <a>Title: RemoveKDigits </a>
  * <a>Author: kapcb <a>
@@ -21,13 +23,29 @@ package com.kapcb.ccc.leetcode;
  * link: https://leetcode-cn.com/problems/remove-k-digits/
  */
 public class RemoveKDigits {
+
     public static void main(String[] args) {
         String number = "1432219";
         int k = 3;
-
+        int theResult = getTheResult(number, k);
+        System.out.println(theResult);
     }
 
+    /**
+     * 贪心算法 + 栈
+     * 先记录下，等会了再来
+     *
+     * @param number String
+     * @param k      int
+     * @return int
+     */
     private static int getTheResult(String number, int k) {
-
+        Stack<Integer> integerStack = new Stack<>();
+        String[] split = number.split("");
+        for (int i = 0; i < split.length; i++) {
+            Integer peek = integerStack.peek();
+            // TODO continue;
+        }
+        return 0;
     }
 }
