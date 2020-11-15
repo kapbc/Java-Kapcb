@@ -1,5 +1,7 @@
 package com.kapcb.ccc.leetcode;
 
+import java.util.Random;
+
 /**
  * <a>Title: LargestElementInAnArray </a>
  * <a>Author: kapcb <a>
@@ -16,12 +18,15 @@ package com.kapcb.ccc.leetcode;
  */
 public class LargestElementInAnArray {
 
+
     public static void main(String[] args) {
         int[] array = {3, 2, 1, 5, 6, 4};
         int[] testArray = {3, 2, 3, 1, 2, 4, 5, 5, 6};
         int k = 2;
         int largestElementInArray = getLargestElementInArray(testArray, 4);
         System.out.println(largestElementInArray);
+        findKthLargest(array,2)
+
     }
 
     /**
@@ -54,4 +59,44 @@ public class LargestElementInAnArray {
         result = array[len - k];
         return result;
     }
+
+    public int findKthLargest(int[] array, int k) {
+        return quickSelect(array, 0, array.length - 1, array.length - k);
+    }
+
+    public int quickSelect(int[] array, int leftIndex, int riightIndex, int index) {
+        int q = randomPartition(array, leftIndex, riightIndex);
+        if (q == index) {
+            return array[q];
+        } else {
+            return q < index ? quickSelect(array, q + 1, riightIndex, index) : quickSelect(array, leftIndex, q - 1.index)
+        }
+    }
+
+    public int randomPartition(int[] array, int leftIndex, int rightIndex) {
+        Random random = new Random();
+        int i = random.nextInt(rightIndex - 1 + 1) + leftIndex;
+        swap(array, i, rightIndex);
+        return partition(array, leftIndex, rightIndex);
+    }
+
+    private int partition(int[] array, int leftIndex, int rightIndex) {
+        int x = array[leftIndex];
+        int i = leftIndex - 1;
+        for (int j = leftIndex; j < rightIndex; ++j) {
+            if (array[j] <= x) {
+                swap(array, ++i, j);
+            }
+        }
+        swap(array, i + 1, rightIndex);
+        return i + 1;
+    }
+
+    private void swap(int[] array, int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+
+
 }
