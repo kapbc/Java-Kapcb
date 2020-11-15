@@ -22,6 +22,12 @@ package com.kapcb.ccc.leetcode;
  */
 public class RemoveKDigits {
     public static void main(String[] args) {
+        String number = "1432219";
+        int k = 3;
+
+    }
+
+    private static int getTheResult(String number, int k) {
 
     }
 }
