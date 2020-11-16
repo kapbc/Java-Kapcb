@@ -25,7 +25,8 @@ public class LargestElementInAnArray {
         int k = 2;
         int largestElementInArray = getLargestElementInArray(testArray, 4);
         System.out.println(largestElementInArray);
-        findKthLargest(array,2)
+        int kthLargest = findKthLargest(array, 2);
+        System.out.println(kthLargest);
 
     }
 
@@ -60,27 +61,27 @@ public class LargestElementInAnArray {
         return result;
     }
 
-    public int findKthLargest(int[] array, int k) {
+    public static int findKthLargest(int[] array, int k) {
         return quickSelect(array, 0, array.length - 1, array.length - k);
     }
 
-    public int quickSelect(int[] array, int leftIndex, int riightIndex, int index) {
+    public static int quickSelect(int[] array, int leftIndex, int riightIndex, int index) {
         int q = randomPartition(array, leftIndex, riightIndex);
         if (q == index) {
             return array[q];
         } else {
-            return q < index ? quickSelect(array, q + 1, riightIndex, index) : quickSelect(array, leftIndex, q - 1.index)
+            return q < index ? quickSelect(array, q + 1, riightIndex, index) : quickSelect(array, leftIndex, q - 1, index);
         }
     }
 
-    public int randomPartition(int[] array, int leftIndex, int rightIndex) {
+    public static int randomPartition(int[] array, int leftIndex, int rightIndex) {
         Random random = new Random();
         int i = random.nextInt(rightIndex - 1 + 1) + leftIndex;
         swap(array, i, rightIndex);
         return partition(array, leftIndex, rightIndex);
     }
 
-    private int partition(int[] array, int leftIndex, int rightIndex) {
+    private static int partition(int[] array, int leftIndex, int rightIndex) {
         int x = array[leftIndex];
         int i = leftIndex - 1;
         for (int j = leftIndex; j < rightIndex; ++j) {
@@ -92,11 +93,9 @@ public class LargestElementInAnArray {
         return i + 1;
     }
 
-    private void swap(int[] array, int i, int j) {
+    private static void swap(int[] array, int i, int j) {
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
-
-
 }
