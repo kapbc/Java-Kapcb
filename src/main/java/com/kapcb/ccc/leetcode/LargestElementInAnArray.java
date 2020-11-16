@@ -61,6 +61,13 @@ public class LargestElementInAnArray {
         return result;
     }
 
+    /**
+     * 贪心 + partition
+     *
+     * @param array int[]
+     * @param k     int
+     * @return int
+     */
     public static int findKthLargest(int[] array, int k) {
         return quickSelect(array, 0, array.length - 1, array.length - k);
     }
