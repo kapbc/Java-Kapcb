@@ -27,17 +27,19 @@ public class ReverseLinkedList {
 class kapcbLinkedList<E> {
 
     private Node<E> root;
-    
+
     private E next;
-    
+
     public void add(Node<E> element){
         if (root.getNext()==null){
             root.setNext(element);
             element.setNext(null);
-        } 
+        }
     }
-    
-    public void remove()
+
+    public void remove(){
+        
+    }
 }
 
 class Node<E> {
@@ -68,4 +70,3 @@ class Node<E> {
         }
     }
 }
-
