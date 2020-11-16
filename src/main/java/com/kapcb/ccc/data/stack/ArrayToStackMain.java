@@ -85,5 +85,6 @@ public class ArrayToStackMain {
                     break;
             }
         }
+        scanner.close();
     }
 }
