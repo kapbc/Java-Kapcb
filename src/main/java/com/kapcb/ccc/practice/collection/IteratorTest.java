@@ -29,5 +29,7 @@ public class IteratorTest {
             String next = iterator.next();
             System.out.println(next);
         }
+        
+        iterator.forEachRemaining(element -> {System.out.println(element);});
     }
 }
