@@ -11,7 +11,7 @@ import java.util.logging.Logger;
  * @version 1.0.0
  * @date 2020/11/17-13:14
  */
-public class KapcbStack<E> {
+public class KapcbStack {
 
     private static final Logger logger = Logger.getLogger(String.valueOf(KapcbStack.class), "logmessage_en");
 
@@ -31,14 +31,14 @@ public class KapcbStack<E> {
     }
 
     private boolean isFull(int[] array) {
-        return array.length == this.capacity ? true : false;
+        return head + 1 == this.capacity ? true : false;
     }
 
     private boolean isEmpty(int[] array) {
         return head == -1 ? true : false;
     }
 
-    public <E extends Integer> void push(E e) {
+    public void push(int e) {
         if (isFull(array)) {
             logger.warning("kapcb.stack.full.error");
             return;
@@ -77,7 +77,7 @@ public class KapcbStack<E> {
             return;
         }
         for (int i = 0; i < size; i++) {
-            System.out.printf("栈中的数据为:%d\n" + array[i]);
+            System.out.printf("栈中的数据为:%d\n" , array[i]);
         }
     }
 }
