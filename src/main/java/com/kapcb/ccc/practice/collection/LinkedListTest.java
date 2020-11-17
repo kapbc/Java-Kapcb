@@ -30,15 +30,22 @@ public class LinkedListTest {
             System.out.println(s);
         }
 
+        System.out.println("-------------------------");
+
         List<String> list = new ArrayList<>();
         list.add("1111");
         list.add("2222");
         list.add("3333");
         list.add("4444");
         ListIterator<String> listIterator = list.listIterator();
+        listIterator.next();
+        listIterator.add("kapcb nb");
+        while (listIterator.hasPrevious()) {
+            System.out.println("data: " + listIterator.previous() + ", index: " + listIterator.previousIndex());
+        }
+        System.out.println("-------------------------");
         while (listIterator.hasNext()) {
-            String previous = listIterator.next();
-            System.out.println(previous);
+            System.out.println("data: " + listIterator.next() + ", index: " + listIterator.nextIndex());
         }
     }
 }
