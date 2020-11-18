@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 
 /**
  * @author kapcb
@@ -26,18 +27,59 @@ public class TwoLinkListSum {
 
         List<Integer> integers = new LinkedList<>();
         List<Integer> integers2 = new LinkedList<>();
-        integers.add(1);
         integers.add(2);
-        integers.add(3);
-        integers2.add(4);
+        integers.add(4);
+        integers.add(6);
         integers2.add(5);
-        integers2.add(6);
+        integers2.add(5);
+        integers2.add(4);
         List<Integer> twoLinkListSum = getTwoLinkListSum(integers, integers2);
         System.out.println(twoLinkListSum);
     }
 
+    /**
+     * @param elementOne List<Integer>
+     * @param elementTwo List<Integer>
+     * @return List<Integer>
+     */
+    public static List<Integer> getTwoLinkListSum(List<Integer> elementOne, List<Integer> elementTwo) {
+        List<Integer> result = new LinkedList<>();
+        List<Integer> resultForReverse = new LinkedList<>();
+        ListIterator<Integer> elementOneIterator = elementOne.listIterator();
+        ListIterator<Integer> elementTwoIterator = elementTwo.listIterator();
+        int loopCount = Math.max(elementOne.size(), elementTwo.size());
+        int carry = 0;
+        for (int i = 0; i < loopCount; i++) {
+            Integer resultOne = 0;
+            Integer resultTwo = 0;
+            if (elementOneIterator.hasNext()) {
+                resultOne = elementOneIterator.next();
+            }
+            if (elementTwoIterator.hasNext()) {
+                resultTwo = elementTwoIterator.next();
+            }
+            int resultNum = resultOne + resultTwo + carry;
+            result.add(resultNum % 10);
+            carry = resultNum / 10;
+        }
+        if (carry > 0) {
+            result.add(carry);
+        }
+        for (int i = result.size() - 1; i >= 0; i--) {
+            resultForReverse.add(result.get(i));
+        }
+        return resultForReverse;
 
-    private static List<Integer> getTwoLinkListSum(List<Integer> elementOne, List<Integer> elementTwo) {
+    }
+
+    /**
+     * Not Recommended and that method have some trouble
+     *
+     * @param elementOne List<Integer>
+     * @param elementTwo List<Integer>
+     * @return List<Integer>
+     */
+    private static List<Integer> getTwoLinkListSumNotRecommended(List<Integer> elementOne, List<Integer> elementTwo) {
         List<List<Integer>> array = new ArrayList<>();
         array.add(elementOne);
         array.add(elementTwo);
