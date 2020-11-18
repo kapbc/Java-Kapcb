@@ -1,7 +1,7 @@
 package com.kapcb.ccc.practice.loop;
 
 /**
- * <a>Title: print </a>
+ * <a>Title: Print </a>
  * <a>Author: kapcb <a>
  * <a>Description：<a>
  *
