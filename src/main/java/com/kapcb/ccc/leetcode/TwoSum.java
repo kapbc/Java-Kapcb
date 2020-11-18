@@ -2,7 +2,9 @@ package com.kapcb.ccc.leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author kapcb
@@ -17,18 +19,43 @@ import java.util.List;
  * 给定 nums = [2, 7, 11, 15], target = 9
  * 因为 nums[0] + nums[1] = 2 + 7 = 9
  * 所以返回 [0, 1]
- *
+ * <p>
  * link: https://leetcode-cn.com/problems/two-sum/
  */
 public class TwoSum {
 
     public static void main(String[] args) {
         int[] nums = {2, 7, 11, 15};
-        List twoSum = getTwoSum(nums, 18);
-        System.out.println(twoSum);
+        int[] twoSum = getTwoSum(nums, 18);
+        System.out.println(Arrays.toString(twoSum));
     }
 
-    private static List getTwoSum(int[] array, int target) {
+    /**
+     * HashMap , Recommended
+     *
+     * @param array  int[]
+     * @param target int
+     * @return int[]
+     */
+    private static int[] getTwoSum(int[] array, int target) {
+        Map<Integer, Integer> hashMap = new HashMap<>(6);
+        for (int i = 0; i < array.length; i++) {
+            if (hashMap.containsKey(target - array[i])) {
+                return new int[]{hashMap.get(target - array[i]), i};
+            }
+            hashMap.put(array[i], i);
+        }
+        return new int[0];
+    }
+
+    /**
+     * 暴力破解 Not Recommended
+     *
+     * @param array  int[]
+     * @param target int
+     * @return List
+     */
+    private static List getTwoSumNotRecommended(int[] array, int target) {
         Arrays.sort(array);
         List<Integer> indexArray = new ArrayList<>();
         loop:
