@@ -13,6 +13,8 @@ import java.io.File;
  */
 public class FileDeleteUtil {
 
+    private static final String OPERATION = ".#";
+
     private FileDeleteUtil() {
     }
 
@@ -28,7 +30,7 @@ public class FileDeleteUtil {
                 deleteTheOverVersionFiles(f);
             }
             if (f.isFile()) {
-                if (f.getName().startsWith(".#")) {
+                if (f.getName().startsWith(OPERATION)) {
                     System.out.println(f.getName());
                     f.delete();
                 }
