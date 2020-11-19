@@ -42,7 +42,6 @@ public class GasStation {
             if (costGas > 0) {
                 index = i;
                 while (index != index - 1) {
-                    costGas
                 }
             }
 
