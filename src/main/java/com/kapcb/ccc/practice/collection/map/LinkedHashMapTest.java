@@ -3,6 +3,7 @@ package com.kapcb.ccc.practice.collection.map;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * <a>Title: LinkedHashMapTest </a>
@@ -33,6 +34,15 @@ public class LinkedHashMapTest {
         while (valueIterator.hasNext()) {
             String next = valueIterator.next();
             System.out.println(next);
+        }
+        System.out.println("===================");
+        Set<Map.Entry<String, String>> entries = map.entrySet();
+        Iterator<Map.Entry<String, String>> entryIterator = entries.iterator();
+        while (entryIterator.hasNext()) {
+            Map.Entry<String, String> next = entryIterator.next();
+            String key = next.getKey();
+            String value = next.getValue();
+            System.out.println("key = " + key + ", value = " + value);
         }
     }
 }
