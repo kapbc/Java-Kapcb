@@ -51,4 +51,9 @@ public class Employee {
         double raise = salary * byPercent / 100;
         salary += raise;
     }
+
+    @Override
+    public String toString() {
+        return getClass().getName() + "[ name =" + name + ", salary=" + salary + ", hireDay=" + hireDay + " ]";
+    }
 }
