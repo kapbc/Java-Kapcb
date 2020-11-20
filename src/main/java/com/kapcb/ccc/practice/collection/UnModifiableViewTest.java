@@ -39,6 +39,8 @@ public class UnModifiableViewTest {
         Map<String, String> hashMapString = Collections.unmodifiableMap(new HashMap<String, String>(4));
         SortedMap<String, String> sortedMapString = Collections.unmodifiableSortedMap(new TreeMap<String, String>());
         NavigableMap<String, String> navigableTreeMapString = Collections.unmodifiableNavigableMap(new TreeMap<String, String>());
+        
+        Map<String, String> synchronizedMap = Collections.synchronizedMap(new HashMap<String, String>(4));
 
         try {
             hashMapString.put("kapcb", "ccc");
