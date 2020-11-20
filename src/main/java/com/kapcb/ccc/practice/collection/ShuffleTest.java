@@ -68,7 +68,7 @@ public class ShuffleTest {
                 if (map.containsKey(o1) && map.containsKey(o2)) {
                     return map.get(o1) - (map.get(o2));
                 }
-                throw new NoSuchElementException("The element is no exist. Please double check!!!");
+                throw new NoSuchElementException("The element is not exist. Please double check!!!");
             }
         };
 
