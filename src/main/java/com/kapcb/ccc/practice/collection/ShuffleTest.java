@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 /**
  * <a>Title: ShuffleTest </a>
@@ -41,7 +42,7 @@ public class ShuffleTest {
         List<String> kapcb = new ArrayList<>();
         List<String> zhourunfa = new ArrayList<>();
         List<String> dipai = new ArrayList<>();
-        
+
         for (int i = 0; i < list.size(); i++) {
             if (i >= 51) {
                 dipai.add(list.get(i));
@@ -67,7 +68,7 @@ public class ShuffleTest {
                 if (map.containsKey(o1) && map.containsKey(o2)) {
                     return map.get(o1) - (map.get(o2));
                 }
-                return -1;
+                throw new NoSuchElementException("The element is no exist. Please double check!!!");
             }
         };
 
