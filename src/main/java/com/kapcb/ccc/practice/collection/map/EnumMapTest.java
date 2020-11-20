@@ -23,6 +23,6 @@ public class EnumMapTest {
         enumMap.put(EnumElement.WEDNESDAY, new Employee("eeeee", 3000, 1999, 05, 15));
         enumMap.put(EnumElement.TUESDAY, new Employee("bbbbb", 2000, 1996, 06, 17));
 
-        enumMap.forEach((k, v) -> System.out.println("k = " + k + ", v = " + v.toString()));
+        enumMap.forEach((k, v) -> System.out.println("k = " + k + ", v = " + v));
     }
 }
