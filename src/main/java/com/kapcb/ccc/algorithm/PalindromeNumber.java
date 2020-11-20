@@ -15,7 +15,7 @@ public class PalindromeNumber {
 
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in);) {
-            System.out.println("请输入一个范围在: [" + Integer.MIN_VALUE + ", " + Integer.MAX_VALUE + " ] 之间的正整数!");
+            System.out.println("请输入一个范围在: [" + Integer.MIN_VALUE + ", " + Integer.MAX_VALUE + " ] 之间的正整数, 否则程序会出错哟!!!");
             int element = scanner.nextInt();
             if (judgeThePalindromeNumber(element)) {
                 System.out.println("是回文");
