@@ -3,7 +3,6 @@ package com.kapcb.ccc.practice.collection;
 import com.kapcb.ccc.practice.think.Employee;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -26,5 +25,9 @@ public class SubListTest {
         employees.add(new Employee("aaaaa", 2500, 1995, 06, 23));
         employees.add(new Employee("ddddd", 1000, 1994, 07, 12));
         employees.subList(0, 2).forEach(System.out::println);
+
+        employees.subList(0,3).remove(2);
+        System.out.println("-------------------------------------");
+        employees.forEach(System.out::println);
     }
 }
