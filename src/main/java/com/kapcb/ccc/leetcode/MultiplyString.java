@@ -43,7 +43,7 @@ public class MultiplyString {
         if (operatorOne.length() <= 0 || operatorTwo.length() <= 0) {
             throw new IllegalArgumentException("输入参数错误!");
         }
-        boolean isZero = (operatorOne.length() == 1 && operatorOne.contains("0")) || (operatorTwo.length() == 1 && operatorTwo.contains("0"));
+        boolean isZero = ("0".equals(operatorOne)) || ("0".equals(operatorTwo));
         if (isZero) {
             return "0";
         }
