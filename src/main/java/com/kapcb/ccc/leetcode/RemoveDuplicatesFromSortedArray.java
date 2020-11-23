@@ -32,7 +32,7 @@ public class RemoveDuplicatesFromSortedArray {
     }
 
     /**
-     * 将非重复元素移动到数组左侧
+     * 将非重复元素移动到数组左侧,双指针
      *
      * @param array int[]
      * @return int
