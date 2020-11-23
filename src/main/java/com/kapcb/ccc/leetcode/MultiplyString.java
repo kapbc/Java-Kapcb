@@ -94,7 +94,7 @@ public class MultiplyString {
         for (int i = operatorOne.length() - 1; i >= 0; i--) {
             int elementOne = operatorOne.charAt(i) - '0';
             for (int j = operatorTwo.length() - 1; j >= 0; j--) {
-                int elementTwo = operatorTwo.charAt(i) - '0';
+                int elementTwo = operatorTwo.charAt(j) - '0';
                 int sum = (array[i + j + 1] + elementOne * elementTwo);
                 array[i + j] += sum / 10;
                 array[i + j + 1] = sum % 10;
