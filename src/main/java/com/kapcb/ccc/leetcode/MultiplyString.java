@@ -19,7 +19,7 @@ package com.kapcb.ccc.leetcode;
  * num1 和 num2 只包含数字 0-9。
  * num1 和 num2 均不以零开头，除非是数字 0 本身。
  * 不能使用任何标准库的大数类型（比如 BigInteger）或直接将输入转换为整数来处理
- *
+ * <p>
  * link: https://leetcode-cn.com/problems/multiply-strings/
  */
 public class MultiplyString {
@@ -30,6 +30,8 @@ public class MultiplyString {
         String multiplyString = getMultiplyString(operatorOne, operatorTwo);
         System.out.println("multiplyString = " + multiplyString);
 
+        String theMultiplyStringNumber = getTheMultiplyStringNumber(operatorOne, operatorTwo);
+        System.out.println("theMultiplyStringNumber = " + theMultiplyStringNumber);
     }
 
     /**
@@ -40,7 +42,7 @@ public class MultiplyString {
      * @return String
      */
     private static String getMultiplyString(String operatorOne, String operatorTwo) {
-        if (operatorOne.length() <= 0 || operatorTwo.length() <= 0) {
+        if (operatorOne == null || operatorTwo == null) {
             throw new IllegalArgumentException("输入参数错误!");
         }
         boolean isZero = ("0".equals(operatorOne)) || ("0".equals(operatorTwo));
@@ -71,5 +73,40 @@ public class MultiplyString {
             calculator += result;
         }
         return String.valueOf(calculator);
+    }
+
+    /**
+     * 字符串的乘积，将每次运算的结果保存在一个数组中，最后遍历数组进行拼串
+     *
+     * @param operatorOne String
+     * @param operatorTwo String
+     * @return String
+     */
+    private static String getTheMultiplyStringNumber(String operatorOne, String operatorTwo) {
+        if (operatorOne == null || operatorTwo == null) {
+            throw new IllegalArgumentException("输入参数错误!");
+        }
+        boolean isZero = ("0".equals(operatorOne)) || ("0".equals(operatorTwo));
+        if (isZero) {
+            return "0";
+        }
+        int[] array = new int[operatorOne.length() + operatorTwo.length()];
+        for (int i = operatorOne.length() - 1; i >= 0; i--) {
+            int elementOne = operatorOne.charAt(i) - '0';
+            for (int j = operatorTwo.length() - 1; j >= 0; j--) {
+                int elementTwo = operatorTwo.charAt(i) - '0';
+                int sum = (array[i + j + 1] + elementOne * elementTwo);
+                array[i + j] += sum / 10;
+                array[i + j + 1] = sum % 10;
+            }
+        }
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == 0 && i == 0) {
+                continue;
+            }
+            stringBuilder.append(array[i]);
+        }
+        return stringBuilder.toString();
     }
 }
