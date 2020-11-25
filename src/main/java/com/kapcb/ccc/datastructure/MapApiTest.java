@@ -21,8 +21,10 @@ public class MapApiTest {
         map.forEach((k, v) -> {
             System.out.println("k: " + k + ", v: " + v);
         });
-        map.merge("type", "T000", (oldValue, newValue) -> {
-            return oldValue = newValue;
+        map.merge("type", "T000", (oldValue, newValue) -> oldValue = newValue);
+
+        map.forEach((k, v) -> {
+            System.out.println("k: " + k + ", v: " + v);
         });
 
         map.merge("type", "ccc", new BiFunction<String, String, String>() {
