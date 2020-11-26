@@ -16,6 +16,8 @@ import java.util.NoSuchElementException;
  * @author kapcb
  * @version 1.0.0
  * @date 2020/11/20-14:33
+ * <p>
+ * 数组模拟扑克牌场景
  */
 public class ShuffleTest {
 
