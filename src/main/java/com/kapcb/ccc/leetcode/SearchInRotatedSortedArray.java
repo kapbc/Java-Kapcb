@@ -1,6 +1,5 @@
 package com.kapcb.ccc.leetcode;
 
-import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -18,11 +17,13 @@ public class SearchInRotatedSortedArray {
 
     public static void main(String[] args) {
         int[] array = {0, 1, 2, 4, 5, 6, 7};
-        search(array, 1);
+        int search = search(array, 7);
+        System.out.println(search);
 
     }
 
     private static int search(int[] array, int target) {
+        int result = -1;
         if (target >= array[0] && target <= array[array.length - 1]) {
             Random random = new Random();
             int len = 0;
@@ -34,17 +35,27 @@ public class SearchInRotatedSortedArray {
             int[] array2 = new int[len2];
             int i = 0;
             int j = 0;
+            boolean inArrayOne = false;
             while (i < len) {
+                if (array[i] == target) {
+                    result = i;
+                    inArrayOne = true;
+                    break;
+                }
                 array1[i] = array[i];
                 i++;
             }
+            boolean inArrayTwo = false;
             while (j < len2) {
+                if (array[i + j] == target) {
+                    result = i + j;
+                    inArrayTwo = true;
+                    break;
+                }
                 array2[j] = array[i + j];
                 j++;
             }
         }
-        int result = -1;
-
         return result;
     }
 }
