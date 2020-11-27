@@ -3,7 +3,6 @@ package com.kapcb.ccc.leetcode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Logger;
 
 /**
@@ -16,6 +15,16 @@ import java.util.logging.Logger;
  * @date 2020/11/27-16:22
  * <p>
  * link: https://leetcode-cn.com/problems/roman-to-integer/
+ * 罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。
+ * 字符          数值
+ * I             1
+ * V             5
+ * X             10
+ * L             50
+ * C             100
+ * D             500
+ * M             1000
+ * 例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。
  */
 public class RomanToInt {
 
@@ -25,18 +34,46 @@ public class RomanToInt {
         String roman = "XXVII";
         String roman2 = "IV";
         String roman3 = "IX";
-        String test = "MCMXCIV";
+        String roman4 = "MCMXCIV";
+        String roman5 = "LVIII";
         int i = romanToInt(roman);
         int i2 = romanToInt(roman2);
         int i3 = romanToInt(roman3);
-        int i4 = romanToInt(test);
+        int i4 = romanToInt(roman4);
+        int i5 = romanToInt(roman5);
         System.out.println(i);
         System.out.println(i2);
         System.out.println(i3);
         System.out.println(i4);
+        System.out.println(i5);
     }
 
+    /**
+     * 小的数字放在大的数字左边就是减法，否则为加法
+     *
+     * @param roman String
+     * @return int
+     */
     private static int romanToInt(String roman) {
+        List<Integer> elementList = getElementList(roman);
+        int size = elementList.size();
+        int result = 0;
+        int operation = 0;
+        for (int i = 0; i < size - 1; i++) {
+            operation = elementList.get(i) >= elementList.get(i + 1) ? elementList.get(i) : -elementList.get(i);
+            result = result + operation;
+        }
+        result = result + elementList.get(size - 1);
+        return result;
+    }
+
+    /**
+     * 罗马文转数字
+     *
+     * @param roman String
+     * @return List<Integer>
+     */
+    private static List<Integer> getElementList(String roman) {
         String[] split = roman.split("");
         List<Integer> elementList = new ArrayList<>();
         Arrays.stream(split).forEach(x -> {
@@ -67,14 +104,6 @@ public class RomanToInt {
                     break;
             }
         });
-        System.out.println(elementList);
-        int size = elementList.size();
-        int result = 0;
-        int operation = 4000;
-        for (int i = 0; i < size; i++) {
-            operation = operation >= elementList.get(i) ? elementList.get(i) : -elementList.get(i);
-            result = result + operation;
-        }
-        return result > 0 ? result : -result;
+        return elementList;
     }
 }
