@@ -55,7 +55,7 @@ public class ElementSumFour {
         List<List<Integer>> result = new ArrayList<>();
         int len = array.length;
         for (int i = 0; i < array.length - 1; i++) {
-            if ((target >= 0 && array[len - 1] < 0) || (target <= 0 && array[0] > 0)) {
+            if ((target > array[len - 1]) || (target < array[0])) {
                 break;
             }
             for (int j = i + 1; j < array.length; j++) {
