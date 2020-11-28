@@ -2,7 +2,9 @@ package com.kapcb.ccc.leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <a>Title: ElementSumFourII </a>
@@ -36,8 +38,52 @@ public class ElementSumFourII {
 
         int i = fourSumCount(arrayA, arrayB, arrayC, arrayD);
         System.out.println("i = " + i);
+
+        int j = fourSumCountII(arrayA, arrayB, arrayC, arrayD);
+        System.out.println("j = " + j);
     }
 
+    /**
+     * 因为题目并不关心每个值的索引位置，只关心元组个数
+     * 使用HashMap,先存放两个数字的所有元素之和，然后与另外两个数字相比。也可使用两个HashMap分别存放两两分组的数组的和，再比较HashMap的key
+     *
+     * @param arrayA int[]
+     * @param arrayB int[]
+     * @param arrayC int[]
+     * @param arrayD int[]
+     * @return int
+     */
+    private static int fourSumCountII(int[] arrayA, int[] arrayB, int[] arrayC, int[] arrayD) {
+        Map<Integer, Integer> map = new HashMap<>(6);
+        int len = arrayA.length;
+        int result = 0;
+        for (int i = 0; i < len; i++) {
+            for (int j = 0; j < len; j++) {
+                int sum = arrayA[i] + arrayB[j];
+                map.merge(sum, 1, Integer::sum);
+            }
+        }
+
+        for (int i = 0; i < len; i++) {
+            for (int j = 0; j < len; j++) {
+                int temp = arrayC[i] + arrayD[j];
+                if (map.containsKey(-temp)) {
+                    result += map.get(-temp);
+                }
+            }
+        }
+        return result;
+    }
+
+    /**
+     * 有序数组,固定两个,移动两个
+     *
+     * @param arrayA int[]
+     * @param arrayB int[]
+     * @param arrayC int[]
+     * @param arrayD int[]
+     * @return int
+     */
     private static int fourSumCount(int[] arrayA, int[] arrayB, int[] arrayC, int[] arrayD) {
         Arrays.sort(arrayA);
         Arrays.sort(arrayB);
