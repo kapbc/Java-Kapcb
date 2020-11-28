@@ -1,6 +1,5 @@
 package com.kapcb.ccc.leetcode;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -35,8 +34,8 @@ public class ElementSumFourII {
         int[] arrayC = {-1, 2};
         int[] arrayD = {0, 2};
 
-        int i = fourSumCount(arrayA, arrayB, arrayC, arrayC);
-//        System.out.println("i = " + i);
+        int i = fourSumCount(arrayA, arrayB, arrayC, arrayD);
+        System.out.println("i = " + i);
     }
 
     private static int fourSumCount(int[] arrayA, int[] arrayB, int[] arrayC, int[] arrayD) {
@@ -45,44 +44,51 @@ public class ElementSumFourII {
         Arrays.sort(arrayC);
         Arrays.sort(arrayD);
         int len = arrayA.length;
-        int leftIndex = 0;
-        int rightIndex = len - 1;
-        List<Integer> result = new ArrayList<>();
+        int leftIndex;
+        int rightIndex;
+        List<List<Integer>> result = new ArrayList<>();
+        List<Integer> elementList;
         for (int i = 0; i < len; i++) {
             for (int j = 0; j < len; j++) {
-                while (0 <= rightIndex && leftIndex < len) {
-                    while (0 <= rightIndex && leftIndex < len && arrayA[leftIndex] + arrayB[i] + arrayC[j] + arrayA[rightIndex] > 0) {
-                        if (arrayA[leftIndex] + arrayB[i] + arrayC[j] + arrayA[rightIndex] == 0) {
-                            result.add(leftIndex);
-                            result.add(i);
-                            result.add(j);
-                            result.add(rightIndex);
-                            break;
-                        }
-                        rightIndex--;
-                    }
-                    while (0 <= rightIndex && leftIndex < len && arrayA[leftIndex] + arrayB[i] + arrayC[j] + arrayA[rightIndex] < 0) {
-                        if (arrayA[leftIndex] + arrayB[i] + arrayC[j] + arrayA[rightIndex] == 0) {
-                            result.add(leftIndex);
-                            result.add(i);
-                            result.add(j);
-                            result.add(rightIndex);
-                            break;
-                        }
-                        leftIndex++;
-                    }
-                    if (0 <= rightIndex && leftIndex < len && arrayA[leftIndex] + arrayB[i] + arrayC[j] + arrayA[rightIndex] == 0) {
-                        result.add(leftIndex);
-                        result.add(i);
-                        result.add(j);
-                        result.add(rightIndex);
+                boolean flag = false;
+                elementList = new ArrayList<>();
+                leftIndex = 0;
+                rightIndex = len - 1;
+                while (0 <= rightIndex && leftIndex < len && arrayA[leftIndex] + arrayB[i] + arrayC[j] + arrayD[rightIndex] > 0) {
+                    if (arrayA[leftIndex] + arrayB[i] + arrayC[j] + arrayD[rightIndex] == 0) {
+                        elementList.add(leftIndex);
+                        elementList.add(i);
+                        elementList.add(j);
+                        elementList.add(rightIndex);
+                        flag = true;
+                        break;
                     }
                     rightIndex--;
+                }
+                while (0 <= rightIndex && leftIndex < len && arrayA[leftIndex] + arrayB[i] + arrayC[j] + arrayD[rightIndex] < 0) {
+                    if (arrayA[leftIndex] + arrayB[i] + arrayC[j] + arrayD[rightIndex] == 0) {
+                        elementList.add(leftIndex);
+                        elementList.add(i);
+                        elementList.add(j);
+                        elementList.add(rightIndex);
+                        flag = true;
+                        break;
+                    }
                     leftIndex++;
+                }
+                if (0 <= rightIndex && leftIndex < len && arrayA[leftIndex] + arrayB[i] + arrayC[j] + arrayD[rightIndex] == 0) {
+                    elementList.add(leftIndex);
+                    elementList.add(i);
+                    elementList.add(j);
+                    elementList.add(rightIndex);
+                    flag = true;
+                }
+                if (flag) {
+                    result.add(elementList);
                 }
             }
         }
         System.out.println(result);
-        return 0;
+        return result.size();
     }
 }
