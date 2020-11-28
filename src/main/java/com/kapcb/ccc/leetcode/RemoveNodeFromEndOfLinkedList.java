@@ -50,30 +50,6 @@ class LinkedListForLeetCode {
         Node pre;
         Node next;
 
-        public String getNode() {
-            return node;
-        }
-
-        public void setNode(String node) {
-            this.node = node;
-        }
-
-        public Node getPre() {
-            return pre;
-        }
-
-        public void setPre(Node pre) {
-            this.pre = pre;
-        }
-
-        public Node getNext() {
-            return next;
-        }
-
-        public void setNext(Node next) {
-            this.next = next;
-        }
-
         Node() {
         }
 
@@ -90,14 +66,13 @@ class LinkedListForLeetCode {
     }
 
     public void add(String value) {
-        Node node = head;
+        Node node = new Node(value, null, null);
         while (true) {
             if (node.next == null) {
                 break;
             }
             node = node.next;
         }
-        node.setPre(head);
         head.next = node;
         node.pre = head;
         size++;
