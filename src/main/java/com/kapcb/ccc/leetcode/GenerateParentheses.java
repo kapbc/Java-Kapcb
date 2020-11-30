@@ -18,6 +18,8 @@ public class GenerateParentheses {
     }
 
     private static String generateParenthesis(int n) {
+
+        // todo
         return null;
     }
 }
