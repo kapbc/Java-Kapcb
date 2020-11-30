@@ -45,7 +45,7 @@ public class UnModifiableViewTest {
         try {
             hashMapString.put("kapcb", "ccc");
         } catch (UnsupportedOperationException e) {
-            logger.warning("kapcb.unmodifiable,collection");
+            logger.warning("kapcb.unmodifiable.collection");
         }
         hashMapString.forEach((k, v) -> System.out.println("k =" + k + ", v =" + v));
     }
