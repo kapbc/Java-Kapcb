@@ -14,4 +14,6 @@ package com.kapcb.ccc.leetcode;
  * 题目看不懂 淦~~~
  */
 public class NextPermutation {
+
+    //todo
 }
