@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.logging.Logger;
 
 /**
  * <a>Title: ShuffleTest </a>
@@ -20,6 +21,8 @@ import java.util.NoSuchElementException;
  * 数组模拟扑克牌场景
  */
 public class ShuffleTest {
+
+    private static final Logger logger = Logger.getLogger(String.valueOf(ShuffleTest.class), "logmessage_en");
 
     public static void main(String[] args) {
         String[] number = new String[]{"3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A", "2"};
@@ -70,7 +73,8 @@ public class ShuffleTest {
                 if (map.containsKey(o1) && map.containsKey(o2)) {
                     return map.get(o1) - (map.get(o2));
                 }
-                throw new NoSuchElementException("The element is not exist. Please double check!!!");
+                logger.warning("kapcb.element.not.exist");
+                throw new NoSuchElementException();
             }
         };
 
