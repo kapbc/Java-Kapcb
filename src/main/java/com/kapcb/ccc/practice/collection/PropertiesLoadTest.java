@@ -26,5 +26,8 @@ public class PropertiesLoadTest {
         } catch (Exception e) {
             logger.warning("System Exception" + e.getMessage());
         }
+
+        String system = System.getProperty("user.home");
+        System.out.println("system = " + system);
     }
 }
