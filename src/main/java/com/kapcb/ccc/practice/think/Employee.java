@@ -1,5 +1,6 @@
 package com.kapcb.ccc.practice.think;
 
+
 import java.time.LocalDate;
 
 /**
@@ -16,11 +17,16 @@ public class Employee {
     public Employee() {
     }
 
+    public Employee(String name) {
+        this.name = name;
+    }
+    
     public Employee(String name, double salary, int year, int month, int day) {
         this.name = name;
         this.salary = salary;
         this.hireDay = LocalDate.of(year, month, day);
     }
+
 
     public String getName() {
         return name;
