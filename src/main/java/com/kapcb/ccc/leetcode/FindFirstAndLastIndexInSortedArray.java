@@ -1,5 +1,6 @@
 package com.kapcb.ccc.leetcode;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -21,15 +22,40 @@ public class FindFirstAndLastIndexInSortedArray {
 
     public static void main(String[] args) {
         int[] array = {5, 7, 7, 8, 8, 10};
+        int[] result = searchRange(array, 7);
+        System.out.println(Arrays.toString(result));
     }
 
-    private static List<Integer> searchRange(int[] array, int target) {
+    private static int[] searchRange(int[] array, int target) {
         int len = array.length;
         int leftIndex = 0;
         int rightIndex = len - 1;
+        int[] result = new int[]{-1, -1};
         while (leftIndex < rightIndex) {
             int middleIndex = leftIndex + ((rightIndex - leftIndex) >> 1);
-            if ()
+            if (array[middleIndex] > target) {
+                rightIndex = middleIndex - 1;
+            }
+            if (array[middleIndex] < target) {
+                leftIndex = middleIndex + 1;
+            }
+            if (array[middleIndex] == target) {
+                int temp = middleIndex;
+                if (array[temp] != target) {
+                    result[0] = temp + 1;
+                } else {
+                    temp--;
+                }
+                if (array[middleIndex] != target) {
+                    result[1] = middleIndex - 1;
+                } else {
+                    middleIndex++;
+                }
+
+            }
+            leftIndex++;
+            rightIndex--;
         }
+        return result;
     }
 }
