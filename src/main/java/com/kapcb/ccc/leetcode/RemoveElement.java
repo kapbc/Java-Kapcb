@@ -30,9 +30,37 @@ public class RemoveElement {
         logger.warning("kapcb.test.dividing.line");
 
         int theElement = removeTheElement(testArrayOne, targetOne);
-        System.out.println(theElement);
+        System.out.println("theElement = " + theElement);
         int element = removeTheElement(testArrayTwo, targetTwo);
-        System.out.println(element);
+        System.out.println("element = " + element);
+
+        logger.warning("kapcb.test.dividing.line");
+
+        int elementToLast = removeTheElementToLast(testArrayOne, targetOne);
+        System.out.println("elementToLast = " + elementToLast);
+        int removeTheElementToLast = removeTheElementToLast(testArrayTwo, targetTwo);
+        System.out.println("removeTheElementToLast = " + removeTheElementToLast);
+    }
+
+    /**
+     * 双指针，将寻找的目标元素替换到数组最后，并更新数组的实时长度
+     *
+     * @param array  int[]
+     * @param target int
+     * @return int
+     */
+    private static int removeTheElementToLast(int[] array, int target) {
+        int len = array.length;
+        int index = 0;
+        while (index < len) {
+            if (array[index] == target) {
+                array[index] = array[len - 1];
+                len--;
+            } else {
+                index++;
+            }
+        }
+        return index;
     }
 
     /**
