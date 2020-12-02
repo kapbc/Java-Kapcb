@@ -1,7 +1,7 @@
 package com.kapcb.ccc.leetcode;
 
 import java.util.Arrays;
-import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * <a>Title: RemoveElement </a>
@@ -15,6 +15,7 @@ import java.util.List;
  * link: https://leetcode-cn.com/problems/remove-element/
  */
 public class RemoveElement {
+    private static final Logger logger = Logger.getLogger(String.valueOf(RemoveElement.class), "logmessage_en");
 
     public static void main(String[] args) {
         int[] testArrayOne = {3, 2, 2, 3};
@@ -25,9 +26,33 @@ public class RemoveElement {
         System.out.println("result = " + result);
         int i = removeElement(testArrayTwo, targetTwo);
         System.out.println("i = " + i);
+
+        logger.warning("kapcb.test.dividing.line");
+
+        int theElement = removeTheElement(testArrayOne, targetOne);
+        System.out.println(theElement);
+        int element = removeTheElement(testArrayTwo, targetTwo);
+        System.out.println(element);
     }
 
-    private static int
+    /**
+     * 将非目标元素重新赋值给原数组。 双指针
+     *
+     * @param array  int[]
+     * @param target int
+     * @return int
+     */
+    private static int removeTheElement(int[] array, int target) {
+        int len = array.length;
+        int index = 0;
+        for (int i = 0; i < len; i++) {
+            if (array[i] != target) {
+                array[index] = array[i];
+                index++;
+            }
+        }
+        return index;
+    }
 
     /**
      * 将目标元素移动至数组最后
