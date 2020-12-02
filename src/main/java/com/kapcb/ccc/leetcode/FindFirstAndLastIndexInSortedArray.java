@@ -21,34 +21,49 @@ public class FindFirstAndLastIndexInSortedArray {
 
     public static void main(String[] args) {
         int[] array = {5, 7, 7, 8, 8, 10};
-        int[] result = searchRange(array, 7);
+        int[] result = searchRange(array, 10);
         System.out.println(Arrays.toString(result));
     }
 
+    /**
+     * 二分查找 + 双指针
+     *
+     * @param array  int[]
+     * @param target int
+     * @return int[]
+     */
     private static int[] searchRange(int[] array, int target) {
         int len = array.length;
         int leftIndex = 0;
         int rightIndex = len - 1;
-        boolean flag = false;
         int[] result = new int[]{-1, -1};
-        while (leftIndex < rightIndex) {
+        while (leftIndex <= rightIndex) {
             int middleIndex = leftIndex + ((rightIndex - leftIndex) >> 1);
-            if (array[middleIndex] >= target) {
+            if (array[middleIndex] < target) {
                 leftIndex = middleIndex + 1;
-            } else {
+            }
+            if (array[middleIndex] > target) {
                 rightIndex = middleIndex - 1;
             }
-        }
-
-        while (leftIndex < rightIndex) {
-            if (array[leftIndex] == array[rightIndex]) {
+            int temp = middleIndex;
+            if (array[middleIndex] == target) {
+                while (middleIndex >= 0) {
+                    if (array[middleIndex] != target) {
+                        break;
+                    }
+                    middleIndex--;
+                }
+                while (temp < len) {
+                    if (array[temp] != target) {
+                        break;
+                    }
+                    temp++;
+                }
+                result[0] = middleIndex + 1;
+                result[1] = temp - 1;
                 break;
             }
-            rightIndex--;
         }
-
-        result[0] = leftIndex;
-        result[1] = rightIndex;
         return result;
     }
 }
