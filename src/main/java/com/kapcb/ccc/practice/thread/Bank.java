@@ -1,6 +1,7 @@
 package com.kapcb.ccc.practice.thread;
 
 import java.util.Arrays;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Logger;
 
 /**
@@ -17,6 +18,8 @@ public class Bank {
     private static final Logger logger = Logger.getLogger(String.valueOf(Bank.class), "logmessage_en");
 
     private final double[] accounts;
+
+    private ReentrantLock reentrantLock = new ReentrantLock();
 
     /**
      * Constructs the Bank
@@ -38,15 +41,20 @@ public class Bank {
      * @param amount double
      */
     public void transfer(int form, int to, double amount) {
-        if (accounts[form] < amount) {
-            return;
+        reentrantLock.lock();
+        try {
+            if (accounts[form] < amount) {
+                return;
+            }
+            //logger.warning("currentThread: " + Thread.currentThread());
+            System.out.println(Thread.currentThread());
+            accounts[form] -= amount;
+            System.out.printf("%10.2f from %d to %d", amount, form, to);
+            accounts[to] += amount;
+            System.out.printf(". Total Balance: %10.2f%n", getTotalBalance());
+        } finally {
+            reentrantLock.unlock();
         }
-        //logger.warning("currentThread: " + Thread.currentThread());
-        System.out.println(Thread.currentThread());
-        accounts[form] -= amount;
-        System.out.printf("%10.2f from %d to %d", amount, form, to);
-        accounts[to] += amount;
-        System.out.printf(". Total Balance: %10.2f%n", getTotalBalance());
     }
 
     /**
