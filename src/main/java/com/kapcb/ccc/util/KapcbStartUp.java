@@ -45,23 +45,24 @@ public class KapcbStartUp {
 
     /**
      * Please check whether the StartUp have been insert into the properties
-     * 
+     *
+     *
      * kapcb.start.up.0=---------------------------Start Up Begin------------------------------------
-     * kapcb.start.up.1=|__    __                                __              __     __  __      
-     * kapcb.start.up.2=/  |  /  |                              /  |            /      /  |/  |      
-     * kapcb.start.up.3=$$ | /$$/   ______    ______    _______ $$ |____        $$     $$ |$$ |_____ 
+     * kapcb.start.up.1=|__    __                                __              __     __  __
+     * kapcb.start.up.2=/  |  /  |                              /  |            /      /  |/  |
+     * kapcb.start.up.3=$$ | /$$/   ______    ______    _______ $$ |____        $$     $$ |$$ |_____
      * kapcb.start.up.4=$$ |/$$/   /        /          /       |$$       |      $$$    $$ |$$       |
-     * kapcb.start.up.5=$$  $$<     $$$$$$ |/$$$$$$  |/$$$$$$$/ $$$$$$$  |      $$$$   $$ |$$$$$$$  |
-     * kapcb.start.up.6=$$$$$      /    $$ |$$ |  $$ |$$ |   $$|$$ |  $$ |      $$ $$  $$ |$$|   $$ |
-     * kapcb.start.up.7=$$ |$$    /$$$$$$$ |$$ |__$$ |$$     __|$$ |__$$ |      $$ |$$ $$ |$$|___$$ |
-     * kapcb.start.up.8=$$ | $$  | $$   $$ |$$    $$/ $$       |$$    $$/       $$ | $$$$ |$$    $$/
-     * kapcb.start.up.9=$$/   $$/  $$$$$$$/ $$$$$$$/   $$$$$$$/ $$$$$$$/        $$/   $$/  $$$$$$$/ 
-     * kapcb.start.up.10=|                   $$ |                                                    
-     * kapcb.start.up.11=|                   $$ |                                                    
-     * kapcb.start.up.12=|                   $$ /  
+     * kapcb.start.up.5=$$  $$<   / $$$$$$ |/$$$$$$  |/$$$$$$$/ $$$$$$$  |      $$$$   $$ |$$$$$$$  |
+     * kapcb.start.up.6=$$$$$    /      $$ |$$ |  $$ |$$ |   $$|$$ |  $$ |      $$ $$  $$ |$$|   $$ |
+     * kapcb.start.up.7=$$ |$$  /  $$$$$$$ |$$ |__$$ |$$ |__   |$$ |__$$ |      $$ |$$ $$ |$$|__ $$ |
+     * kapcb.start.up.8=$$ | $$ |  $$   $$ |$$    $$/ $$     $$|$$    $$/       $$ | $$$$ |$$    $$/
+     * kapcb.start.up.9=$$/   $$/  $$$$$$$/ $$$$$$$/   $$$$$$$/ $$$$$$$/        $$/   $$/  $$$$$$$/
+     * kapcb.start.up.10=|                   $$ |
+     * kapcb.start.up.11=|                   $$ |
+     * kapcb.start.up.12=|                   $$ /
      * kapcb.start.up.13=---------------------------Start Up Success----------------------------------
-     * 
-     * 
+     *
+     *
      */
 //    public static void kapcbStartUpPropertiesInsert() {
     private static void kapcbStartUpPropertiesInsert() {
