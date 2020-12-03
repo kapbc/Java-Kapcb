@@ -40,6 +40,19 @@ public class RemoveElement {
         System.out.println("elementToLast = " + elementToLast);
         int removeTheElementToLast = removeTheElementToLast(testArrayTwo, targetTwo);
         System.out.println("removeTheElementToLast = " + removeTheElementToLast);
+
+        System.out.println(" __    __                                __              __     __  __");
+        System.out.println("/  |  /  |                              /  |            /      /  |/ |      ");
+        System.out.println("$$ | /$$/   ______    ______    _______ $$ |____        $$     $$ |$$|_____ ");
+        System.out.println("$$ |/$$/   /        /          /       |$$              $$$    $$ |$$      |");
+        System.out.println("$$  $$<     $$$$$$ |/$$$$$$  |/$$$$$$$/ $$$$$$$  |      $$$$   $$ |$$$$$$$ |");
+        System.out.println("$$$$$      /    $$ |$$ |  $$ |$$ |   $$|$$ |  $$ |      $$ $$  $$ |$$|   $$|");
+        System.out.println("$$ |$$    /$$$$$$$ |$$ |__$$ |$$     __|$$ |__$$ |      $$ |$$ $$ |$$|___$$|");
+        System.out.println("$$ | $$  | $$   $$ |$$    $$/ $$       |$$    $$/       $$ | $$$$ |$$    $$/");
+        System.out.println("$$/   $$/  $$$$$$$/ $$$$$$$/   $$$$$$$/ $$$$$$$/        $$/   $$/  $$$$$$$/ ");
+        System.out.println("                    $$ |                                                    ");
+        System.out.println("                    $$ |                                                    ");
+        System.out.println("                    $$ /  ");
     }
 
     /**
