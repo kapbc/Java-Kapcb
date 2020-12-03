@@ -8,6 +8,7 @@ import java.util.logging.Logger;
  * <a>Title: KapcbStartUp </a>
  * <a>Author: kapcb <a>
  * <a>Description：<a>
+ * kapcb独家专属启动器!!!!
  *
  * @author kapcb
  * @version 1.0.0
@@ -15,20 +16,25 @@ import java.util.logging.Logger;
  */
 public class KapcbStartUp {
 
+    private static final int START_UP_STEP = 14;
+
+    private static final String BASE_PROPERTIES_KEY = "kapcb.start.up.";
+
     private static final Logger logger = Logger.getLogger(String.valueOf(KapcbStartUp.class), "logmessage_en");
 
-    public static void main(String[] args) {
+    private KapcbStartUp() {
+    }
 
+    public static void kapcbUp() {
         Properties properties = new Properties();
         try (FileInputStream fileInputStream = new FileInputStream("src/main/resource/program.properties");) {
             properties.load(fileInputStream);
-            for (int i = 0; i < 12; i++) {
-                String key = "kapcb.test." + i;
-                String property = properties.getProperty(key);
-                System.out.println(property);
+            for (int i = 0; i < START_UP_STEP; i++) {
+                String key = BASE_PROPERTIES_KEY + i;
+                System.out.println(properties.getProperty(key));
             }
         } catch (Exception e) {
-            logger.warning("kapcb.test.fail");
+            logger.warning("kapcb.start.up.fail");
             logger.warning("System Exception: " + e.getMessage());
         }
     }
