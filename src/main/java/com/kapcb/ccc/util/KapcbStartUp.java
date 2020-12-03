@@ -27,7 +27,7 @@ public class KapcbStartUp {
 
     public static void kapcbUp() {
         Properties properties = new Properties();
-        try (FileInputStream fileInputStream = new FileInputStream("src/main/resource/program.properties");) {
+        try (FileInputStream fileInputStream = new FileInputStream("src/main/resource/start.properties");) {
             properties.load(fileInputStream);
             for (int i = 0; i < START_UP_STEP; i++) {
                 String key = BASE_PROPERTIES_KEY + i;
