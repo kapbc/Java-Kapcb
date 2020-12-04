@@ -1,6 +1,6 @@
 package com.kapcb.ccc.leetcode;
 
-import java.util.Stack;
+import com.kapcb.ccc.util.KapcbStartUp;
 
 /**
  * <a>Title: RemoveKDigits </a>
@@ -25,27 +25,49 @@ import java.util.Stack;
 public class RemoveKDigits {
 
     public static void main(String[] args) {
-        String number = "1432219";
-        int k = 3;
-        int theResult = getTheResult(number, k);
-        System.out.println(theResult);
+        KapcbStartUp.kapcbUp();
+        String numberOne = "1432219";
+        String numberTwo = "10200";
+        String numberThree = "10";
+        int k1 = 3;
+        int k2 = 1;
+        int k3 = 2;
+        System.out.println(getTheResult(numberOne, k1));
+        System.out.println(getTheResult(numberTwo, k2));
+        System.out.println(getTheResult(numberThree, k3));
     }
 
     /**
-     * 贪心算法 + 栈
-     * 先记录下，等会了再来
+     * 需要删除的元素个数与存在的元素个数之和应该等于原字符串的长度,移动窗口找最小的值，如果最后还未满足新字符串长度 则截取
      *
-     * @param number String
-     * @param k      int
+     * @param num String
+     * @param k   int
      * @return int
      */
-    private static int getTheResult(String number, int k) {
-        Stack<Integer> integerStack = new Stack<>();
-        String[] split = number.split("");
-        for (int i = 0; i < split.length; i++) {
-            Integer peek = integerStack.peek();
-            // TODO continue;
+    public static String getTheResult(String num, int k) {
+        char[] array = num.toCharArray();
+        int len = array.length;
+        if (k == len) {
+            return "0";
         }
-        return 0;
+        int digit = len - k;
+        int resultLength = 0;
+        String result = "";
+        while (digit < len) {
+            int min = 10;
+            for (int i = resultLength; i < digit; i++) {
+                min = Math.min(min, array[i] - '0');
+            }
+            result += min;
+            digit++;
+            resultLength++;
+        }
+        if (k + resultLength < len) {
+            if (result.startsWith("0")) {
+                result = result.replaceFirst("0", "");
+            }
+            result += num.substring(k + resultLength, len);
+        }
+        return result;
     }
 }
