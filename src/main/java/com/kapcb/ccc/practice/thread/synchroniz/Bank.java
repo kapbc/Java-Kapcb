@@ -49,6 +49,7 @@ public class Bank {
             System.out.printf("%10.2f from %d to %d", amount, from, to);
             account[to] += amount;
             System.out.printf(" Total balance: %10.2f%n", getTotalBalance());
+            sufficientFunds.signalAll();
         } finally {
             bankLock.unlock();
         }
