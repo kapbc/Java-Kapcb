@@ -6,7 +6,7 @@ package com.kapcb.ccc.practice.exception;
  * @classname ExceptionTest
  * @date 2020/11/10 9:53
  */
-public class ExceptionTest {
+public class StackTraceTest {
 
     private static final String EXCEPTION_CONDITION = "exception";
 

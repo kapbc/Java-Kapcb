@@ -1,5 +1,6 @@
-package com.kapcb.ccc.practice.thread.synchroniz;
+package com.kapcb.ccc.practice.thread;
 
+import com.kapcb.ccc.practice.thread.synchroniz.BankTest;
 import com.kapcb.ccc.util.KapcbStartUp;
 
 import java.util.logging.Logger;
@@ -13,7 +14,7 @@ import java.util.logging.Logger;
  * @version 1.0.0
  * @date 2020/12/4-10:56
  */
-public class BankTest {
+public class ThreadTest {
 
     private static final Logger logger = Logger.getLogger(String.valueOf(BankTest.class), "logmessage_en");
 

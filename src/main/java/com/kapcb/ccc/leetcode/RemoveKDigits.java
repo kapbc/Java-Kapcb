@@ -38,6 +38,14 @@ public class RemoveKDigits {
     }
 
     /**
+     * 单调栈
+     * @return String
+     */
+    public static String getTheResultByIncreaseStack() {
+        return null;
+    }
+
+    /**
      * 需要删除的元素个数与存在的元素个数之和应该等于原字符串的长度,移动窗口找最小的值，如果最后还未满足新字符串长度 则截取
      *
      * @param num String
