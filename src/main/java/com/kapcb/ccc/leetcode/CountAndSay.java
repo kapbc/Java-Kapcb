@@ -1,7 +1,5 @@
 package com.kapcb.ccc.leetcode;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * <a>Title:CountAndSay</a>
@@ -24,33 +22,39 @@ public class CountAndSay {
 
     public static void main(String[] args) {
 
-        countAndSay(5);
+        System.out.println(countAndSay(5));
     }
 
+    /**
+     * 双指针，慢指针指向第一个元素，块指针指向第一个与块指针所指向元素不同的元素，所以当前元素出现次数为 (快指针索引- 慢指针索引) 然后拼接上慢指针所指向的当前元素，最后将
+     * 快指针赋值给慢指针。然后循环上述即可
+     *
+     * @param n int
+     * @return String
+     */
     private static String countAndSay(int n) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("1211");
-        digui(sb);
-        return null;
-    }
-
-    private static void digui(StringBuilder stringBuilder) {
-        String s = stringBuilder.toString();
-        char[] chars = s.toCharArray();
-        String result = null;
-        for (int i = 0; i < chars.length; i++) {
-            int index = 1;
-            if (chars[i] == chars[i + 1]) {
-                while (i <= chars.length - 1 && index < chars.length) {
-                    if (chars[index] != chars[i]) {
-                        break;
-                    }
-                    index++;
+        StringBuilder current = new StringBuilder("1");
+        StringBuilder previous = new StringBuilder("1");
+        for (int i = 0; i < n; i++) {
+            previous = current;
+            current = new StringBuilder();
+            int start = 0;
+            int end = 0;
+            /**
+             * 遍历前一项
+             */
+            while (end < previous.length()) {
+                while (end < previous.length() && previous.charAt(start) == previous.charAt(end)) {
+                    end++;
                 }
-                i = index - 1;
+
+                /**
+                 * 元素出现次数与元素进行拼接
+                 */
+                current = current.append(String.valueOf(end - start)).append(previous.charAt(start));
+                start = end;
             }
-            result = String.valueOf(index) + chars[i];
-            System.out.println("index = " + index);
         }
+        return current.toString();
     }
 }
