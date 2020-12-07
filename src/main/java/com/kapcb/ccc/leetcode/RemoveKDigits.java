@@ -2,6 +2,10 @@ package com.kapcb.ccc.leetcode;
 
 import com.kapcb.ccc.util.KapcbStartUp;
 
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Stack;
+
 /**
  * <a>Title: RemoveKDigits </a>
  * <a>Author: kapcb <a>
@@ -35,14 +39,81 @@ public class RemoveKDigits {
         System.out.println(getTheResult(numberOne, k1));
         System.out.println(getTheResult(numberTwo, k2));
         System.out.println(getTheResult(numberThree, k3));
+        System.out.println(monotonicallyStack(numberThree, k3));
+        System.out.println(doubleEndedQueue(numberThree, k3));
     }
 
     /**
-     * 单调栈
+     * 贪心+双端队列，避免栈的依次弹出反转
+     *
+     * @param num String
+     * @param k   int
      * @return String
      */
-    public static String getTheResultByIncreaseStack() {
-        return null;
+    public static String doubleEndedQueue(String num, int k) {
+        Deque<Character> deque = new LinkedList<>();
+        int length = num.length();
+        for (int i = 0; i < length; i++) {
+            char digit = num.charAt(i);
+            while (!deque.isEmpty() && k > 0 && deque.peekLast() > digit) {
+                deque.pollLast();
+                k--;
+            }
+            deque.offerLast(digit);
+        }
+
+        for (int i = 0; i < k; i++) {
+            deque.pollLast();
+        }
+
+        StringBuilder stringBuilder = new StringBuilder();
+        boolean loadingZero = true;
+        while (!deque.isEmpty()) {
+            Character digit = deque.pollFirst();
+            if (loadingZero && digit == '0') {
+                continue;
+            }
+            loadingZero = false;
+            stringBuilder.append(digit);
+        }
+        return stringBuilder.length() == 0 ? "0" : stringBuilder.toString();
+    }
+
+    /**
+     * 单调栈+贪心
+     *
+     * @param num String
+     * @param k   int
+     * @return String
+     */
+    public static String monotonicallyStack(String num, int k) {
+        int len = num.length();
+        Stack<Character> elementStack = new Stack<>();
+        for (int i = 0; i < len; i++) {
+            char element = num.charAt(i);
+            while (!elementStack.empty() && k > 0 && elementStack.peek() > element) {
+                elementStack.pop();
+                k--;
+            }
+            elementStack.push(element);
+        }
+
+        /**
+         * 弹出超过长度的元素
+         */
+        for (int i = 0; i < k; i++) {
+            elementStack.pop();
+        }
+        StringBuilder stringBuilder = new StringBuilder();
+        int length = elementStack.size();
+        for (int i = 0; i < length; i++) {
+            Character pop = elementStack.pop();
+            if (i == length - 1 && pop == '0') {
+                continue;
+            }
+            stringBuilder.insert(0, pop);
+        }
+        return stringBuilder.length() == 0 ? "0" : stringBuilder.toString();
     }
 
     /**
