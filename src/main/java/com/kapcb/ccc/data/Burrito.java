@@ -4,7 +4,7 @@ package com.kapcb.ccc.data;
  * @author kapcb
  * @version 1.0.0
  * @classname Burrito
- * @description TODO
+ * @description 
  * @date 2020/10/22 16:04
  */
 public class Burrito {
