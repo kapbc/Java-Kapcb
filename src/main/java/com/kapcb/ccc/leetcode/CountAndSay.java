@@ -50,17 +50,14 @@ public class CountAndSay {
             current = new StringBuilder();
             int start = 0;
             int end = 0;
-            /**
-             * 遍历前一项
-             */
+
+            // 遍历前一项
             while (end < previous.length()) {
                 while (end < previous.length() && previous.charAt(start) == previous.charAt(end)) {
                     end++;
                 }
 
-                /**
-                 * 元素出现次数与元素进行拼接
-                 */
+                // 元素出现次数与元素进行拼接
                 current = current.append(String.valueOf(end - start)).append(previous.charAt(start));
                 start = end;
             }
