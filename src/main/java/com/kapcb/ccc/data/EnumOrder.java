@@ -6,7 +6,7 @@ package com.kapcb.ccc.data;
  * @author kapcb
  * @version 1.0.0
  * @classname EnumOrder
- * @description TODO
+ * @description 
  * @date 2020/10/22 16:02
  */
 public class EnumOrder {
