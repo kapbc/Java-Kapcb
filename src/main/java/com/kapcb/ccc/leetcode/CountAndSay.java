@@ -20,9 +20,19 @@ package com.kapcb.ccc.leetcode;
  */
 public class CountAndSay {
 
+    private static final int STEP = 1;
+
     public static void main(String[] args) {
 
+        /**
+         * 双指针
+         */
         System.out.println(countAndSay(5));
+
+        /**
+         * 递归调用
+         */
+        System.out.println(countAndSayByDeliverTortoise(5 + STEP));
     }
 
     /**
@@ -56,5 +66,37 @@ public class CountAndSay {
             }
         }
         return current.toString();
+    }
+
+    /**
+     * 双指针递归
+     *
+     * @param n int
+     * @return String
+     */
+    public static String countAndSayByDeliverTortoise(int n) {
+        // 递归终止条件
+        if (n == 1) {
+            return "1";
+        }
+        StringBuilder result = new StringBuilder();
+
+        // 拿到上一层的字符串
+        String previous = countAndSayByDeliverTortoise(n - 1);
+        int length = previous.length();
+        // 开始指针为0
+        int start = 0;
+        for (int i = 1; i < length + 1; i++) {
+            // 字符串最后一位直接拼接
+            if (i == length) {
+                result.append(i - start).append(previous.charAt(start));
+            }
+            // 直到start位的字符串和i位的字符串不同，拼接并更新start指针位置
+            else if (previous.charAt(i) != previous.charAt(start)) {
+                result.append(i - start).append(previous.charAt(start));
+                start = i;
+            }
+        }
+        return result.toString();
     }
 }
