@@ -15,9 +15,14 @@ import java.util.stream.Collectors;
  */
 public class TestStream {
 
+    private static final String SEPARATOR_COMMA = ", ";
+
     public static void main(String[] args) {
         List<String> elementList = Arrays.asList("kapcb", "dsaddsadaas", "dsdsdsada", "dsadasdsd", "dsdsddsdd", "dsdsdsdsd", "nb!");
         List<String> collect = elementList.stream().filter(element -> element.length() <= 5).collect(Collectors.toList());
         System.out.println(collect);
+
+        String result = elementList.parallelStream().filter(element -> element.length() <= 5).collect(Collectors.joining(SEPARATOR_COMMA));
+        System.out.println(result);
     }
 }
