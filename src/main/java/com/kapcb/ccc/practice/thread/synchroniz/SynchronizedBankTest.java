@@ -38,7 +38,7 @@ public class SynchronizedBankTest {
                     logger.warning("Exception Information: " + e.getMessage());
                 }
             }
-        }, "Thread A").start();
+        }, Constants.COMMON_THREAD_NAME_A.getStringStatusCode()).start();
 
         new Thread(() -> {
             for (int i = 0; i < STEPS; i++) {
@@ -51,6 +51,6 @@ public class SynchronizedBankTest {
                     logger.warning("Exception Information: " + e.getMessage());
                 }
             }
-        }, "Thread B").start();
+        }, Constants.COMMON_THREAD_NAME_B.getStringStatusCode()).start();
     }
 }

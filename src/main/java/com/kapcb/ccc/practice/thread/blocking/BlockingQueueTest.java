@@ -1,5 +1,7 @@
 package com.kapcb.ccc.practice.thread.blocking;
 
+import com.kapcb.ccc.util.Constants;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -40,7 +42,7 @@ public class BlockingQueueTest {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }, "Thread A").start();
+            }, Constants.COMMON_THREAD_NAME_A.getStringStatusCode()).start();
 
             for (int i = 0; i < SEARCH_THREADS; i++) {
                 new Thread(() -> {
@@ -59,7 +61,7 @@ public class BlockingQueueTest {
                             e.printStackTrace();
                         }
                     }
-                }, "Thread B").start();
+                }, Constants.COMMON_THREAD_NAME_B.getStringStatusCode()).start();
             }
         }
     }
