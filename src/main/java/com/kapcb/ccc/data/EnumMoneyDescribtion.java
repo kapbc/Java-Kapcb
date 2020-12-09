@@ -4,7 +4,6 @@ package com.kapcb.ccc.data;
  * @author kapcb
  * @version 1.0.0
  * @classname EnumMoneyDescribtion
- * @description 
  * @date 2020/10/22 16:28
  */
 public class EnumMoneyDescribtion {
@@ -28,7 +27,7 @@ public class EnumMoneyDescribtion {
             case FIFTY:
                 System.out.println("面值50元的人民币!");
                 break;
-            case HUNDRE:
+            case HUNDRED:
                 System.out.println("面值100元的人民币!");
                 break;
             default:
