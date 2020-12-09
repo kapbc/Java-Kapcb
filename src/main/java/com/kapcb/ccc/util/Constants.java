@@ -12,7 +12,7 @@ package com.kapcb.ccc.util;
 public enum Constants {
 
     /**
-     * IO Path
+     * Static Resources IO Path
      */
     COMMON_STREAM_TEST_TXT_RESOURCES_PATH("src/main/resource/streamTest.txt", "Stream Optional Test Static Resources Location"),
     COMMON_START_UP_PROPERTIES_RESOURCES_PATH("src/main/resource/start.properties", "Start Up Properties Resources Location"),
@@ -39,23 +39,23 @@ public enum Constants {
     COMMON_THREAD_NAME_B("Thread B", "common thread name"),
 
     /**
-     * Common system out println String
+     * PrintStream
      */
-    COMMON_SYSTEM_OUT_PRINTLN_STRING("Kapcb Nb!", "Common log"),
+    COMMON_SYSTEM_OUT_PRINTLN_STRING("Kapcb Nb!", "Common System Out Println String"),
 
     /**
-     * Base Number Constant
+     * Base-Number
      */
-    COMMON_NUMBER_ONE(1, "One"),
-    COMMON_NUMBER_TWO(2, "two"),
-    COMMON_NUMBER_THREE(3, "three"),
-    COMMON_NUMBER_FOUR(4, "four"),
-    COMMON_NUMBER_FIVE(5, "five"),
-    COMMON_NUMBER_SIX(6, "six"),
-    COMMON_NUMBER_SEVEN(7, "seven"),
-    COMMON_NUMBER_EIGHT(8, "eight"),
-    COMMON_NUMBER_NINE(9, "nine"),
-    COMMON_NUMBER_TEN(10, "ten");
+    COMMON_NUMBER_ONE(1, "Common base number constant One"),
+    COMMON_NUMBER_TWO(2, "Common base number constant Two"),
+    COMMON_NUMBER_THREE(3, "Common base number constant Three"),
+    COMMON_NUMBER_FOUR(4, "Common base number constant Four"),
+    COMMON_NUMBER_FIVE(5, "Common base number constant Five"),
+    COMMON_NUMBER_SIX(6, "Common base number constant Six"),
+    COMMON_NUMBER_SEVEN(7, "Common base number constant Seven"),
+    COMMON_NUMBER_EIGHT(8, "Common base number constant Eight"),
+    COMMON_NUMBER_NINE(9, "Common base number constant Nine"),
+    COMMON_NUMBER_TEN(10, "Common base number constant Ten");
 
 
     /**
