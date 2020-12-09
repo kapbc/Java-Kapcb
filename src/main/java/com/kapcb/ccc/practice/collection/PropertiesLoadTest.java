@@ -1,5 +1,7 @@
 package com.kapcb.ccc.practice.collection;
 
+import com.kapcb.ccc.util.Constants;
+
 import java.io.FileInputStream;
 import java.util.Properties;
 import java.util.logging.Logger;
@@ -19,7 +21,7 @@ public class PropertiesLoadTest {
 
     public static void main(String[] args) {
         Properties properties = new Properties();
-        try (FileInputStream fileInputStream = new FileInputStream("src/main/resource/program.properties");) {
+        try (FileInputStream fileInputStream = new FileInputStream(Constants.COMMON_PROGRAM_PROPERTIES_RESOURCES_PATH.getStringStatusCode());) {
             properties.load(fileInputStream);
 
             properties.forEach((k, v) -> System.out.println("k=" + k + ", v=" + v));

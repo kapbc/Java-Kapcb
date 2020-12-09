@@ -1,5 +1,6 @@
 package com.kapcb.ccc.practice.thread.synchroniz;
 
+import com.kapcb.ccc.util.Constants;
 import com.kapcb.ccc.util.KapcbStartUp;
 
 import java.util.logging.Logger;
@@ -15,7 +16,7 @@ import java.util.logging.Logger;
  */
 public class SynchronizedBankTest {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(SynchronizedBankTest.class), "logmessage_en");
+    private static final Logger logger = Logger.getLogger(String.valueOf(SynchronizedBankTest.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
     private static final int DELAY = 10;
     private static final int STEPS = 100;

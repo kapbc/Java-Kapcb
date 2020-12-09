@@ -21,7 +21,7 @@ public class KapcbStartUp {
 
     private static final String BASE_PROPERTIES_KEY = "kapcb.start.up.";
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(KapcbStartUp.class), "logmessage_en");
+    private static final Logger logger = Logger.getLogger(String.valueOf(KapcbStartUp.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
     private KapcbStartUp() {
     }
@@ -31,7 +31,7 @@ public class KapcbStartUp {
      */
     public static void kapcbUp() {
         Properties properties = new Properties();
-        try (FileInputStream fileInputStream = new FileInputStream("src/main/resource/start.properties");) {
+        try (FileInputStream fileInputStream = new FileInputStream(Constants.COMMON_START_UP_PROPERTIES_RESOURCES_PATH.getStringStatusCode());) {
             properties.load(fileInputStream);
             for (int i = 0; i < START_UP_STEP; i++) {
                 String key = BASE_PROPERTIES_KEY + i;
@@ -45,8 +45,8 @@ public class KapcbStartUp {
 
     /**
      * Please check whether the StartUp have been insert into the properties
-     *
-     *
+     * <p>
+     * <p>
      * kapcb.start.up.0=---------------------------Start Up Begin------------------------------------
      * kapcb.start.up.1=|__    __                                __              __     __  __
      * kapcb.start.up.2=/  |  /  |                              /  |            /      /  |/  |
@@ -61,8 +61,6 @@ public class KapcbStartUp {
      * kapcb.start.up.11=|                   $$ |
      * kapcb.start.up.12=|                   $$ /
      * kapcb.start.up.13=---------------------------Start Up Success----------------------------------
-     *
-     *
      */
 //    public static void kapcbStartUpPropertiesInsert() {
     private static void kapcbStartUpPropertiesInsert() {
@@ -81,7 +79,7 @@ public class KapcbStartUp {
         properties.setProperty("kapcb.start.up.11", "|                   $$ |                                                    ");
         properties.setProperty("kapcb.start.up.12", "|                   $$ |                                                    ");
         properties.setProperty("kapcb.start.up.13", "---------------------------Start Up Success----------------------------------");
-        try (FileOutputStream fileOutputStream = new FileOutputStream("src/main/resource/start.properties");) {
+        try (FileOutputStream fileOutputStream = new FileOutputStream(Constants.COMMON_START_UP_PROPERTIES_RESOURCES_PATH.getStringStatusCode());) {
             properties.store(fileOutputStream, "#########################################kapcb start up########################################");
         } catch (Exception e) {
             logger.warning("kapcb.start.up.store.fail");

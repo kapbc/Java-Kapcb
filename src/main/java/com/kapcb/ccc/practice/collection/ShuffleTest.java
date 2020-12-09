@@ -1,5 +1,7 @@
 package com.kapcb.ccc.practice.collection;
 
+import com.kapcb.ccc.util.Constants;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -22,7 +24,7 @@ import java.util.logging.Logger;
  */
 public class ShuffleTest {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(ShuffleTest.class), "logmessage_en");
+    private static final Logger logger = Logger.getLogger(String.valueOf(ShuffleTest.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
     public static void main(String[] args) {
         String[] number = new String[]{"3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A", "2"};

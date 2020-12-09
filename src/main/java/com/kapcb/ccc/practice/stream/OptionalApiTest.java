@@ -1,6 +1,7 @@
 package com.kapcb.ccc.practice.stream;
 
 import com.kapcb.ccc.practice.exception.OptionalException;
+import com.kapcb.ccc.util.Constants;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -23,7 +24,7 @@ import java.util.logging.Logger;
  */
 public class OptionalApiTest {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(OptionalApiTest.class), "logmessage_en");
+    private static final Logger logger = Logger.getLogger(String.valueOf(OptionalApiTest.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
     public static void main(String[] args) {
         List<String> list = Arrays.asList("Java", "JavaScript", "python", "PHP", "C#", "Golang", "Swift", "C++", "Ruby");
@@ -45,7 +46,7 @@ public class OptionalApiTest {
         Optional<String> optionalC = list.stream().parallel().filter(element -> element.startsWith("C")).findAny();
         System.out.println(optionalC.orElse(""));
 
-        try (FileInputStream fileInputStream = new FileInputStream("src/main/resource/logmessage_en.properties")) {
+        try (FileInputStream fileInputStream = new FileInputStream(Constants.COMMON_LOG_MESSAGE_PROPERTIES_RESOURCES_PATH.getStringStatusCode())) {
             Properties properties = new Properties();
             properties.load(fileInputStream);
             String result = list.parallelStream().filter("1234"::equals).findAny().orElseGet(() -> properties.getProperty("kapcb.stream.test"));
@@ -71,7 +72,7 @@ public class OptionalApiTest {
         /**
          * JDK 9 ifPresentOrElse
          */
-        // try (FileInputStream fileInputStream = new FileInputStream("src/main/resource/start.properties");) {
+        // try (FileInputStream fileInputStream = new FileInputStream(Constants.COMMON_START_UP_PROPERTIES_RESOURCES_PATH.getStringStatusCode());) {
         //    Properties properties = new Properties();
         //    properties.load(fileInputStream);
         //    list.parallelStream().filter("6"::equals).findAny().ifPresentOrElse(v -> System.out.println("Found: " + v), () -> logger.warning("kapcb.stream.test.not.found"));

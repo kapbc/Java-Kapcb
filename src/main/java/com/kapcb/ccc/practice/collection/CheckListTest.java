@@ -1,5 +1,7 @@
 package com.kapcb.ccc.practice.collection;
 
+import com.kapcb.ccc.util.Constants;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -16,7 +18,7 @@ import java.util.logging.Logger;
  * @date 2020/11/20-11:06
  */
 public class CheckListTest {
-    private static final Logger logger = Logger.getLogger(String.valueOf(CheckListTest.class), "logmessage_en");
+    private static final Logger logger = Logger.getLogger(String.valueOf(CheckListTest.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
     public static void main(String[] args) {
         List<String> element = new ArrayList<>();

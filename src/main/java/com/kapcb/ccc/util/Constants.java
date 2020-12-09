@@ -16,7 +16,8 @@ public enum Constants {
      */
     COMMON_STREAM_TEST_TXT_RESOURCES_PATH("src/main/resource/streamTest.txt", "Stream Optional Test Static Resources Location"),
     COMMON_START_UP_PROPERTIES_RESOURCES_PATH("src/main/resource/start.properties", "Start Up Properties Resources Location"),
-    COMMON_PROGRAM_TEST_PROPERTIES_RESOURCES_PATH("src/main/resource/program.properties", "Program Test Resources Location"),
+    COMMON_PROGRAM_PROPERTIES_RESOURCES_PATH("src/main/resource/program.properties", "Program Test Resources Location"),
+    COMMON_LOG_MESSAGE_PROPERTIES_RESOURCES_PATH("src/main/resource/logmessage_en.properties",""),
 
 
     /**
@@ -29,7 +30,7 @@ public enum Constants {
     /**
      * Logger
      */
-    COMMON_LOGGER_PATH("logmessage_en", "Java Program Log ResourceBundle Path"),
+    COMMON_LOGGER_RESOURCE_BUNDLE("logmessage_en", "Java Program Log ResourceBundle Path"),
 
 
     /**

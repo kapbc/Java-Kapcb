@@ -1,5 +1,7 @@
 package com.kapcb.ccc.practice.thread;
 
+import com.kapcb.ccc.util.Constants;
+
 import java.util.Arrays;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Logger;
@@ -15,7 +17,7 @@ import java.util.logging.Logger;
  */
 public class Bank {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(Bank.class), "logmessage_en");
+    private static final Logger logger = Logger.getLogger(String.valueOf(Bank.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
     private final double[] accounts;
 

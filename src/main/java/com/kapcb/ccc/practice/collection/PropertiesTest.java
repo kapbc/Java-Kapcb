@@ -1,5 +1,7 @@
 package com.kapcb.ccc.practice.collection;
 
+import com.kapcb.ccc.util.Constants;
+
 import java.io.FileOutputStream;
 import java.util.Properties;
 import java.util.logging.Logger;
@@ -15,7 +17,7 @@ import java.util.logging.Logger;
  */
 public class PropertiesTest {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(PropertiesTest.class), "logmessage_en");
+    private static final Logger logger = Logger.getLogger(String.valueOf(PropertiesTest.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
     public static void main(String[] args) {
         Properties properties = new Properties();
@@ -23,7 +25,7 @@ public class PropertiesTest {
         properties.setProperty("kapcb", "nb");
 
         System.out.println(properties.getProperty("kapcb"));
-        try (FileOutputStream fileOutputStream = new FileOutputStream("src/main/resource/program.properties");) {
+        try (FileOutputStream fileOutputStream = new FileOutputStream(Constants.COMMON_PROGRAM_PROPERTIES_RESOURCES_PATH.getStringStatusCode());) {
             properties.store(fileOutputStream, "Program.properties");
         } catch (Exception e) {
             logger.warning("System error: " + e.getMessage());

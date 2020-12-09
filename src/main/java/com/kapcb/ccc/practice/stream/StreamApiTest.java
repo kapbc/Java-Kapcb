@@ -1,6 +1,7 @@
 package com.kapcb.ccc.practice.stream;
 
 import com.kapcb.ccc.practice.think.Employee;
+import com.kapcb.ccc.util.Constants;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,7 +23,7 @@ import java.util.stream.Collectors;
  * @date 2020/12/8 - 20:38
  */
 public class StreamApiTest {
-    private static final Logger logger = Logger.getLogger(String.valueOf(StreamApiTest.class), "logmessage_en");
+    private static final Logger logger = Logger.getLogger(String.valueOf(StreamApiTest.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
     public static void main(String[] args) {
         List<Employee> employees = new ArrayList<>();

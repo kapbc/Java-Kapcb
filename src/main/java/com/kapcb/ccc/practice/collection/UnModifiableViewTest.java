@@ -1,5 +1,7 @@
 package com.kapcb.ccc.practice.collection;
 
+import com.kapcb.ccc.util.Constants;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -28,7 +30,7 @@ import java.util.logging.Logger;
  */
 public class UnModifiableViewTest {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(UnModifiableViewTest.class), "logmessage_en");
+    private static final Logger logger = Logger.getLogger(String.valueOf(UnModifiableViewTest.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
     public static void main(String[] args) {
         Collection<String> strings = Collections.unmodifiableCollection(new ArrayList<String>());

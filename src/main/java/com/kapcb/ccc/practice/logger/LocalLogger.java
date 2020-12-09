@@ -1,5 +1,7 @@
 package com.kapcb.ccc.practice.logger;
 
+import com.kapcb.ccc.util.Constants;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -11,7 +13,7 @@ import java.util.logging.Logger;
  */
 public class LocalLogger {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(LocalLogger.class), "logmessage_en");
+    private static final Logger logger = Logger.getLogger(String.valueOf(LocalLogger.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
     public static void main(String[] args) {
         logger.info("kapcb.ccc");

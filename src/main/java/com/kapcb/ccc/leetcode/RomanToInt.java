@@ -1,5 +1,7 @@
 package com.kapcb.ccc.leetcode;
 
+import com.kapcb.ccc.util.Constants;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -28,7 +30,7 @@ import java.util.logging.Logger;
  */
 public class RomanToInt {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(RomanToInt.class), "logmessage_en");
+    private static final Logger logger = Logger.getLogger(String.valueOf(RomanToInt.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
     public static void main(String[] args) {
         String roman = "XXVII";

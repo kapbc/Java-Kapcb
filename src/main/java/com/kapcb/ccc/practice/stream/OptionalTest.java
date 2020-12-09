@@ -1,6 +1,7 @@
 package com.kapcb.ccc.practice.stream;
 
 import com.kapcb.ccc.practice.exception.OptionalException;
+import com.kapcb.ccc.util.Constants;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -26,7 +27,7 @@ import java.util.logging.Logger;
  */
 public class OptionalTest {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(OptionalTest.class), "logmessage_en");
+    private static final Logger logger = Logger.getLogger(String.valueOf(OptionalTest.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
     public static void main(String[] args) throws IOException {
         String contents = new String(Files.readAllBytes(Paths.get("src/main/resource/streamTest.txt")), StandardCharsets.UTF_8);

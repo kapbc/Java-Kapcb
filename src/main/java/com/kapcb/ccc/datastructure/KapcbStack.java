@@ -1,5 +1,7 @@
 package com.kapcb.ccc.datastructure;
 
+import com.kapcb.ccc.util.Constants;
+
 import java.util.logging.Logger;
 
 /**
@@ -13,7 +15,7 @@ import java.util.logging.Logger;
  */
 public class KapcbStack {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(KapcbStack.class), "logmessage_en");
+    private static final Logger logger = Logger.getLogger(String.valueOf(KapcbStack.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
     private int head = -1;
     private int size = 0;

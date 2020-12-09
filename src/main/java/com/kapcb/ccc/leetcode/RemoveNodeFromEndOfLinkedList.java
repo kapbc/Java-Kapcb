@@ -1,5 +1,7 @@
 package com.kapcb.ccc.leetcode;
 
+import com.kapcb.ccc.util.Constants;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -36,7 +38,7 @@ public class RemoveNodeFromEndOfLinkedList {
 
 class LinkedListForLeetCode {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(LinkedListForLeetCode.class), "logmessage_en");
+    private static final Logger logger = Logger.getLogger(String.valueOf(LinkedListForLeetCode.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
     private Node head = new Node("", null, null);
 

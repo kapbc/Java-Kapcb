@@ -1,5 +1,7 @@
 package com.kapcb.ccc.practice.genericClass;
 
+import com.kapcb.ccc.util.Constants;
+
 import java.util.logging.Logger;
 
 /**
@@ -13,7 +15,7 @@ import java.util.logging.Logger;
  */
 public class ArrayAlg {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(ArrayAlg.class), "logmessage_en");
+    private static final Logger logger = Logger.getLogger(String.valueOf(ArrayAlg.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
     private ArrayAlg() {
     }

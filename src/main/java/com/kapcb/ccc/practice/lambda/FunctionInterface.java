@@ -1,5 +1,7 @@
 package com.kapcb.ccc.practice.lambda;
 
+import com.kapcb.ccc.util.Constants;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -20,7 +22,7 @@ import java.util.logging.Logger;
  */
 public class FunctionInterface {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(FunctionInterface.class), "logmessage_en");
+    private static final Logger logger = Logger.getLogger(String.valueOf(FunctionInterface.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
     public static void main(String[] args) {
         List<Integer> list = testSupplierInterface(10, () -> (int) (Math.random() * 10));

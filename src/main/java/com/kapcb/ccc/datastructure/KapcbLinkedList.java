@@ -1,6 +1,8 @@
 package com.kapcb.ccc.datastructure;
 
 
+import com.kapcb.ccc.util.Constants;
+
 import java.util.logging.Logger;
 
 /**
@@ -15,7 +17,7 @@ import java.util.logging.Logger;
  */
 public class KapcbLinkedList<E> {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(KapcbLinkedList.class), "logmessage_en");
+    private static final Logger logger = Logger.getLogger(String.valueOf(KapcbLinkedList.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
     transient int size = 0;
 
