@@ -67,5 +67,16 @@ public class OptionalTest {
         List<String> addAndRemoveAbleList = new ArrayList<>(list);
         number.parallelStream().filter(Integer.valueOf(6)::equals).findAny().ifPresent(element -> addAndRemoveAbleList.add(String.valueOf(element)));
         addAndRemoveAbleList.forEach(System.out::println);
+
+        /**
+         * JDK 9 ifPresentOrElse
+         */
+        // try (FileInputStream fileInputStream = new FileInputStream("src/main/resource/start.properties");) {
+        //    Properties properties = new Properties();
+        //    properties.load(fileInputStream);
+        //    list.parallelStream().filter("6"::equals).findAny().ifPresentOrElse(v -> System.out.println("Found: " + v), () -> logger.warning("kapcb.stream.test.not.found"));
+        // } catch (OptionalException | IOException e) {
+        //    logger.warning("The Exception is : " + e);
+        // }
     }
 }
