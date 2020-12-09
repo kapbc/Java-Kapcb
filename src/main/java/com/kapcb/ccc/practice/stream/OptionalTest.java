@@ -57,7 +57,7 @@ public class OptionalTest {
         }
 
 
-        try (FileInputStream fileInputStream = new FileInputStream("src/main/resource/start.properties")) {
+        try {
             String result = list.parallelStream().filter("1234"::equals).findAny().orElseThrow(OptionalException::new);
             System.out.println(result);
         } catch (Exception e) {
