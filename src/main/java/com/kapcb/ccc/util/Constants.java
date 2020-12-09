@@ -17,7 +17,7 @@ public enum Constants {
     COMMON_STREAM_TEST_TXT_RESOURCES_PATH("src/main/resource/streamTest.txt", "Stream Optional Test Static Resources Location"),
     COMMON_START_UP_PROPERTIES_RESOURCES_PATH("src/main/resource/start.properties", "Start Up Properties Resources Location"),
     COMMON_PROGRAM_PROPERTIES_RESOURCES_PATH("src/main/resource/program.properties", "Program Test Resources Location"),
-    COMMON_LOG_MESSAGE_PROPERTIES_RESOURCES_PATH("src/main/resource/logmessage_en.properties",""),
+    COMMON_LOG_MESSAGE_PROPERTIES_RESOURCES_PATH("src/main/resource/logmessage_en.properties", "The Log Message Properties Resources Path"),
 
 
     /**
@@ -36,8 +36,8 @@ public enum Constants {
     /**
      * Thread Name
      */
-    COMMON_THREAD_NAME_A("Thread A", "common thread name"),
-    COMMON_THREAD_NAME_B("Thread B", "common thread name"),
+    COMMON_THREAD_NAME_A("Thread A", "Common Thread Name A"),
+    COMMON_THREAD_NAME_B("Thread B", "Common Thread Name B"),
 
     /**
      * PrintStream
