@@ -13,7 +13,7 @@ import java.util.Properties;
 import java.util.logging.Logger;
 
 /**
- * <a>Title: OptionalTest </a>
+ * <a>Title: OptionalApiTest </a>
  * <a>Author: kapcb <a>
  * <a>Description：<a>
  *
@@ -21,9 +21,9 @@ import java.util.logging.Logger;
  * @version 1.0.0
  * @date 2020/12/9-10:44
  */
-public class OptionalTest {
+public class OptionalApiTest {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(OptionalTest.class), "logmessage_en");
+    private static final Logger logger = Logger.getLogger(String.valueOf(OptionalApiTest.class), "logmessage_en");
 
     public static void main(String[] args) {
         List<String> list = Arrays.asList("Java", "JavaScript", "python", "PHP", "C#", "Golang", "Swift", "C++", "Ruby");
