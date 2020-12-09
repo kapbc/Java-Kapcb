@@ -1,4 +1,4 @@
-package com.kapcb.ccc.practice;
+package com.kapcb.ccc.practice.test;
 
 import java.util.Scanner;
 
