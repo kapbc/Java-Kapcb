@@ -28,7 +28,7 @@ import java.util.stream.Stream;
  */
 public class CollectingResult {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(CollectingResult.class), Constants.COMMON_LOGGER_PATH.getStringStatusCode());
+    private static final Logger logger = Logger.getLogger(String.valueOf(CollectingResult.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
     public static Stream<String> noVowels() throws IOException {
         String contents = new String(Files.readAllBytes(Paths.get(Constants.COMMON_STREAM_TEST_TXT_RESOURCES_PATH.getStringStatusCode())), StandardCharsets.UTF_8);
