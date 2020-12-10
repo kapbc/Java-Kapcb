@@ -27,6 +27,9 @@ import java.util.List;
  */
 public class Interval {
 
+    private Interval() {
+    }
+
     public static void main(String[] args) {
         int[][] interval = {{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}};
         int[] newInterval = {4, 8};

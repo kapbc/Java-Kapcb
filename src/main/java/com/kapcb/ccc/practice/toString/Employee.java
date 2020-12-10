@@ -12,7 +12,8 @@ public class Employee {
     private String password;
     private String email;
 
-    public Employee(){}
+    public Employee() {
+    }
 
     public Employee(String name, String password, String email) {
         this.name = name;
