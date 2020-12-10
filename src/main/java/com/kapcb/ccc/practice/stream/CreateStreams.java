@@ -9,6 +9,7 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Spliterator;
@@ -35,6 +36,22 @@ public class CreateStreams {
     private static final Logger logger = Logger.getLogger(String.valueOf(CreateStreams.class)
             , Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
+    /**
+     * 测试创建流, No-Reference, Just For Create Test
+     */
+    private static void createStreamTestDemo() {
+        String[] array = {"kapcb", "nb", "na", "nb", "nc", "!!!"};
+        Stream<String> arrayStream = Stream.of(array);
+
+        Stream<String> kapCbNbStream = Stream.of("kapcb", "nb", "bad", "!!!");
+
+        Stream<String> stream = Arrays.stream(array, 0, 2);
+        stream.forEach(System.out::println);
+
+        Stream<String> emptyStream = Stream.empty();
+
+    }
+
     public static <T> void show(String title, Stream<T> stream) {
         final int size = 10;
         List<T> firstElement = stream.limit(size + 1).collect(Collectors.toList());
@@ -53,6 +70,7 @@ public class CreateStreams {
     }
 
     public static void main(String[] args) throws IOException {
+        createStreamTestDemo();
         Path path = Paths.get(Constants.COMMON_STREAM_TEST_TXT_RESOURCES_PATH.getStringStatusCode());
 
         String contents = new String(Files.readAllBytes(path), StandardCharsets.UTF_8);
@@ -71,6 +89,9 @@ public class CreateStreams {
 
         Stream<BigInteger> iterate = Stream.iterate(BigInteger.ONE, n -> n.add(BigInteger.ONE));
         show("iterate", iterate);
+
+        Stream<BigInteger> limitStream = Stream.iterate(BigInteger.ZERO, element -> element.add(BigInteger.TEN)).limit(5);
+        show("limitStream", limitStream);
 
 
         try (Stream<String> wordsAnotherWay = compile("\\PL+").splitAsStream(contents)) {
