@@ -111,5 +111,11 @@ public class CreateStreams {
         Iterator<Path> iterator = path.iterator();
         Stream<Path> pathComponents = StreamSupport.stream(Spliterators.spliteratorUnknownSize(iterator, Spliterator.ORDERED), false);
         show("pathComponents", pathComponents);
+
+
+        Constants message = Enum.valueOf(Constants.class, "COMMON_STREAM_TEST_TXT_RESOURCES_PATH");
+        Constants[] values = Constants.values();
+        System.out.println(message.getStringStatusCode());
+        System.out.println(Arrays.asList(values));
     }
 }
