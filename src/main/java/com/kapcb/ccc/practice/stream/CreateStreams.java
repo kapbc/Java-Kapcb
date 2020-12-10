@@ -14,10 +14,11 @@ import java.util.List;
 import java.util.Spliterator;
 import java.util.Spliterators;
 import java.util.logging.Logger;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
+
+import static java.util.regex.Pattern.compile;
 
 
 /**
@@ -72,7 +73,7 @@ public class CreateStreams {
         show("iterate", iterate);
 
 
-        try (Stream<String> wordsAnotherWay = Pattern.compile("\\PL+").splitAsStream(contents)) {
+        try (Stream<String> wordsAnotherWay = compile("\\PL+").splitAsStream(contents)) {
             show("wordsAnotherWay", wordsAnotherWay);
         } catch (Exception e) {
             logger.warning(Constants.COMMON_TRY_CATCH_EXCEPTION_INFO.getStringStatusCode() + e
