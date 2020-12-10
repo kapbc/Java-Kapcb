@@ -63,7 +63,7 @@ public class CreateStreams {
         Stream<String> silence = Stream.empty();
         show("silence", silence);
 
-        Stream<String> echos = Stream.generate(() -> "Echo");
+        Stream<String> echos = Stream.generate(() -> "Echo").limit(2);
         show("echos", echos);
 
         Stream<Double> randoms = Stream.generate(Math::random);
