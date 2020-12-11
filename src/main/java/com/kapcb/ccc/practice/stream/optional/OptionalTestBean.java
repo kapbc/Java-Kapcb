@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 
 /**
- * <a>Title: UserBean </a>
+ * <a>Title: OptionalTestBean </a>
  * <a>Author: kapcb <a>
  * <a>Description：<a>
  *
@@ -12,25 +12,28 @@ import java.util.Optional;
  * @version 1.0.0
  * @date 2020/12/11-11:08
  */
-public class UserBean {
+public class OptionalTestBean {
 
     private Integer id;
     private String name;
     private LocalDateTime birthday;
     private Integer age;
 
-    public UserBean() {
+    /**
+     * I Hope My Project Won't Tips Too Many Objects That I Don't Want To Use When I Am Coding!
+     */
+    private OptionalTestBean() {
     }
 
-    public UserBean(Integer id, String name, LocalDateTime birthday, Integer age) {
+    public OptionalTestBean(Integer id, String name, LocalDateTime birthday, Integer age) {
         this.id = id;
         this.name = name;
         this.birthday = birthday;
         this.age = age;
     }
 
-    public static Optional<UserBean> lookup(UserBean userBean) {
-        return Integer.valueOf(1234).equals(userBean.getId()) ? Optional.empty() : Optional.of(userBean);
+    public static Optional<OptionalTestBean> lookup(OptionalTestBean optionalTestBean) {
+        return Integer.valueOf(1234).equals(optionalTestBean.getId()) ? Optional.empty() : Optional.of(optionalTestBean);
     }
 
     public Integer getId() {
