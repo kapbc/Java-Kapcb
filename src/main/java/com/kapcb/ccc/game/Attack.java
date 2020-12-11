@@ -15,6 +15,9 @@ public class Attack {
     public static final String BEAT = "打败了";
     public static final String NO_MONEY = "经费不足，不打了";
 
+    /**
+     * I Hope My Project Won't Tips Too Many Objects That I Don't Want To Use When I Am Coding! Just For Test Data!
+     */
     private Attack() {
     }
 
