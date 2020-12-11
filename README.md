@@ -44,56 +44,32 @@
 ### # 4、项目简介
 <table>
     <tr>
-    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/algorithm/VampireNumber.java" target="_blank"><strong>VampireNumber</strong></a></td>
-        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/algorithm/VampireNumber.java" target="_blank"><strong>吸血鬼数</strong></a></td>   
+    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/algorithm" target="_blank"><strong>Algorithm</strong></a></td>
+        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/algorithm" target="_blank"><strong>算法</strong></a></td>   
     </tr>
     <tr>
-    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/algorithm/Fibonacci.java" target="_blank"><strong>Fibonacci</strong></a></td>
-        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/algorithm/Fibonacci.java" target="_blank"><strong>斐波拉契数列</strong></a></td>   
+    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/datastructure" target="_blank"><strong>Data Structure</strong></a></td>
+        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/datastructure" target="_blank"><strong>数据结构</strong></a></td>   
     </tr>       
     <tr>
-    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/algorithm/PrimeNumber" target="_blank"><strong>PrimeNumber</strong></a></td>
-        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/algorithm/PrimeNumber" target="_blank"><strong>质数</strong></a></td>
+    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/pattern" target="_blank"><strong>Design Pattern</strong></a></td>
+        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/pattern" target="_blank"><strong>设计模式</strong></a></td>
     </tr>
     <tr>
-    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/util/FileListUtil.java" target="_blank"><strong>FileListUtil</strong></a></td>
-        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/util/FileListUtil.java" target="_blank"><strong>文件路径排序工具类</strong></a></td>
+    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/practice/collection" target="_blank"><strong>Java Collection Framework</strong></a></td>
+        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/practice/collection" target="_blank"><strong>Java 集合框架</strong></a></td>
     </tr>
     <tr>
-    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/pattern/singleton/hungry" target="_blank"><strong>单例模式</strong></a></td>
-        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/pattern/singleton/hungry" target="_blank"><strong>饿汉式</strong></a></td>
+    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/practice/stream" target="_blank"><strong>Java Stream</strong></a></td>
+        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/practice/stream" target="_blank"><strong>Java 流库</strong></a></td>
     </tr>
     <tr>
-    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/pattern/singleton/lazy" target="_blank"><strong>单例模式</strong></a></td>
-        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/pattern/singleton/lazy" target="_blank"><strong>懒汉式</strong></a></td>
+    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/practice/thread" target="_blank"><strong>Java Concurrent</strong></a></td>
+        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/practice/thread" target="_blank"><strong>Java 并发</strong></a></td>
     </tr>
     <tr>
-    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/pattern/singleton/inner" target="_blank"><strong>单例模式</strong></a></td>
-        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/pattern/singleton/inner" target="_blank"><strong>静态内部内</strong></a></td>
-    </tr>
-    <tr>
-    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/data/stack" target="_blank"><strong>数组模拟栈</strong></a></td>
-        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/data/stack" target="_blank"><strong>ArrayToStack</strong></a></td>
-    </tr>
-    <tr>
-    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/regex" target="_blank"><strong>Regex</strong></a></td>
-        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/regex" target="_blank"><strong>正则表达式</strong></a></td>
-    </tr>
-    <tr>
-    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/leetcode/Interval.java" target="_blank"><strong>Interval</strong></a></td>
-        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/leetcode/Interval.java" target="_blank"><strong>二维数组的插入</strong></a></td>
-    </tr>
-    <tr>
-    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/leetcode/TwoSum.java" target="_blank"><strong>TwoSum</strong></a></td>
-        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/leetcode/TwoSum.java" target="_blank"><strong>两数相加</strong></a></td>
-    </tr>
-    <tr>
-    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/leetcode/ContainerWithMostWater.java" target="_blank"><strong>ContainerWithMostWater</strong></a></td>
-        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/leetcode/ContainerWithMostWater.java" target="_blank"><strong>容器能够容纳最多的水</strong></a></td>
-    </tr>
-    <tr>
-    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/leetcode/ElementSumThree.java" target="_blank"><strong>ElementSumThree</strong></a></td>
-        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/blob/master/src/main/java/com/kapcb/ccc/leetcode/ElementSumThree.java" target="_blank"><strong>三数之和</strong></a></td>
+    	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/util" target="_blank"><strong>Java Utils</strong></a></td>
+        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/util" target="_blank"><strong>Java 工具类</strong></a></td>
     </tr>
 </table>
 
