@@ -45,6 +45,11 @@ public enum Constants {
     COMMON_SYSTEM_OUT_PRINTLN_STRING("Kapcb Nb!", "Common System Out Println String"),
 
     /**
+     * String Split Comma
+     */
+    COMMON_STRING_SPLIT_COMMA(", ", "Common String Split Comma"),
+
+    /**
      * Base-Number
      */
     COMMON_NUMBER_ONE(1, "Common base number constant One"),
