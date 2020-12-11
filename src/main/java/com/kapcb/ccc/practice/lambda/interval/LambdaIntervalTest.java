@@ -1,7 +1,7 @@
 package com.kapcb.ccc.practice.lambda.interval;
 
 /**
- * <a>Title: LambdaTest </a>
+ * <a>Title: LambdaIntervalTest </a>
  * <a>Author: kapcb <a>
  * <a>Description：<a>
  *
@@ -9,7 +9,7 @@ package com.kapcb.ccc.practice.lambda.interval;
  * @version 1.0.0
  * @date 2020/12/1-10:22
  */
-public class LambdaTest {
+public class LambdaIntervalTest {
 
     public static void main(String[] args) {
         RepeatedGreeter repeatedGreeter = new RepeatedGreeter();
