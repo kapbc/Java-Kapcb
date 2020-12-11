@@ -32,6 +32,6 @@ public class OptionalToStream {
         /**
          * JDK 9
          */
-        // userList.stream().map(UserBean::lookup).flatMap(Optional::stream);
+         //userList.stream().map(OptionalTestBean::lookup).flatMap(Optional::stream);
     }
 }
