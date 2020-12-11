@@ -65,7 +65,7 @@
     </tr>
     <tr>
     	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/java/nio" target="_blank"><strong>Java NIO</strong></a></td>
-        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/java/nio" target="_blank"><strong>Java </strong></a></td>
+        <td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/java/nio" target="_blank"><strong>Java NIO</strong></a></td>
     </tr>
     <tr>
     	<td><a style="text-decoration: none;" href="https://github.com/kapbc/Java-Kapcb/tree/master/src/main/java/com/kapcb/ccc/practice/thread" target="_blank"><strong>Java Concurrent</strong></a></td>
