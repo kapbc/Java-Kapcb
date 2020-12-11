@@ -9,10 +9,7 @@ package com.kapcb.ccc.practice.toString;
 public class Manager extends Employee {
     private String bonus;
 
-    /**
-     * I Hope My Project Won't Tips Too Many Objects That I Don't Want To Use When I Am Coding! Just For Test Data!
-     */
-    private Manager() {
+    public Manager() {
         super();
     }
 
