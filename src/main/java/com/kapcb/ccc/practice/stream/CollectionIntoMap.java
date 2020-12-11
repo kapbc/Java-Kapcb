@@ -2,6 +2,7 @@ package com.kapcb.ccc.practice.stream;
 
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
@@ -46,6 +47,11 @@ public class CollectionIntoMap {
         }));
         System.out.println("collect = " + collect);
 
+        Stream<Locale> localeStream = Stream.of(Locale.getAvailableLocales());
+        Map<String, List<Locale>> groupResultMap = localeStream.collect(Collectors.groupingBy(Locale::getCountry));
+        System.out.println("groupResultMap = " + groupResultMap);
+        List<Locale> ch = groupResultMap.getOrDefault("CH", null);
+        System.out.println("ch = " + ch);
     }
 
     public static Stream<Person> people() {
