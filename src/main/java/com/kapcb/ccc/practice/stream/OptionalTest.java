@@ -30,7 +30,7 @@ public class OptionalTest {
     private static final Logger logger = Logger.getLogger(String.valueOf(OptionalTest.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
     public static void main(String[] args) throws IOException {
-        String contents = new String(Files.readAllBytes(Paths.get("src/main/resource/streamTest.txt")), StandardCharsets.UTF_8);
+        String contents = new String(Files.readAllBytes(Paths.get(Constants.COMMON_STREAM_TEST_TXT_RESOURCES_PATH.getStringStatusCode())), StandardCharsets.UTF_8);
         // \PL+ 以单词
         List<String> wordList = new ArrayList<>(Arrays.asList(contents.split("\\PL+")));
         Optional<String> optionalValue = wordList.stream().filter("man"::contains).findFirst();
