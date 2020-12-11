@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Properties;
 import java.util.logging.Logger;
+import java.util.stream.Stream;
 
 /**
  * <a>Title: OptionalApiTest </a>
@@ -71,6 +72,8 @@ public class OptionalApiTest {
 
         /**
          * JDK 9 ifPresentOrElse
+         *
+         * If a value is present, performs the given action with the value, otherwise performs the given empty-based action.
          */
         // try (FileInputStream fileInputStream = new FileInputStream(Constants.COMMON_START_UP_PROPERTIES_RESOURCES_PATH.getStringStatusCode());) {
         //    Properties properties = new Properties();
@@ -79,5 +82,13 @@ public class OptionalApiTest {
         // } catch (OptionalException | IOException e) {
         //    logger.warning("The Exception is : " + e);
         // }
+
+        /**
+         * JDK 9 or
+         *
+         *
+         * If a value is present, returns an Optional describing the value, otherwise returns an Optional produced by the supplying function.
+         */
+        // list.stream().filter("1234"::equals).findAny().or(()->list.stream().findFirst());
     }
 }
