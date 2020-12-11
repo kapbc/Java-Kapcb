@@ -66,6 +66,9 @@ public class CollectionMapTest {
             // v.forEach(System.out::println);
         });
 
+        /**
+         * Map<Double, Employee>
+         */
         Map<Double, Employee> treeMap = employees.stream().collect(
                 Collectors.toMap(
                         Employee::getSalary,
