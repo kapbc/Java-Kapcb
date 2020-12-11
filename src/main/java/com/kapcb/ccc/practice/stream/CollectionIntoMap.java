@@ -40,8 +40,8 @@ public class CollectionIntoMap {
 
         Stream<Locale> locales = Stream.of(Locale.getAvailableLocales());
         Map<String, Set<String>> collect = locales.collect(Collectors.toMap(Locale::getDisplayCountry, locale -> Collections.singleton(locale.getDisplayLanguage()), (oldValue, newValue) -> {
-            HashSet<String> set = new HashSet<>();
-            set.addAll(newValue);
+            HashSet<String> set = new HashSet<>(newValue);
+            // set.addAll(newValue);
             return set;
         }));
         System.out.println("collect = " + collect);
