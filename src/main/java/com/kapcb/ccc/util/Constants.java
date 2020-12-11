@@ -56,7 +56,8 @@ public enum Constants {
     COMMON_NUMBER_SEVEN(7, "Common base number constant Seven"),
     COMMON_NUMBER_EIGHT(8, "Common base number constant Eight"),
     COMMON_NUMBER_NINE(9, "Common base number constant Nine"),
-    COMMON_NUMBER_TEN(10, "Common base number constant Ten");
+    COMMON_NUMBER_TEN(10, "Common base number constant Ten"),
+    COMMON_NUMBER_STEP(1234, "Common base number constant Step");
 
 
     /**
