@@ -19,7 +19,10 @@ public class Ultraman {
     private Float attackSpeed = 1.0F;
     private Boolean isLive = true;
 
-    public Ultraman() {
+    /**
+     * I Hope My Project Won't Tips Too Many Objects That I Don't Want To Use When I Am Coding! Just For Test Data!
+     */
+    private Ultraman() {
 
     }
 
