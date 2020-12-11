@@ -14,7 +14,10 @@ public class Employee {
     private double salary;
     private LocalDate hireDay;
 
-    public Employee() {
+    /**
+     * I Hope My Project Won't Tips Too Many Objects That I Don't Want To Use When I Am Coding! Just For Test Data!
+     */
+    private Employee() {
     }
 
     public Employee(String name) {
