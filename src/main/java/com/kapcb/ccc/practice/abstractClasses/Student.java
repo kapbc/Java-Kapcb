@@ -8,6 +8,13 @@ package com.kapcb.ccc.practice.abstractClasses;
  */
 public class Student extends Person {
     private String major;
+    
+    /**
+     * I Hope My Project Won't Tips Too Many Objects That I Don't Want To Use When I Am Coding! Just For Test Data!
+     */
+    private Student(){
+    
+    }
 
     public Student(String name, String major) {
         super(name);
