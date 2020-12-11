@@ -1,5 +1,7 @@
 package com.kapcb.ccc.practice.stream.optional;
 
+import com.kapcb.ccc.util.Constants;
+
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -33,7 +35,7 @@ public class OptionalTestBean {
     }
 
     public static Optional<OptionalTestBean> lookup(OptionalTestBean optionalTestBean) {
-        return Integer.valueOf(1234).equals(optionalTestBean.getId()) ? Optional.empty() : Optional.of(optionalTestBean);
+        return Constants.Common_number_step.getStringStatusCode().equals(optionalTestBean.getId()) ? Optional.empty() : Optional.of(optionalTestBean);
     }
 
     public Integer getId() {
