@@ -18,16 +18,16 @@ import java.util.stream.Collectors;
 public class OptionalToStream {
 
     public static void main(String[] args) {
-        List<UserBean> userList = new ArrayList<>();
-        userList.add(new UserBean(123, "kapcb", LocalDateTime.MIN, 14));
-        userList.add(new UserBean(1233, "nb", LocalDateTime.MIN, 15));
-        userList.add(new UserBean(1235, "!", LocalDateTime.MIN, 16));
-        userList.add(new UserBean(1234, "aaa", LocalDateTime.MIN, 17));
-        userList.add(new UserBean(1234, "bbb", LocalDateTime.MIN, 54));
-        userList.add(new UserBean(1234, "ddd", LocalDateTime.MIN, 32));
+        List<OptionalTestBean> userList = new ArrayList<>();
+        userList.add(new OptionalTestBean(123, "kapcb", LocalDateTime.MIN, 14));
+        userList.add(new OptionalTestBean(1233, "nb", LocalDateTime.MIN, 15));
+        userList.add(new OptionalTestBean(1235, "!", LocalDateTime.MIN, 16));
+        userList.add(new OptionalTestBean(1234, "aaa", LocalDateTime.MIN, 17));
+        userList.add(new OptionalTestBean(1234, "bbb", LocalDateTime.MIN, 54));
+        userList.add(new OptionalTestBean(1234, "ddd", LocalDateTime.MIN, 32));
 
-        List<String> userBeanStream = userList.stream().map(UserBean::lookup).filter(Optional::isPresent).map(Optional::get).map(UserBean::getName).collect(Collectors.toList());
-        System.out.println(userBeanStream);
+        List<String> optionalBeanStream = userList.stream().map(OptionalTestBean::lookup).filter(Optional::isPresent).map(Optional::get).map(OptionalTestBean::getName).collect(Collectors.toList());
+        System.out.println(optionalBeanStream);
 
         /**
          * JDK 9
