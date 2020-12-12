@@ -2,6 +2,7 @@ package com.kapcb.ccc.java.juc.reentrant;
 
 import com.kapcb.ccc.util.Constants;
 
+import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.function.Consumer;
 import java.util.logging.Level;
@@ -77,7 +78,7 @@ public class SaleTicketDemo {
 
         private static volatile int ticketCounts = 30;
 
-        private ReentrantLock lock = new ReentrantLock();
+        private final Lock lock = new ReentrantLock();
 
         public void saleTicket() {
             lock.lock();
