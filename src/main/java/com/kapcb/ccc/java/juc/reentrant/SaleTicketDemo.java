@@ -16,6 +16,8 @@ import java.util.logging.Logger;
  * @author kapcb
  * @version 1.0.0
  * @date 2020/12/12 - 18:01
+ * <p>
+ * 三个售票员         卖出          30张票
  */
 public class SaleTicketDemo {
 
