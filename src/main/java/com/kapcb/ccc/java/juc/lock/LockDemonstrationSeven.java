@@ -38,6 +38,9 @@ public class LockDemonstrationSeven {
 
     }
 
+    /**
+     * 一个是 静态同步代码块, 一个是非静态同步代码块, 前者锁的是当前Class对象, 后者锁的是当前实例对象。两者之间不存在竞态条件, 因Send Email需要睡4s 所以先打印Send SMS 3s 之后再打印Send Email
+     */
     private static class Phone {
 
         public static synchronized void sendEmail() throws InterruptedException {
