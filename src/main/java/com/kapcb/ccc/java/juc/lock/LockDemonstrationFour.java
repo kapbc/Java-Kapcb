@@ -34,6 +34,9 @@ public class LockDemonstrationFour {
         }, "B").start();
     }
 
+    /**
+     * 两个实例对象, 不会共享一把锁, 无需等待phoneOne对象的锁释放 ,所以先打印 say Hello 再打印 sendEmail
+     */
     private static class Phone {
 
         public synchronized void sendEmail() throws InterruptedException {
