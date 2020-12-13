@@ -1,5 +1,7 @@
 package com.kapcb.ccc.java.juc.lock;
 
+import com.kapcb.ccc.util.Constants;
+
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -13,36 +15,37 @@ import java.util.concurrent.TimeUnit;
  */
 public class LockDemonstrationThree {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        Phone phoneOne = new Phone();
-        Phone phoneTwo = new Phone();
+        Phone phone = new Phone();
 
         new Thread(() -> {
             try {
-                phoneOne.sendEmail();
+                phone.sendEmail();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }, "A").start();
 
+        Thread.sleep(1000);
+
         new Thread(() -> {
-            phoneTwo.sayHello();
+            phone.sayHello();
         }, "B").start();
     }
 
     private static class Phone {
         public synchronized void sendEmail() throws InterruptedException {
             TimeUnit.SECONDS.sleep(4);
-            System.out.println("Send Email");
+            System.out.println(Constants.COMMON_LOCK_8_PRINT_SEND_EMAIL.getStringStatusCode());
         }
 
         public synchronized void sendSMS() {
-            System.out.println("Send SMS");
+            System.out.println(Constants.COMMON_LOCK_8_PRINT_SEND_SMS.getStringStatusCode());
         }
 
         public void sayHello() {
-            System.out.println("say Hello");
+            System.out.println(Constants.COMMON_LOCK_8_PRINT_SAY_HELLO.getStringStatusCode());
         }
     }
 }

@@ -45,6 +45,13 @@ public enum Constants {
     COMMON_SYSTEM_OUT_PRINTLN_STRING("Kapcb Nb!", "Common System Out Println String"),
 
     /**
+     * Lock 8 Demonstration Common Print
+     */
+    COMMON_LOCK_8_PRINT_SEND_EMAIL("Send Email", "Print Send Email"),
+    COMMON_LOCK_8_PRINT_SEND_SMS("Send SMS", "Print Send SMS"),
+    COMMON_LOCK_8_PRINT_SAY_HELLO("Hello Kapcb!", "Print Say Hello"),
+
+    /**
      * String Split Comma
      */
     COMMON_STRING_SPLIT_COMMA(", ", "Common String Split Comma"),

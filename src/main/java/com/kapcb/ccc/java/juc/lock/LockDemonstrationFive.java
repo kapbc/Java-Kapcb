@@ -3,36 +3,37 @@ package com.kapcb.ccc.java.juc.lock;
 import com.kapcb.ccc.util.Constants;
 
 /**
- * <a>Title: LockDemonstrationOne </a>
+ * <a>Title: LockDemonstrationFive </a>
  * <a>Author: kapcb <a>
  * <a>Description: <a>
  *
  * @author kapcb
  * @version 1.0.0
- * @date 2020/12/12 - 21:40
+ * @date 2020/12/13 - 11:44
  */
-public class LockDemonstrationOne {
+public class LockDemonstrationFive {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
+
         Phone phone = new Phone();
+
         new Thread(() -> {
-            phone.sendEmail();
+
         }, "A").start();
 
-        Thread.sleep(3000);
-
         new Thread(() -> {
-            phone.sendSMS();
+
         }, "B").start();
+
     }
 
-
     private static class Phone {
-        public synchronized void sendEmail() {
+
+        public static synchronized void sendEmail() {
             System.out.println(Constants.COMMON_LOCK_8_PRINT_SEND_EMAIL.getStringStatusCode());
         }
 
-        public synchronized void sendSMS() {
+        public static synchronized void sendSMS() {
             System.out.println(Constants.COMMON_LOCK_8_PRINT_SEND_SMS.getStringStatusCode());
         }
     }
