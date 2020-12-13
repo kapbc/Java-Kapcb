@@ -19,6 +19,9 @@ public class LockDemonstrationSeven {
 
         Phone phone = new Phone();
 
+        /**
+         * Shouldn't Access The Static Method From Instance , Just For Test!!!
+         */
         new Thread(() -> {
             try {
                 phone.sendEmail();
