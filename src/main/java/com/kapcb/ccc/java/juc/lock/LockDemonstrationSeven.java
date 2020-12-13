@@ -5,23 +5,20 @@ import com.kapcb.ccc.util.Constants;
 import java.util.concurrent.TimeUnit;
 
 /**
- * <a>Title: LockDemonstrationFive </a>
+ * <a>Title: LockDemonstrationSeven </a>
  * <a>Author: kapcb <a>
  * <a>Description: <a>
  *
  * @author kapcb
  * @version 1.0.0
- * @date 2020/12/13 - 11:44
+ * @date 2020/12/13 - 12:11
  */
-public class LockDemonstrationFive {
+public class LockDemonstrationSeven {
 
     public static void main(String[] args) throws InterruptedException {
 
         Phone phone = new Phone();
 
-        /**
-         * Shouldn't Access The Static Method From Instance , Just For Test!!!
-         */
         new Thread(() -> {
             try {
                 phone.sendEmail();
@@ -30,8 +27,8 @@ public class LockDemonstrationFive {
             }
         }, "A").start();
 
-        Thread.sleep(1000);
 
+        Thread.sleep(1000);
         new Thread(() -> {
             phone.sendSMS();
         }, "B").start();
@@ -45,7 +42,7 @@ public class LockDemonstrationFive {
             System.out.println(Constants.COMMON_LOCK_8_PRINT_SEND_EMAIL.getStringStatusCode());
         }
 
-        public static synchronized void sendSMS() {
+        public synchronized void sendSMS() {
             System.out.println(Constants.COMMON_LOCK_8_PRINT_SEND_SMS.getStringStatusCode());
         }
     }
