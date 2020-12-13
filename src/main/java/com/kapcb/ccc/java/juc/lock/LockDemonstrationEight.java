@@ -38,6 +38,9 @@ public class LockDemonstrationEight {
         }, "B").start();
     }
 
+    /**
+     * 不存在竞态条件, 先打印 Send SMS 再打印 Send Email
+     */
     private static class Phone {
         public static synchronized void sendEmail() throws InterruptedException {
             TimeUnit.SECONDS.sleep(4);
