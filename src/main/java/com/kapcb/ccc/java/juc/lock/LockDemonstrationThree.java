@@ -34,6 +34,9 @@ public class LockDemonstrationThree {
         }, "B").start();
     }
 
+    /**
+     * 先打印 say Hello 再打印 Send Email
+     */
     private static class Phone {
         public synchronized void sendEmail() throws InterruptedException {
             TimeUnit.SECONDS.sleep(4);

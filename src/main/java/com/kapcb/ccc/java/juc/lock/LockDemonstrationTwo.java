@@ -26,7 +26,7 @@ public class LockDemonstrationTwo {
             }
         }, "A").start();
 
-        Thread.sleep(1000);
+        Thread.sleep(6000);
 
         new Thread(() -> {
             phone.sendSMS();
@@ -34,7 +34,13 @@ public class LockDemonstrationTwo {
 
     }
 
+    /**
+     * 两个普通同步代码块, 同一个实例对象访问非静态的同步代码块, 必须等待其它非静态方法释放锁之后才能再次获取锁访问同步代码块。
+     * <p>
+     * 等待 4s 后先打印 Send Email 2s 后再打印 Send SMS
+     */
     private static class Phone {
+
         public synchronized void sendEmail() throws InterruptedException {
             TimeUnit.SECONDS.sleep(4);
             System.out.println(Constants.COMMON_LOCK_8_PRINT_SEND_EMAIL.getStringStatusCode());
