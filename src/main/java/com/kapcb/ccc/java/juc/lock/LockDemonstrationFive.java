@@ -38,6 +38,9 @@ public class LockDemonstrationFive {
 
     }
 
+    /**
+     * 两个静态同步代码块, 锁的是当前Class对象, 线程之间共享Phone这一把锁 ,所以调用 先打印 Send Email 等待锁释放之后 再打印 Send SMS
+     */
     private static class Phone {
 
         public static synchronized void sendEmail() throws InterruptedException {
