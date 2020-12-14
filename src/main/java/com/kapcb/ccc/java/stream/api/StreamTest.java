@@ -1,11 +1,11 @@
-package com.kapcb.ccc.java.stream;
+package com.kapcb.ccc.java.stream.api;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * <a>Title: TestStream </a>
+ * <a>Title: StreamTest </a>
  * <a>Author: kapcb <a>
  * <a>Description：<a>
  *
@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
  * @version 1.0.0
  * @date 2020/12/8-11:20
  */
-public class TestStream {
+public class StreamTest {
 
     private static final String SEPARATOR_COMMA = ", ";
 

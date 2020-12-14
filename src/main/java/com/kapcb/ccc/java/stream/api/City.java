@@ -1,4 +1,4 @@
-package com.kapcb.ccc.java.stream;
+package com.kapcb.ccc.java.stream.api;
 
 /**
  * <a>Title: City </a>

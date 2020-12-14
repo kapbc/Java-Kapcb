@@ -1,4 +1,4 @@
-package com.kapcb.ccc.java.stream;
+package com.kapcb.ccc.java.stream.group;
 
 import java.util.List;
 import java.util.Locale;

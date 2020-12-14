@@ -1,5 +1,6 @@
-package com.kapcb.ccc.java.stream;
+package com.kapcb.ccc.java.stream.downcollector;
 
+import com.kapcb.ccc.java.stream.api.City;
 import com.kapcb.ccc.util.Constants;
 
 import java.io.IOException;

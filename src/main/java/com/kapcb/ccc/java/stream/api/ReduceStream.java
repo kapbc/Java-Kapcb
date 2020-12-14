@@ -1,4 +1,4 @@
-package com.kapcb.ccc.java.stream;
+package com.kapcb.ccc.java.stream.api;
 
 import com.kapcb.ccc.java.think.Employee;
 
@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * <a>Title: ReduceTest </a>
+ * <a>Title: ReduceStream </a>
  * <a>Author: kapcb <a>
  * <a>Description：<a>
  *
@@ -15,7 +15,7 @@ import java.util.Optional;
  * @version 1.0.0
  * @date 2020/12/14-15:14
  */
-public class ReduceTest {
+public class ReduceStream {
 
     public static void main(String[] args) {
         List<com.kapcb.ccc.java.think.Employee> employees = new LinkedList<>();

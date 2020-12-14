@@ -1,4 +1,4 @@
-package com.kapcb.ccc.java.stream;
+package com.kapcb.ccc.java.stream.optional;
 
 import com.kapcb.ccc.java.exception.OptionalException;
 import com.kapcb.ccc.util.Constants;

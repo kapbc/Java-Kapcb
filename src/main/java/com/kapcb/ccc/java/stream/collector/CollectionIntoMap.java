@@ -1,4 +1,4 @@
-package com.kapcb.ccc.java.stream;
+package com.kapcb.ccc.java.stream.collector;
 
 import java.util.Collections;
 import java.util.HashSet;

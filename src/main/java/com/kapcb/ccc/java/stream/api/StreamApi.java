@@ -1,4 +1,4 @@
-package com.kapcb.ccc.java.stream;
+package com.kapcb.ccc.java.stream.api;
 
 import com.kapcb.ccc.java.think.Employee;
 import com.kapcb.ccc.util.Constants;
@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 /**
- * <a>Title: StreamApiTest </a>
+ * <a>Title: StreamApi </a>
  * <a>Author: kapcb <a>
  * <a>Description: <a>
  *
@@ -22,8 +22,8 @@ import java.util.stream.Collectors;
  * @version 1.0.0
  * @date 2020/12/8 - 20:38
  */
-public class StreamApiTest {
-    private static final Logger logger = Logger.getLogger(String.valueOf(StreamApiTest.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
+public class StreamApi {
+    private static final Logger logger = Logger.getLogger(String.valueOf(StreamApi.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
     public static void main(String[] args) {
         List<Employee> employees = new ArrayList<>();

@@ -1,4 +1,4 @@
-package com.kapcb.ccc.java.stream;
+package com.kapcb.ccc.java.stream.collector;
 
 import com.kapcb.ccc.java.think.Employee;
 import com.kapcb.ccc.util.Constants;

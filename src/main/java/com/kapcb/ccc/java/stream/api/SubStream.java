@@ -1,4 +1,4 @@
-package com.kapcb.ccc.java.stream;
+package com.kapcb.ccc.java.stream.api;
 
 import com.kapcb.ccc.util.Constants;
 
@@ -24,7 +24,7 @@ import java.util.stream.Stream;
  * @version 1.0.0
  * @date 2020/12/10-15:44
  */
-public class SubStreamTest {
+public class SubStream {
 
     public static void main(String[] args) throws IOException {
 

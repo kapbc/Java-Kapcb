@@ -1,4 +1,4 @@
-package com.kapcb.ccc.java.stream;
+package com.kapcb.ccc.java.stream.parallel;
 
 import com.kapcb.ccc.util.Constants;
 

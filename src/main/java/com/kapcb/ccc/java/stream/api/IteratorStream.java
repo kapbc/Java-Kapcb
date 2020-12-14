@@ -1,10 +1,10 @@
-package com.kapcb.ccc.java.stream;
+package com.kapcb.ccc.java.stream.api;
 
 import java.math.BigInteger;
 import java.util.stream.Stream;
 
 /**
- * <a>Title: IteratorTest </a>
+ * <a>Title: IteratorStream </a>
  * <a>Author: kapcb <a>
  * <a>Description：<a>
  *
@@ -12,7 +12,7 @@ import java.util.stream.Stream;
  * @version 1.0.0
  * @date 2020/12/10-8:33
  */
-public class IteratorTest {
+public class IteratorStream {
 
     public static void main(String[] args) {
         Stream<BigInteger> iterate = Stream.iterate(BigInteger.ZERO, n -> n.add(BigInteger.ONE)).limit(10);
