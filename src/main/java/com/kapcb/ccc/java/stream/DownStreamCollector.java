@@ -3,6 +3,7 @@ package com.kapcb.ccc.java.stream;
 import com.kapcb.ccc.util.Constants;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -12,8 +13,10 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static java.util.stream.Collectors.collectingAndThen;
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.maxBy;
@@ -53,7 +56,9 @@ public class DownStreamCollector {
         Optional<City> tx = stateToLargestCity.get("TX");
         System.out.println(tx.orElse(null));
 
-        Stream<City> cityStreamTwo = Files.lines(path).map(element -> element.split(Constants.COMMON_STRING_SPLIT_COMMA.getStringStatusCode())).map(line -> new City(line[0], line[1], Integer.parseInt(line[2])));
-        cityStreamTwo.collect();
+        // Stream<City> cityStreamTwo = Files.lines(path).map(element -> element.split(Constants.COMMON_STRING_SPLIT_COMMA.getStringStatusCode())).map(line -> new City(line[0], line[1], Integer.parseInt(line[2])));
+        Stream<String> lines = Files.lines(Paths.get(Constants.COMMON_STREAM_TEST_TXT_RESOURCES_PATH.getStringStatusCode()), StandardCharsets.UTF_8);
+        Map<Character, Integer> characterIntegerMap = lines.collect(groupingBy(s -> s.charAt(0), collectingAndThen(toSet(), Set::size)));
+        characterIntegerMap.forEach((k, v) -> System.out.println("k: " + k + ", v: " + v));
     }
 }
