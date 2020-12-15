@@ -8,6 +8,11 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.groupingByConcurrent;
 
 /**
  * <a>Title: ParallelStreams </a>
@@ -45,18 +50,17 @@ public class ParallelStreams {
             }
         });
         System.out.println(Arrays.toString(shortWords));
-        
-                Map<Integer, Long> shortWordCount = wordList.parallelStream().filter(s -> s.length() < 10).collect(groupingBy(String::length, counting()));
+
+        Map<Integer, Long> shortWordCount = wordList.parallelStream().filter(s -> s.length() < 10).collect(groupingBy(String::length, counting()));
         System.out.println("shortWordCount = " + shortWordCount);
-        
+
         Map<Integer, List<String>> result = wordList.parallelStream().collect(groupingByConcurrent(String::length));
         System.out.println(result.get(14));
-        
+
         result = wordList.parallelStream().collect(groupingByConcurrent(String::length));
         System.out.println(result.get(14));
-        
+
         Map<Integer, Long> wordCounts = wordList.parallelStream().collect(groupingByConcurrent(String::length, counting()));
         System.out.println(wordCounts);
-
     }
 }
