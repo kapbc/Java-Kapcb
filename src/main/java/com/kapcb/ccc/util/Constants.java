@@ -20,6 +20,7 @@ public enum Constants {
     COMMON_LOG_MESSAGE_PROPERTIES_RESOURCES_PATH("src/main/resource/logmessage_en.properties", "The Log Message Properties Resources Path"),
     COMMON_CITY_TXT_RESOURCES_PATH("src/main/resource/cities.txt", "Stream City Test Resources Txt File"),
     COMMON_ALICE_TXT_RESOURCES_PATH("src/main/resource/alice30.txt", "Stream PrimitiveTypeStreams Test Txt File"),
+    COMMON_MENU_TXT_RESOURCES_PATH("src/main/resource/menu.txt", "Stream Menu Resources Test Txt File"),
 
 
     /**
