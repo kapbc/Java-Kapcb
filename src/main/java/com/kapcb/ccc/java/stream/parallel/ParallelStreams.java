@@ -48,6 +48,9 @@ public class ParallelStreams {
         
                 Map<Integer, Long> shortWordCount = wordList.parallelStream().filter(s -> s.length() < 10).collect(groupingBy(String::length, counting()));
         System.out.println("shortWordCount = " + shortWordCount);
+        
+        Map<Integer, List<String>> result = wordList.parallelStream().collect(groupingByConcurrent(String::length));
+        System.out.println(result.get(14));
 
     }
 }
