@@ -1,16 +1,14 @@
 package com.kapcb.ccc.java.stream.test;
 
 
-import java.io.File;
+import com.kapcb.ccc.util.Constants;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
@@ -27,9 +25,9 @@ import static java.util.stream.Collectors.toList;
 public class DemoOne {
 
     public static void main(String[] args) throws IOException {
-        Stream<Menu> menuNodeStream = Files.lines(Paths.get("src/main/resource/menu.txt"), StandardCharsets.UTF_8).map(line -> line.split(", ")).map(m -> new Menu(Integer.parseInt(m[0]), Integer.parseInt(m[1]), m[2], Integer.parseInt(m[3])));
-//        List<Menu> rootIdList = menuNodeStream.filter(s -> Integer.valueOf(0).equals(s.getParentId())).collect(toList());
-        List<Menu> rootIdList = menuNodeStream.collect(toList());
+        String filename = Constants.COMMON_MENU_TXT_RESOURCES_PATH.getStringStatusCode();
+        Stream<Menu> menuNodeStream = Files.lines(Paths.get(filename), StandardCharsets.UTF_8).map(line -> line.split(", ")).map(m -> new Menu(Integer.parseInt(m[0]), Integer.parseInt(m[1]), m[2], Integer.parseInt(m[3])));
+        List<Menu> menuList = menuNodeStream.collect(toList());
 //        System.out.println("rootIdList = " + rootIdList);
 //        System.out.println("rootIdList = " + rootIdList);
 //        Stream<Menu> menuStream = Files.lines(Paths.get("src/main/resource/menu.txt"), StandardCharsets.UTF_8).map(line -> line.split(", ")).map(m -> new Menu(Integer.parseInt(m[0]), Integer.parseInt(m[1]), m[2], Integer.parseInt(m[3])));
@@ -38,9 +36,10 @@ public class DemoOne {
 //        List<Menu> treeNode = getTreeNode(rootIdList, nodeIdList);
 //        System.out.println("treeNode = " + treeNode);
 
-        List<Menu> treeNode = getTreeNode(rootIdList);
+        List<Menu> treeNode = getTreeNode(menuList);
         System.out.println("treeNode = " + treeNode);
     }
+
 
     private static List<Menu> getTreeNode(List<Menu> rootIdList) {
         List<Menu> rootMenu = new ArrayList<>();
