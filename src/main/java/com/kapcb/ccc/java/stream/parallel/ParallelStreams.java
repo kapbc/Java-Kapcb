@@ -35,7 +35,16 @@ public class ParallelStreams {
         });
         System.out.println(Arrays.toString(shortWords));
 
-
+        /**
+         * Try-Again -- The Result Will likely be different and also wrong
+         */
+        Arrays.fill(shortWords, 0);
+        wordList.parallelStream().forEach(s -> {
+            if (s.length() < 10) {
+                shortWords[s.length()]++;
+            }
+        });
+        System.out.println(Arrays.toString(shortWords));
 
     }
 }
