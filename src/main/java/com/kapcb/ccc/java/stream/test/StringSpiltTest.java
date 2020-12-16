@@ -9,7 +9,10 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 import java.util.logging.Logger;
 import java.util.stream.Stream;
@@ -50,11 +53,14 @@ public class StringSpiltTest {
         String result = property.replaceAll("\\{YYYYMMdd\\}", simpleDateFormat.format(new Date()));
         System.out.println("result = " + result);
 
+        Menu menu = new Menu();
         try {
             Stream<Menu> menuStream = Files.lines(Paths.get(Constants.COMMON_MENU_TXT_RESOURCES_PATH.getStringStatusCode()), StandardCharsets.UTF_8)
                     .map(s -> s.split(", "))
                     .map(e -> new Menu(Integer.valueOf(e[0]), Integer.valueOf(e[1]), e[2], Integer.parseInt(e[3])));
-
+            Stream<String> lines = Files.lines(Paths.get(Constants.COMMON_MENU_TXT_RESOURCES_PATH.getStringStatusCode()), StandardCharsets.UTF_8);
+            // lines.map(s -> s.split(", ")).map(Arrays::stream).forEach(s -> s.forEach(s1 -> menu.addEmail(getEmail(s1))));
+            System.out.println(menu.getEmail(1));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -67,6 +73,7 @@ public class StringSpiltTest {
         private Integer nodeId;
         private String menuName;
         private int order;
+        private List<Email> emailList = new ArrayList<>();
 
         public Menu() {
         }
@@ -108,6 +115,14 @@ public class StringSpiltTest {
 
         public void setOrder(int order) {
             this.order = order;
+        }
+
+        public Email getEmail(int index) {
+            return emailList.get(index);
+        }
+
+        public void addEmail(Email email) {
+            this.emailList.add(email);
         }
 
         @Override
