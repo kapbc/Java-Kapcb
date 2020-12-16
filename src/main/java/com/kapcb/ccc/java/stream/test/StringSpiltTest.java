@@ -5,6 +5,9 @@ import com.kapcb.ccc.util.Constants;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
@@ -47,8 +50,70 @@ public class StringSpiltTest {
         String result = property.replaceAll("\\{YYYYMMdd\\}", simpleDateFormat.format(new Date()));
         System.out.println("result = " + result);
 
+        try {
+            Stream<Menu> menuStream = Files.lines(Paths.get(Constants.COMMON_MENU_TXT_RESOURCES_PATH.getStringStatusCode()), StandardCharsets.UTF_8)
+                    .map(s -> s.split(", "))
+                    .map(e -> new Menu(Integer.valueOf(e[0]), Integer.valueOf(e[1]), e[2], Integer.parseInt(e[3])));
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 
+    private static class Menu {
+        private Integer parentId;
+        private Integer nodeId;
+        private String menuName;
+        private int order;
+
+        public Menu() {
+        }
+
+        public Menu(Integer parentId, Integer nodeId, String menuName, int order) {
+            this.parentId = parentId;
+            this.nodeId = nodeId;
+            this.menuName = menuName;
+            this.order = order;
+        }
+
+        public Integer getParentId() {
+            return parentId;
+        }
+
+        public void setParentId(Integer parentId) {
+            this.parentId = parentId;
+        }
+
+        public Integer getNodeId() {
+            return nodeId;
+        }
+
+        public void setNodeId(Integer nodeId) {
+            this.nodeId = nodeId;
+        }
+
+        public String getMenuName() {
+            return menuName;
+        }
+
+        public void setMenuName(String menuName) {
+            this.menuName = menuName;
+        }
+
+        public int getOrder() {
+            return order;
+        }
+
+        public void setOrder(int order) {
+            this.order = order;
+        }
+
+        @Override
+        public String toString() {
+            return "Menu[ parentId= " + this.parentId + ", nodeId= " + this.nodeId + ", menuName= " + this.menuName + ", order= " + this.order + "]";
+        }
     }
 
     private static Email getEmail(String address) {
