@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -54,19 +55,36 @@ public class StringSpiltTest {
         System.out.println("result = " + result);
 
         Menu menu = new Menu();
+        Path path = Paths.get(Constants.COMMON_MENU_TXT_RESOURCES_PATH.getStringStatusCode());
         try {
-            Stream<Menu> menuStream = Files.lines(Paths.get(Constants.COMMON_MENU_TXT_RESOURCES_PATH.getStringStatusCode()), StandardCharsets.UTF_8)
+            Stream<Menu> menuStream = Files.lines(path, StandardCharsets.UTF_8)
                     .map(s -> s.split(", "))
                     .map(e -> new Menu(Integer.valueOf(e[0]), Integer.valueOf(e[1]), e[2], Integer.parseInt(e[3])));
-            Stream<String> lines = Files.lines(Paths.get(Constants.COMMON_MENU_TXT_RESOURCES_PATH.getStringStatusCode()), StandardCharsets.UTF_8);
-            // lines.map(s -> s.split(", ")).map(Arrays::stream).forEach(s -> s.forEach(s1 -> menu.addEmail(getEmail(s1))));
+
+            Stream<String> lines = Files.lines(path, StandardCharsets.UTF_8);
+            lines.map(s -> s.split(", ")).map(Arrays::stream).forEach(s -> s.forEach(s1 -> menu.addEmail(getEmail(s1))));
             System.out.println(menu.getEmail(1));
+
+            Stream<String> stringStream = Files.lines(path, StandardCharsets.UTF_8);
+            stringStream.map(s -> s.split(", ")).flatMap(Arrays::stream).forEach(s -> menu.addEmail(getEmail(s)));
+            System.out.println(menu.getEmail(2));
         } catch (IOException e) {
+            logger.warning(Constants.COMMON_TRY_CATCH_EXCEPTION_MESSAGE.getStringStatusCode() + e + Constants.COMMON_TRY_CATCH_EXCEPTION_MESSAGE.getStringStatusCode() + e.getMessage());
             e.printStackTrace();
         }
 
     }
 
+    private static Email getEmail(String address) {
+        if (address.contains(Constants.COMMON_STRING_SPLIT_COMMA.getStringStatusCode())) {
+            return Stream.of(address)
+                    .map(s -> s.split(Constants.COMMON_STRING_SPLIT_COMMA.getStringStatusCode()))
+                    .map(e -> new Email(e[0], e[1]))
+                    .findAny()
+                    .orElseThrow(IllegalArgumentException::new);
+        }
+        return new Email(address, address);
+    }
 
     private static class Menu {
         private Integer parentId;
@@ -127,15 +145,11 @@ public class StringSpiltTest {
 
         @Override
         public String toString() {
-            return "Menu[ parentId= " + this.parentId + ", nodeId= " + this.nodeId + ", menuName= " + this.menuName + ", order= " + this.order + "]";
+            return "Menu[ parentId= " + this.parentId
+                    + ", nodeId= " + this.nodeId +
+                    ", menuName= " + this.menuName +
+                    ", order= " + this.order + "]";
         }
-    }
-
-    private static Email getEmail(String address) {
-        if (address.contains(Constants.COMMON_STRING_SPLIT_COMMA.getStringStatusCode())) {
-            return Stream.of(address).map(s -> s.split(Constants.COMMON_STRING_SPLIT_COMMA.getStringStatusCode())).map(e -> new Email(e[0], e[1])).findAny().orElseThrow(IllegalArgumentException::new);
-        }
-        return new Email(address, address);
     }
 
     private static class Email {
@@ -168,7 +182,8 @@ public class StringSpiltTest {
 
         @Override
         public String toString() {
-            return "Email: [address= " + this.address + " ,realAddress= " + this.realAddress + " ]";
+            return "Email: [address= " + this.address +
+                    " ,realAddress= " + this.realAddress + " ]";
         }
     }
 }
