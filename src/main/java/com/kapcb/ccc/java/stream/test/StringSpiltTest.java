@@ -12,6 +12,7 @@ import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Properties;
@@ -40,6 +41,7 @@ public class StringSpiltTest {
         String testAddress = "eircccallroot@yeah.net";
         Email email1 = getEmail(testAddress);
         System.out.println("email1 = " + email1);
+
         String property = null;
         try (InputStream inputStream = new FileInputStream(Constants.COMMON_LOG_MESSAGE_PROPERTIES_RESOURCES_PATH.getStringStatusCode());) {
             Properties properties = new Properties();
@@ -53,6 +55,8 @@ public class StringSpiltTest {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String result = property.replaceAll("\\{YYYYMMdd\\}", simpleDateFormat.format(new Date()));
         System.out.println("result = " + result);
+
+        Stream.of(property).map(s -> s.replaceAll("\\{YYYYMMdd\\}", new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime()))).forEach(System.out::println);
 
         Menu menu = new Menu();
         Path path = Paths.get(Constants.COMMON_MENU_TXT_RESOURCES_PATH.getStringStatusCode());
