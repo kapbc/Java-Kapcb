@@ -35,7 +35,11 @@ public class StringSpiltTest {
     public static void main(String[] args) {
 
         String address = "chenchengcheng@163.com,eircccallroot@163.com";
-        Email email = Stream.of(address).map(s -> s.split(",")).map(e -> new Email(e[0], e[1])).findAny().orElseThrow(IllegalArgumentException::new);
+        Email email = Stream.of(address)
+                .map(s -> s.split(","))
+                .map(e -> new Email(e[0], e[1]))
+                .findAny()
+                .orElseThrow(IllegalArgumentException::new);
         System.out.println(email);
 
         String testAddress = "eircccallroot@yeah.net";
@@ -48,7 +52,8 @@ public class StringSpiltTest {
             properties.load(inputStream);
             property = properties.getProperty("kapcb.stream.email.test");
         } catch (IOException e) {
-            logger.warning(Constants.COMMON_TRY_CATCH_EXCEPTION_INFO.getStringStatusCode() + e + Constants.COMMON_TRY_CATCH_EXCEPTION_MESSAGE + e.getMessage());
+            logger.warning(Constants.COMMON_TRY_CATCH_EXCEPTION_INFO.getStringStatusCode() +
+                    e + Constants.COMMON_TRY_CATCH_EXCEPTION_MESSAGE + e.getMessage());
             e.printStackTrace();
         }
 
