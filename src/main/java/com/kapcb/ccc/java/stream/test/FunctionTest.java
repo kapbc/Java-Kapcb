@@ -28,7 +28,7 @@ public class FunctionTest {
     public static void main(String[] args) {
         Path path = Paths.get(Constants.COMMON_MENU_TXT_RESOURCES_PATH.getStringStatusCode());
         try (Stream<String> lines = Files.lines(path, StandardCharsets.UTF_8);) {
-            lines.map(s -> s.split(","));
+            lines.map(s -> s.split(Constants.COMMON_STRING_SPLIT_COMMA.getStringStatusCode()));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -39,7 +39,7 @@ public class FunctionTest {
         Menu menu = new Menu();
         addIntoMenu(testTwo, menu::addTo);
         System.out.println(menu.getTo());
-        
+
         addIntoMenu(test, menu::addFrom);
         System.out.println(menu.getFrom());
     }
@@ -59,10 +59,10 @@ public class FunctionTest {
     }
 
     private static SimpleAddress getSimpleAddress(String ids) {
-        if (ids.contains("|")) {
+        if (ids.contains(Constants.COMMON_STRING_SPLIT_VERTICAL_LINE.getStringStatusCode())) {
             return Stream
                     .of(ids)
-                    .map(s -> s.split("\\|"))
+                    .map(s -> s.split(Constants.COMMON_STRING_SPLIT_ESCAPE_VERTICAL_LINE.getStringStatusCode()))
                     .map(e -> new SimpleAddress(e[0], e[1]))
                     .findAny()
                     .orElseGet(null);
