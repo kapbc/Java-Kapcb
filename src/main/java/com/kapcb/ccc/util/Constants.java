@@ -22,26 +22,21 @@ public enum Constants {
     COMMON_ALICE_TXT_RESOURCES_PATH("src/main/resource/alice30.txt", "Stream PrimitiveTypeStreams Test Txt File"),
     COMMON_MENU_TXT_RESOURCES_PATH("src/main/resource/menu.txt", "Stream Menu Resources Test Txt File"),
 
-
     /**
      * Try-Catch
      */
     COMMON_TRY_CATCH_EXCEPTION_INFO("Exception Information : ", "Try Catch Exception Information"),
-
     COMMON_TRY_CATCH_EXCEPTION_MESSAGE("The Exception Message is : ", "The Exception Message To Log"),
-
 
     /**
      * Logger
      */
     COMMON_LOGGER_RESOURCE_BUNDLE("logmessage_en", "Java Program Log ResourceBundle Path"),
 
-
     /**
      * Thread Name
      */
     COMMON_THREAD_NAME_A("Thread A", "Common Thread Name A"),
-
     COMMON_THREAD_NAME_B("Thread B", "Common Thread Name B"),
 
     /**
@@ -53,39 +48,29 @@ public enum Constants {
      * Lock 8 Demonstration Common Print
      */
     COMMON_LOCK_8_PRINT_SEND_EMAIL("Send Email", "Print Send Email"),
-
     COMMON_LOCK_8_PRINT_SEND_SMS("Send SMS", "Print Send SMS"),
-
     COMMON_LOCK_8_PRINT_SAY_HELLO("Hello Kapcb!", "Print Say Hello"),
 
     /**
      * String Split Comma
      */
     COMMON_STRING_SPLIT_COMMA(", ", "Common String Split Comma"),
+    COMMON_STRING_SPLIT_VERTICAL_LINE("|", "Common String Split Vertical Line"),
+    COMMON_STRING_SPLIT_ESCAPE_VERTICAL_LINE("\\|", "Common String Split Escape Vertical Line"),
 
     /**
      * Base-Number
      */
     COMMON_NUMBER_ONE(1, "Common base number constant One"),
-
     COMMON_NUMBER_TWO(2, "Common base number constant Two"),
-
     COMMON_NUMBER_THREE(3, "Common base number constant Three"),
-
     COMMON_NUMBER_FOUR(4, "Common base number constant Four"),
-
     COMMON_NUMBER_FIVE(5, "Common base number constant Five"),
-
     COMMON_NUMBER_SIX(6, "Common base number constant Six"),
-
     COMMON_NUMBER_SEVEN(7, "Common base number constant Seven"),
-
     COMMON_NUMBER_EIGHT(8, "Common base number constant Eight"),
-
     COMMON_NUMBER_NINE(9, "Common base number constant Nine"),
-
     COMMON_NUMBER_TEN(10, "Common base number constant Ten"),
-
     COMMON_NUMBER_STEP(1234, "Common base number constant Step");
 
 
