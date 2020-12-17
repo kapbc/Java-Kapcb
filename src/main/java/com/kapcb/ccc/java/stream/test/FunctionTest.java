@@ -108,6 +108,7 @@ public class FunctionTest {
     }
 
     private static class Menu {
+
         private Integer parentId;
         private Integer nodeId;
         private String menuName;
