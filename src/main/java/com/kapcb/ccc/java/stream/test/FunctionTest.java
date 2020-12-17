@@ -1,6 +1,9 @@
 package com.kapcb.ccc.java.stream.test;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * <a>Title: FunctionTest </a>
  * <a>Author: kapcb <a>
@@ -15,12 +18,13 @@ public class FunctionTest {
     public static void main(String[] args) {
 
 
-
     }
 
     private static class SimpleId {
         private Integer firstId;
         private Integer lastId;
+        private List<SimpleId> listTo = new ArrayList<>();
+        private List<SimpleId> listFrom = new ArrayList<>();
 
         public SimpleId() {
         }
@@ -44,6 +48,22 @@ public class FunctionTest {
 
         public void setLastId(Integer lastId) {
             this.lastId = lastId;
+        }
+
+        public void addTo(SimpleId simpleId) {
+            this.listTo.add(simpleId);
+        }
+
+        public SimpleId getTo(int index) {
+            return this.listTo.get(index);
+        }
+
+        public void addFrom(SimpleId simpleId) {
+            this.listFrom.add(simpleId);
+        }
+
+        public SimpleId getFrom(int index) {
+            return listFrom.get(index);
         }
 
         @Override
