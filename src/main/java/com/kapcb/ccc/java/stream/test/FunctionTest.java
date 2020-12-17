@@ -34,9 +34,13 @@ public class FunctionTest {
         }
 
         String test = "eircccallroot@163.com,eircccallroot@yeah.net";
-        String testTwo = "eircccallroot@163.com,eircccallroot@yeah.net|chenchengcheng@163.com,eircccallroot@126.com";
-        
+        String testTwo = "eircccallroot@163.com|eircccallroot@yeah.net, chenchengcheng@163.com|eircccallroot@126.com";
 
+        Menu menu = new Menu();
+        addIntoMenu(testTwo, menu::addTo);
+        System.out.println(menu.getTo());
+        addIntoMenu(test,menu::addFrom);
+        System.out.println(menu.getFrom());
     }
 
     private static void addIntoMenu(String address, Consumer<SimpleAddress> consumer) {
@@ -50,7 +54,7 @@ public class FunctionTest {
 
     private static SimpleAddress getSimpleAddress(String ids) {
         if (ids.contains("|")) {
-            return Stream.of(ids).map(s -> s.split("|")).map(e -> new SimpleAddress(e[0], e[1])).findAny().orElseGet(null);
+            return Stream.of(ids).map(s -> s.split("\\|")).map(e -> new SimpleAddress(e[0], e[1])).findAny().orElseGet(null);
         }
         return new SimpleAddress(ids, ids);
     }
@@ -145,16 +149,16 @@ public class FunctionTest {
             this.listTo.add(simpleAddress);
         }
 
-        public SimpleAddress getTo(int index) {
-            return this.listTo.get(index);
+        public List<SimpleAddress> getTo() {
+            return this.listTo;
         }
 
         public void addFrom(SimpleAddress simpleAddress) {
             this.listFrom.add(simpleAddress);
         }
 
-        public SimpleAddress getFrom(int index) {
-            return listFrom.get(index);
+        public List<SimpleAddress> getFrom() {
+            return listFrom;
         }
 
         @Override
@@ -162,7 +166,9 @@ public class FunctionTest {
             return "Menu:[parentId= " + this.parentId
                     + " ,nodeId= " + this.nodeId +
                     ", menuName= " + this.menuName +
-                    ", order= " + this.order + " ]";
+                    ", order= " + this.order +
+                    ", listTo= " + this.listTo +
+                    ", ListFrom= " + this.listFrom + "]";
         }
     }
 }
