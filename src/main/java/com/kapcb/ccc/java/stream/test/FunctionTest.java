@@ -38,10 +38,9 @@ public class FunctionTest {
 
         Menu menu = new Menu();
         addIntoMenu(testTwo, menu::addTo);
-        System.out.println(menu.getTo());
-
+        System.out.println("menu.getTo() = " + menu.getTo());
         addIntoMenu(test, menu::addFrom);
-        System.out.println(menu.getFrom());
+        System.out.println("menu.getFrom() = " + menu.getFrom());
     }
 
     private static void addIntoMenu(String address, Consumer<SimpleAddress> consumer) {
