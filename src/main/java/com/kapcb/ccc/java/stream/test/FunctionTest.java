@@ -11,6 +11,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.stream.Stream;
 
 /**
@@ -34,22 +35,29 @@ public class FunctionTest {
 
         String test = "eircccallroot@163.com,eircccallroot@yeah.net";
         String testTwo = "eircccallroot@163.com,eircccallroot@yeah.net|chenchengcheng@163.com,eircccallroot@126.com";
-        Stream.of(testTwo).map(s -> s.split(Constants.COMMON_STRING_SPLIT_COMMA.getStringStatusCode())).flatMap(Arrays::stream).forEach();
+        
 
     }
 
-    private static SimpleAddress getSimpleId(String ids) {
+    private static void addIntoMenu(String address, Consumer<SimpleAddress> consumer) {
+        if (address.contains(Constants.COMMON_STRING_SPLIT_COMMA.getStringStatusCode())) {
+            Stream.of(address).map(s -> s.split(Constants.COMMON_STRING_SPLIT_COMMA.getStringStatusCode())).flatMap(Arrays::stream).map(FunctionTest::getSimpleAddress).forEach(consumer);
+        } else {
+            consumer.accept(getSimpleAddress(address));
+        }
+
+    }
+
+    private static SimpleAddress getSimpleAddress(String ids) {
         if (ids.contains("|")) {
             return Stream.of(ids).map(s -> s.split("|")).map(e -> new SimpleAddress(e[0], e[1])).findAny().orElseGet(null);
         }
-        new SimpleAddress()
+        return new SimpleAddress(ids, ids);
     }
 
     private static class SimpleAddress {
         private String firstAddress;
         private String lastAddress;
-        private List<SimpleAddress> listTo = new ArrayList<>();
-        private List<SimpleAddress> listFrom = new ArrayList<>();
 
         public SimpleAddress() {
         }
@@ -70,41 +78,9 @@ public class FunctionTest {
             this.lastAddress = lastAddress;
         }
 
-        public List<SimpleAddress> getListTo() {
-            return listTo;
-        }
-
-        public void setListTo(List<SimpleAddress> listTo) {
-            this.listTo = listTo;
-        }
-
-        public List<SimpleAddress> getListFrom() {
-            return listFrom;
-        }
-
-        public void setListFrom(List<SimpleAddress> listFrom) {
-            this.listFrom = listFrom;
-        }
-
         public SimpleAddress(String firstAddress, String lastAddress) {
             this.firstAddress = firstAddress;
             this.lastAddress = lastAddress;
-        }
-
-        public void addTo(SimpleAddress simpleAddress) {
-            this.listTo.add(simpleAddress);
-        }
-
-        public SimpleAddress getTo(int index) {
-            return this.listTo.get(index);
-        }
-
-        public void addFrom(SimpleAddress simpleAddress) {
-            this.listFrom.add(simpleAddress);
-        }
-
-        public SimpleAddress getFrom(int index) {
-            return listFrom.get(index);
         }
 
         @Override
@@ -118,6 +94,9 @@ public class FunctionTest {
         private Integer nodeId;
         private String menuName;
         private int order;
+
+        private List<SimpleAddress> listTo = new ArrayList<>();
+        private List<SimpleAddress> listFrom = new ArrayList<>();
 
         public Menu() {
         }
@@ -160,6 +139,22 @@ public class FunctionTest {
 
         public void setOrder(int order) {
             this.order = order;
+        }
+
+        public void addTo(SimpleAddress simpleAddress) {
+            this.listTo.add(simpleAddress);
+        }
+
+        public SimpleAddress getTo(int index) {
+            return this.listTo.get(index);
+        }
+
+        public void addFrom(SimpleAddress simpleAddress) {
+            this.listFrom.add(simpleAddress);
+        }
+
+        public SimpleAddress getFrom(int index) {
+            return listFrom.get(index);
         }
 
         @Override
