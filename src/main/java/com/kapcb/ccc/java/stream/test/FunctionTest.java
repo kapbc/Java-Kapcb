@@ -1,8 +1,17 @@
 package com.kapcb.ccc.java.stream.test;
 
 
+import com.kapcb.ccc.util.Constants;
+
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * <a>Title: FunctionTest </a>
@@ -16,59 +25,91 @@ import java.util.List;
 public class FunctionTest {
 
     public static void main(String[] args) {
+        Path path = Paths.get(Constants.COMMON_MENU_TXT_RESOURCES_PATH.getStringStatusCode());
+        try (Stream<String> lines = Files.lines(path, StandardCharsets.UTF_8);) {
+            lines.map(s -> s.split(","));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+        String test = "eircccallroot@163.com,eircccallroot@yeah.net";
+        String testTwo = "eircccallroot@163.com,eircccallroot@yeah.net|chenchengcheng@163.com,eircccallroot@126.com";
+        Stream.of(testTwo).map(s -> s.split(Constants.COMMON_STRING_SPLIT_COMMA.getStringStatusCode())).flatMap(Arrays::stream).forEach();
 
     }
 
-    private static class SimpleId {
-        private Integer firstId;
-        private Integer lastId;
-        private List<SimpleId> listTo = new ArrayList<>();
-        private List<SimpleId> listFrom = new ArrayList<>();
+    private static SimpleAddress getSimpleId(String ids) {
+        if (ids.contains("|")) {
+            return Stream.of(ids).map(s -> s.split("|")).map(e -> new SimpleAddress(e[0], e[1])).findAny().orElseGet(null);
+        }
+        new SimpleAddress()
+    }
 
-        public SimpleId() {
+    private static class SimpleAddress {
+        private String firstAddress;
+        private String lastAddress;
+        private List<SimpleAddress> listTo = new ArrayList<>();
+        private List<SimpleAddress> listFrom = new ArrayList<>();
+
+        public SimpleAddress() {
         }
 
-        public SimpleId(Integer firstId, Integer lastId) {
-            this.firstId = firstId;
-            this.lastId = lastId;
+        public String getFirstAddress() {
+            return firstAddress;
         }
 
-        public Integer getFirstId() {
-            return firstId;
+        public void setFirstAddress(String firstAddress) {
+            this.firstAddress = firstAddress;
         }
 
-        public void setFirstId(Integer firstId) {
-            this.firstId = firstId;
+        public String getLastAddress() {
+            return lastAddress;
         }
 
-        public Integer getLastId() {
-            return lastId;
+        public void setLastAddress(String lastAddress) {
+            this.lastAddress = lastAddress;
         }
 
-        public void setLastId(Integer lastId) {
-            this.lastId = lastId;
+        public List<SimpleAddress> getListTo() {
+            return listTo;
         }
 
-        public void addTo(SimpleId simpleId) {
-            this.listTo.add(simpleId);
+        public void setListTo(List<SimpleAddress> listTo) {
+            this.listTo = listTo;
         }
 
-        public SimpleId getTo(int index) {
+        public List<SimpleAddress> getListFrom() {
+            return listFrom;
+        }
+
+        public void setListFrom(List<SimpleAddress> listFrom) {
+            this.listFrom = listFrom;
+        }
+
+        public SimpleAddress(String firstAddress, String lastAddress) {
+            this.firstAddress = firstAddress;
+            this.lastAddress = lastAddress;
+        }
+
+        public void addTo(SimpleAddress simpleAddress) {
+            this.listTo.add(simpleAddress);
+        }
+
+        public SimpleAddress getTo(int index) {
             return this.listTo.get(index);
         }
 
-        public void addFrom(SimpleId simpleId) {
-            this.listFrom.add(simpleId);
+        public void addFrom(SimpleAddress simpleAddress) {
+            this.listFrom.add(simpleAddress);
         }
 
-        public SimpleId getFrom(int index) {
+        public SimpleAddress getFrom(int index) {
             return listFrom.get(index);
         }
 
         @Override
         public String toString() {
-            return "SimpleId:[ firstId= " + this.firstId + ", lastId= " + this.lastId + " ]";
+            return "SimpleAddress:[ firstAddress= " + this.firstAddress + ", lastAddress= " + this.lastAddress + " ]";
         }
     }
 
