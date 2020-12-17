@@ -39,13 +39,15 @@ public class FunctionTest {
         Menu menu = new Menu();
         addIntoMenu(testTwo, menu::addTo);
         System.out.println(menu.getTo());
+        
         addIntoMenu(test, menu::addFrom);
         System.out.println(menu.getFrom());
     }
 
     private static void addIntoMenu(String address, Consumer<SimpleAddress> consumer) {
         if (address.contains(Constants.COMMON_STRING_SPLIT_COMMA.getStringStatusCode())) {
-            Stream.of(address)
+            Stream
+                    .of(address)
                     .map(s -> s.split(Constants.COMMON_STRING_SPLIT_COMMA.getStringStatusCode()))
                     .flatMap(Arrays::stream)
                     .map(FunctionTest::getSimpleAddress)
@@ -58,7 +60,8 @@ public class FunctionTest {
 
     private static SimpleAddress getSimpleAddress(String ids) {
         if (ids.contains("|")) {
-            return Stream.of(ids)
+            return Stream
+                    .of(ids)
                     .map(s -> s.split("\\|"))
                     .map(e -> new SimpleAddress(e[0], e[1]))
                     .findAny()
