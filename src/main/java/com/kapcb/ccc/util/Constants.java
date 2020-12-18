@@ -14,13 +14,13 @@ public enum Constants {
     /**
      * Static Resources IO Path
      */
-    COMMON_STREAM_TEST_TXT_RESOURCES_PATH("src/main/resource/streamTest.txt", "Stream Optional Test Static Resources Location"),
-    COMMON_START_UP_PROPERTIES_RESOURCES_PATH("src/main/resource/start.properties", "Start Up Properties Resources Location"),
-    COMMON_PROGRAM_PROPERTIES_RESOURCES_PATH("src/main/resource/program.properties", "Program Test Resources Location"),
-    COMMON_LOG_MESSAGE_PROPERTIES_RESOURCES_PATH("src/main/resource/logmessage_en.properties", "The Log Message Properties Resources Path"),
+    COMMON_MENU_TXT_RESOURCES_PATH("src/main/resource/menu.txt", "Stream Menu Resources Test Txt File"),
     COMMON_CITY_TXT_RESOURCES_PATH("src/main/resource/cities.txt", "Stream City Test Resources Txt File"),
     COMMON_ALICE_TXT_RESOURCES_PATH("src/main/resource/alice30.txt", "Stream PrimitiveTypeStreams Test Txt File"),
-    COMMON_MENU_TXT_RESOURCES_PATH("src/main/resource/menu.txt", "Stream Menu Resources Test Txt File"),
+    COMMON_PROGRAM_PROPERTIES_RESOURCES_PATH("src/main/resource/program.properties", "Program Test Resources Location"),
+    COMMON_START_UP_PROPERTIES_RESOURCES_PATH("src/main/resource/start.properties", "Start Up Properties Resources Location"),
+    COMMON_STREAM_TEST_TXT_RESOURCES_PATH("src/main/resource/streamTest.txt", "Stream Optional Test Static Resources Location"),
+    COMMON_LOG_MESSAGE_PROPERTIES_RESOURCES_PATH("src/main/resource/logmessage_en.properties", "The Log Message Properties Resources Path"),
 
     /**
      * Try-Catch
@@ -47,8 +47,8 @@ public enum Constants {
     /**
      * Lock 8 Demonstration Common Print
      */
-    COMMON_LOCK_8_PRINT_SEND_EMAIL("Send Email", "Print Send Email"),
     COMMON_LOCK_8_PRINT_SEND_SMS("Send SMS", "Print Send SMS"),
+    COMMON_LOCK_8_PRINT_SEND_EMAIL("Send Email", "Print Send Email"),
     COMMON_LOCK_8_PRINT_SAY_HELLO("Hello Kapcb!", "Print Say Hello"),
 
     /**
