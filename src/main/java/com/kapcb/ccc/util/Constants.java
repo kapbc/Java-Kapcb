@@ -16,6 +16,7 @@ public enum Constants {
      */
     COMMON_MENU_TXT_RESOURCES_PATH("src/main/resource/menu.txt", "Stream Menu Resources Test Txt File"),
     COMMON_CITY_TXT_RESOURCES_PATH("src/main/resource/cities.txt", "Stream City Test Resources Txt File"),
+    COMMON_EMAIL_HANDLER_RESOURCES_PATH("src/main/resource/score.txt", "Email Handler Data Test Txt File"),
     COMMON_ALICE_TXT_RESOURCES_PATH("src/main/resource/alice30.txt", "Stream PrimitiveTypeStreams Test Txt File"),
     COMMON_PROGRAM_PROPERTIES_RESOURCES_PATH("src/main/resource/program.properties", "Program Test Resources Location"),
     COMMON_START_UP_PROPERTIES_RESOURCES_PATH("src/main/resource/start.properties", "Start Up Properties Resources Location"),
