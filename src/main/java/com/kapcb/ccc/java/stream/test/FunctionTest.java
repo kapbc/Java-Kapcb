@@ -41,12 +41,12 @@ public class FunctionTest {
         System.out.println("menu.getTo() = " + menu.getTo());
         addIntoMenu(test, menu::addFrom);
         System.out.println("menu.getFrom() = " + menu.getFrom());
+        
     }
 
     private static void addIntoMenu(String address, Consumer<SimpleAddress> consumer) {
         if (address.contains(Constants.COMMON_STRING_SPLIT_COMMA.getStringStatusCode())) {
-            Stream
-                    .of(address)
+            Stream.of(address)
                     .map(s -> s.split(Constants.COMMON_STRING_SPLIT_COMMA.getStringStatusCode()))
                     .flatMap(Arrays::stream)
                     .map(FunctionTest::getSimpleAddress)
