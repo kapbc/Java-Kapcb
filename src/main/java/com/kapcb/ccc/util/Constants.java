@@ -59,6 +59,19 @@ public enum Constants {
     COMMON_STRING_SPLIT_ESCAPE_VERTICAL_LINE("\\|", "Common String Split Escape Vertical Line"),
 
     /**
+     * Time Formatter Pattern
+     */
+    COMMON_TIME_FORMATTER_PATTERN_DAY("yyyy-MM-dd", "Simple Time Formatter"),
+    COMMON_TIME_FORMATTER_PATTERN_SECOND_12("yyyy-MM-dd hh:mm:ss", "LocalDateTime 12"),
+    COMMON_TIME_FORMATTER_PATTERN_SECOND_24("yyyy-MM-dd HH:mm:ss", "LocalDateTime 24"),
+    COMMON_TIME_FORMATTER_PATTERN_SECOND_12AP("yyyy-MM-dd hh:mm:ss a", "LocalDateTime 12 am and pm"),
+    COMMON_TIME_FORMATTER_PATTERN_SECOND_24AP("yyyy-MM-dd HH:mm:ss a", "LocalDateTime 24 am and pm"),
+    COMMON_TIME_FORMATTER_PATTERN_SECOND_NANO_12("yyyy-MM-dd hh:mm:ss:SSS", "LocalDateTime 12 Nano"),
+    COMMON_TIME_FORMATTER_PATTERN_SECOND_NANO_24("yyyy-MM-dd HH:mm:ss:SSS", "LocalDateTime 24 Nano"),
+    COMMON_TIME_FORMATTER_PATTERN_SECOND_NANO_12AP("yyyy-MM-dd hh:mm:ss:SSS a", "LocalDateTime 12 Nano am and pm"),
+    COMMON_TIME_FORMATTER_PATTERN_SECOND_NANO_24AP("yyyy-MM-dd hh:mm:ss:SSS a", "LocalDateTime 24 Nano am and pm"),
+
+    /**
      * Base-Number
      */
     COMMON_NUMBER_ONE(1, "Common base number constant One"),
