@@ -54,11 +54,14 @@ public class EmailHandler {
                             Integer.valueOf(s[6]),
                             LocalDateTime.parse(s[7], dateTimeFormatter)));
 
-            List<String> result = userScoreStream
-                    .filter(s -> isUpdateLastWeek(s.getLastUpdateDate()))
-                    .filter(s -> isPositiveIntegralScore(s.getPrevWeekAddPoint(), s.getPrevWeekConsumerPoint()))
-                    .map(UserScore::getFirstName)
-                    .collect(Collectors.toList());
+//            List<String> result = userScoreStream
+//                    .filter(s -> isUpdateLastWeek(s.getLastUpdateDate()))
+//                    .filter(s -> isPositiveIntegralScore(s.getPrevWeekAddPoint(), s.getPrevWeekConsumerPoint()))
+//                    .map(UserScore::getFirstName)
+//                    .collect(Collectors.toList());
+
+            List<Long> result = userScoreStream.filter(s -> isUpdateLastWeek(s.getLastUpdateDate())).filter(s -> isPositiveIntegralScore(s.getPrevWeekAddPoint(), s.getPrevWeekConsumerPoint()))
+                    .map(s -> convertIdWithSuffix(s.getUserId(), "400")).collect(Collectors.toList());
 
             logger.log(Level.INFO, "The Result That Should Be Send Email: " + result);
         } catch (IOException e) {
@@ -74,7 +77,7 @@ public class EmailHandler {
      * @param target String
      * @return long
      */
-    private long convertIdWithSuffix(long id, String target) {
+    private static long convertIdWithSuffix(long id, String target) {
         if (id < 0L) {
             return 0L;
         }
