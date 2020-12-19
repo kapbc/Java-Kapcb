@@ -75,7 +75,6 @@ public class DateUtil {
 
     public static void main(String[] args) {
         LocalDate now = LocalDate.now();
-        System.out.println("now = " + now);
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(Constants.COMMON_TIME_FORMATTER_PATTERN_DAY.getStringStatusCode());
         String format = dateTimeFormatter.format(now);
         PrintUtil.print("The Current Time is: {0}\n", format);
