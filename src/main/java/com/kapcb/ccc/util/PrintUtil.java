@@ -30,19 +30,21 @@ public class PrintUtil {
     private static String getDataTypePlaceholder(String name) {
         String operation = null;
         switch (name) {
-            case "Double":
             case "Float":
+            case "Double":
                 operation = "%f";
                 break;
-            case "Integer":
-            case "Short":
             case "Byte":
+            case "Short":
+            case "Integer":
             case "Long":
                 operation = "%d";
                 break;
             case "Boolean":
                 operation = "%b";
                 break;
+            case "String":
+                operation = "%s";
             default:
                 break;
         }
