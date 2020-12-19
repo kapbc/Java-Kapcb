@@ -29,12 +29,12 @@ public class Turtle {
     public static void main(String[] args) {
         PrintStream out = System.out;
         Turtle kapcb = new Turtle("kapcb", new Formatter(out));
-        Turtle ccc = new Turtle("ccc", new Formatter(out));
+        Turtle ccccc = new Turtle("ccccc", new Formatter(out));
         kapcb.move(0, 0);
-        ccc.move(4, 8);
+        ccccc.move(4, 8);
         kapcb.move(3, 4);
-        ccc.move(2, 5);
+        ccccc.move(2, 5);
         kapcb.move(3, 3);
-        ccc.move(3, 3);
+        ccccc.move(3, 3);
     }
 }
