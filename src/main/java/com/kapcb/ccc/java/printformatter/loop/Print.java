@@ -1,4 +1,4 @@
-package com.kapcb.ccc.java.loop;
+package com.kapcb.ccc.java.printformatter.loop;
 
 /**
  * <a>Title: Print </a>

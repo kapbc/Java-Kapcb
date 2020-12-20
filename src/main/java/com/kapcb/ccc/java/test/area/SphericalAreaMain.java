@@ -1,4 +1,4 @@
-package com.kapcb.ccc.java.area;
+package com.kapcb.ccc.java.test.area;
 
 import java.util.Scanner;
 

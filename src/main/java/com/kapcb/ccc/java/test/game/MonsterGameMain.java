@@ -1,4 +1,4 @@
-package com.kapcb.ccc.java.game;
+package com.kapcb.ccc.java.test.game;
 
 /**
  * <a>Title:MonsterGameMain</a>

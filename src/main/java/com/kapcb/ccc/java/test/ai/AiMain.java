@@ -1,4 +1,4 @@
-package com.kapcb.ccc.java.ai;
+package com.kapcb.ccc.java.test.ai;
 
 import java.util.Scanner;
 
