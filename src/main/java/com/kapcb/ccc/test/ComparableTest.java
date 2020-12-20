@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.stream.Stream;
 
 /**
- * <a>Title: Student </a>
+ * <a>Title: ComparableTest </a>
  * <a>Author: kapcb <a>
  * <a>Description: <a>
  *
@@ -12,7 +12,7 @@ import java.util.stream.Stream;
  * @version 1.0.0
  * @date 2020/12/19 - 17:05
  */
-public class TestComparable {
+public class ComparableTest {
 
     public static void main(String[] args) {
         Student[] students = {
