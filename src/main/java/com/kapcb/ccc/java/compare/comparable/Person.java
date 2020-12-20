@@ -1,4 +1,4 @@
-package com.kapcb.ccc.java.comparable;
+package com.kapcb.ccc.java.compare.comparable;
 
 import java.time.LocalDateTime;
 

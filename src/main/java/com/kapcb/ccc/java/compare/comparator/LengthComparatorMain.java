@@ -1,4 +1,4 @@
-package com.kapcb.ccc.java.comparator;
+package com.kapcb.ccc.java.compare.comparator;
 
 /**
  * @author kapcb

@@ -1,4 +1,4 @@
-package com.kapcb.ccc.java.comparable;
+package com.kapcb.ccc.java.compare.comparable;
 
 import com.kapcb.ccc.util.Constants;
 
@@ -9,7 +9,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
