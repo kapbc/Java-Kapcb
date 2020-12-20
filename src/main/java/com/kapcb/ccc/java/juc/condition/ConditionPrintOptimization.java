@@ -43,21 +43,33 @@ public class ConditionPrintOptimization {
     private static class PrintMachine {
 
         private static int machineIndex = 1;
-        private Lock lock = new ReentrantLock();
-        private Condition conditionForFive = lock.newCondition();
-        private Condition conditionForTen = lock.newCondition();
-        private Condition conditionForFifteen = lock.newCondition();
+        private final Lock lock = new ReentrantLock();
+        private final Condition conditionForFive = lock.newCondition();
+        private final Condition conditionForTen = lock.newCondition();
+        private final Condition conditionForFifteen = lock.newCondition();
 
         public void printForFive() {
-            print(5, conditionForFive, conditionForTen, Constants.COMMON_NUMBER_ONE.getNumberStatusCode(), Constants.COMMON_NUMBER_TWO.getNumberStatusCode());
+            print(5,
+                    conditionForFive,
+                    conditionForTen,
+                    Constants.COMMON_NUMBER_ONE.getNumberStatusCode(),
+                    Constants.COMMON_NUMBER_TWO.getNumberStatusCode());
         }
 
         public void printForTen() {
-            print(10, conditionForTen, conditionForFifteen, Constants.COMMON_NUMBER_TWO.getNumberStatusCode(), Constants.COMMON_NUMBER_THREE.getNumberStatusCode());
+            print(10,
+                    conditionForTen,
+                    conditionForFifteen,
+                    Constants.COMMON_NUMBER_TWO.getNumberStatusCode(),
+                    Constants.COMMON_NUMBER_THREE.getNumberStatusCode());
         }
 
         public void printFifteen() {
-            print(15, conditionForFifteen, conditionForFive, Constants.COMMON_NUMBER_THREE.getNumberStatusCode(), Constants.COMMON_NUMBER_ONE.getNumberStatusCode());
+            print(15,
+                    conditionForFifteen,
+                    conditionForFive,
+                    Constants.COMMON_NUMBER_THREE.getNumberStatusCode(),
+                    Constants.COMMON_NUMBER_ONE.getNumberStatusCode());
         }
 
         private void print(int count, Condition conditionForHold, Condition conditionForSignal, int currentIndex, int signalIndex) {
@@ -68,13 +80,16 @@ public class ConditionPrintOptimization {
                     conditionForHold.await();
                 }
                 for (int i = count; i > 0; i--) {
-                    System.out.println("The Machine: " + Thread.currentThread().getName() + " Has been print: " + Constants.COMMON_SYSTEM_OUT_PRINTLN_STRING.getStringStatusCode() + " for: " + (frequency - i + 1) + " frequency");
+                    System.out.println("The Machine: " + Thread.currentThread().getName() +
+                            " Has been print: " + Constants.COMMON_SYSTEM_OUT_PRINTLN_STRING.getStringStatusCode() +
+                            " for: " + (frequency - i + 1) + " frequency");
                 }
                 machineIndex = signalIndex;
                 conditionForSignal.signalAll();
             } catch (InterruptedException e) {
                 logger.log(Level.WARNING,
-                        Constants.COMMON_TRY_CATCH_EXCEPTION_INFO.getStringStatusCode() + e + Constants.COMMON_TRY_CATCH_EXCEPTION_MESSAGE + e.getMessage());
+                        Constants.COMMON_TRY_CATCH_EXCEPTION_INFO.getStringStatusCode() + e +
+                                Constants.COMMON_TRY_CATCH_EXCEPTION_MESSAGE + e.getMessage());
                 e.printStackTrace();
             } finally {
                 lock.unlock();
