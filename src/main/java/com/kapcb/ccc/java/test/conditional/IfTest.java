@@ -1,4 +1,4 @@
-package com.kapcb.ccc.java.conditional;
+package com.kapcb.ccc.java.test.conditional;
 
 
 /**

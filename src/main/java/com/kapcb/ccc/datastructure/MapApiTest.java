@@ -2,7 +2,6 @@ package com.kapcb.ccc.datastructure;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.BiFunction;
 
 /**
  * <a>Title: MapApiTest </a>
@@ -27,12 +26,7 @@ public class MapApiTest {
             System.out.println("k: " + k + ", v: " + v);
         });
 
-        map.merge("type", "ccc", new BiFunction<String, String, String>() {
-            @Override
-            public String apply(String o, String o2) {
-                return o = o2;
-            }
-        });
+        map.merge("type", "ccc", (o, o2) -> o = o2);
 
         map.forEach((k, v) -> {
             System.out.println("k: " + k + ", v: " + v);
