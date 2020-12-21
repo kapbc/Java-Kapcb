@@ -69,4 +69,14 @@ public class Person {
     public void setFlag(String flag) {
         this.flag = flag;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", flag='" + flag + '\'' +
+                '}';
+    }
 }
