@@ -47,6 +47,18 @@ public class Person {
         this.flag = flag;
     }
 
+    public void eat() {
+        System.out.println("Come into eat...");
+    }
+
+    public void eat(String food) {
+        System.out.println("Come into eat " + food);
+    }
+
+    public void eat(Integer weight) {
+        System.out.println("Come into eat " + weight + " weight");
+    }
+
     public String getUsername() {
         return username;
     }
