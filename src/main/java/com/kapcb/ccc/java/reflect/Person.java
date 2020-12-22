@@ -31,6 +31,15 @@ public class Person {
     public Person() {
     }
 
+    /**
+     * 单个参数的构造函数，且为私有构造方法
+     *
+     * @param username String
+     */
+    private Person(String username) {
+        this.username = username;
+    }
+
     public Person(String username, String password, String email, String flag) {
         this.username = username;
         this.password = password;
