@@ -27,7 +27,7 @@ public class LazyInnerClassSingleton {
      *
      * @return LazyInnerClassSingleton
      */
-    private static final LazyInnerClassSingleton getInstance() {
+    public static final LazyInnerClassSingleton getInstance() {
         return LazyHolder.LAZY_INNER_CLASS_SINGLETON;
     }
 

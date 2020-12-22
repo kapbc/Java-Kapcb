@@ -18,7 +18,7 @@ public class LazyInnerClassSafeSingleton {
         }
     }
 
-    private static final LazyInnerClassSafeSingleton getInstance() {
+    public static final LazyInnerClassSafeSingleton getInstance() {
         return LazyHolder.LAZY_INNER_CLASS_SAFE_SINGLETON;
     }
 
