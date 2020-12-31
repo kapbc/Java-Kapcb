@@ -1,9 +1,5 @@
 package com.kapcb.ccc.java.reflect.tdd;
 
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,15 +14,17 @@ import java.util.Map;
  */
 public class ReflectForResultMap {
 
-   
+    public static void main(String[] args) throws Exception {
 
-    private static String parseSetMethodName(String fieldName) {
-        if (fieldName == null || "".equals(fieldName)) {
-            return null;
-        }
-        StringBuilder set = new StringBuilder("set");
-        set.append(Character.toUpperCase(fieldName.charAt(0)));
-        set.append(fieldName.substring(1));
-        return set.toString();
+        Map<String, String> resultMap = new HashMap<>(10);
+        resultMap.put("user_name", "kapcb");
+        resultMap.put("pass_word", "123456");
+        resultMap.put("l_upd_date", "2020-11-21 14:41:06:612");
+
+        ResultMapping<Person> personResultMapping = new ResultMapping<>(Person.class);
+        Person person = personResultMapping.resultMapper(resultMap);
+        System.out.println("person = " + person);
+
     }
+
 }
