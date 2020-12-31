@@ -1,6 +1,8 @@
 package com.kapcb.ccc.java.reflect.tdd;
 
 
+import java.time.LocalDateTime;
+
 /**
  * <a>Title: Person </a>
  * <a>Author: kapcb <a>
@@ -18,12 +20,16 @@ public class Person {
     @Column(name = "pass_word")
     private String password;
 
+    @Column(name = "l_upd_date")
+    private LocalDateTime lastUpdateDate;
+
     public Person() {
     }
 
-    public Person(String username, String password) {
+    public Person(String username, String password, LocalDateTime lastUpdateDate) {
         this.username = username;
         this.password = password;
+        this.lastUpdateDate = lastUpdateDate;
     }
 
     public String getUsername() {
@@ -42,11 +48,20 @@ public class Person {
         this.password = password;
     }
 
+    public LocalDateTime getLastUpdateDate() {
+        return lastUpdateDate;
+    }
+
+    public void setLastUpdateDate(LocalDateTime lastUpdateDate) {
+        this.lastUpdateDate = lastUpdateDate;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", lastUpdateDate=" + lastUpdateDate +
                 '}';
     }
 }
