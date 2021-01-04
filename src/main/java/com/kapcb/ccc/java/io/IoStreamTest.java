@@ -2,12 +2,15 @@ package com.kapcb.ccc.java.io;
 
 
 import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 
 /**
  * <a>Title: InputStreamTest </a>
@@ -38,6 +41,16 @@ public class IoStreamTest {
             Double salary = 7500.00;
             printWriter.println(name);
             printWriter.println(salary);
+
+            FileInputStream fileInputStream = new FileInputStream("src/main/resource/dat/out.txt");
+            while (fileInputStream.read() != -1) {
+                System.out.println("fileInputStream.read() = " + fileInputStream.read());
+            }
+
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream("src/main/resource/dat/out.txt"), StandardCharsets.UTF_8));
+            while (bufferedReader.readLine() != null) {
+                System.out.println("bufferedReader.read() = " + bufferedReader.readLine());
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
