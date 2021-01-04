@@ -105,7 +105,7 @@ public class FileListUtil {
         return map;
     }
 
-    public static int getPackageHierarchy(String location) {
+    private static int getPackageHierarchy(String location) {
         return (location.split(ILLEGAL_CHARACTERS_REPLACEMENT).length - 1);
     }
 }
