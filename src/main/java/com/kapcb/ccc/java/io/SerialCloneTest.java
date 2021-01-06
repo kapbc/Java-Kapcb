@@ -1,6 +1,5 @@
 package com.kapcb.ccc.java.io;
 
-import java.time.LocalDate;
 
 /**
  * <a>Title: SerialCloneTest </a>
