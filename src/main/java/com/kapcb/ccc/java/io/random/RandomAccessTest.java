@@ -1,5 +1,7 @@
-package com.kapcb.ccc.java.io;
+package com.kapcb.ccc.java.io.random;
 
+import com.kapcb.ccc.java.io.FixedDataIo;
+import com.kapcb.ccc.java.io.bean.Person;
 import com.kapcb.ccc.util.Constants;
 
 import java.io.DataOutputStream;

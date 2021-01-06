@@ -1,4 +1,4 @@
-package com.kapcb.ccc.java.io;
+package com.kapcb.ccc.java.io.zip;
 
 import java.io.FileInputStream;
 import java.io.IOException;

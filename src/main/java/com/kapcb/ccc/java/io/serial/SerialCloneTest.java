@@ -1,5 +1,7 @@
-package com.kapcb.ccc.java.io;
+package com.kapcb.ccc.java.io.serial;
 
+
+import com.kapcb.ccc.java.io.bean.Employee;
 
 /**
  * <a>Title: SerialCloneTest </a>

@@ -1,4 +1,4 @@
-package com.kapcb.ccc.java.io;
+package com.kapcb.ccc.java.io.bean;
 
 import java.time.LocalDateTime;
 

@@ -1,4 +1,6 @@
-package com.kapcb.ccc.java.io;
+package com.kapcb.ccc.java.io.bean;
+
+import com.kapcb.ccc.java.io.serial.SerialCloneable;
 
 import java.time.LocalDate;
 

@@ -1,4 +1,4 @@
-package com.kapcb.ccc.java.io;
+package com.kapcb.ccc.java.io.serial;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

@@ -1,5 +1,6 @@
-package com.kapcb.ccc.java.io;
+package com.kapcb.ccc.java.io.charstream;
 
+import com.kapcb.ccc.java.io.bean.Person;
 import com.kapcb.ccc.util.Constants;
 
 import java.io.FileInputStream;

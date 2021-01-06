@@ -1,4 +1,7 @@
-package com.kapcb.ccc.java.io;
+package com.kapcb.ccc.java.io.objectstream;
+
+import com.kapcb.ccc.java.io.bean.Employee;
+import com.kapcb.ccc.java.io.bean.Manager;
 
 import java.io.File;
 import java.io.FileInputStream;
