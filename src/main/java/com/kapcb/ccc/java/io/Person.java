@@ -13,6 +13,9 @@ import java.time.LocalDateTime;
  */
 public class Person {
 
+    public static final int NAME_SIZE = 40;
+    public static final int RECORD_SIZE = 2 * NAME_SIZE + 8 + 4 + 4 + 4;
+
     private String name;
     private String email;
     private int age;
