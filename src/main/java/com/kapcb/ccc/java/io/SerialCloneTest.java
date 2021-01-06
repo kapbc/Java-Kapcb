@@ -14,7 +14,7 @@ import java.time.LocalDate;
 public class SerialCloneTest {
 
     public static void main(String[] args) throws CloneNotSupportedException {
-        Employee kapcb = new Employee("kapcb", 2000, LocalDate.now());
+        Employee kapcb = new Employee("kapcb", 2000, 2020, 01, 23);
         Employee clone = (Employee) kapcb.clone();
 
         kapcb.raiseSalary(10);
