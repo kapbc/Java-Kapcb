@@ -20,10 +20,10 @@ public class Employee extends SerialCloneable {
     public Employee() {
     }
 
-    public Employee(String name, double salary, LocalDate hireDay) {
+    public Employee(String name, double salary, int year, int month, int day) {
         this.name = name;
         this.salary = salary;
-        this.hireDay = hireDay;
+        this.hireDay = LocalDate.of(year, month, day);
     }
 
     public String getName() {
