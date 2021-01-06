@@ -11,7 +11,7 @@ import java.time.LocalDate;
  * @version 1.0.0
  * @date 2021/1/6-14:20
  */
-public class Employee {
+public class Employee extends SerialCloneable {
 
     private String name;
     private double salary;
