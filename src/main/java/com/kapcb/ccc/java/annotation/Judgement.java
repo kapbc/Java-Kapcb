@@ -24,7 +24,15 @@ public class Judgement<T> {
         this.clazz = clazz;
     }
 
-    public void judgement(T data) throws InvocationTargetException, IllegalAccessException {
+    public void valid(T data) {
+        try {
+            judgement(data);
+        } catch (IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void judgement(T data) throws InvocationTargetException, IllegalAccessException {
         T bean = null;
         Field[] fields = clazz.getDeclaredFields();
         if (fields.length >= 1) {
@@ -55,25 +63,28 @@ public class Judgement<T> {
                         }
                     }
                 }
-                validateData(fieldName, Objects.requireNonNull(getMethod), data);
+                validateData(fieldName, Objects.requireNonNull(getMethod), data, clazz.getSimpleName());
             }
         }
     }
 
-    private void validateData(String fieldName, Method getMethod, T data) throws InvocationTargetException, IllegalAccessException {
+    private void validateData(String fieldName, Method getMethod, T data, String className) throws InvocationTargetException, IllegalAccessException {
         if (Objects.equals(null, getMethod.invoke(data))) {
-            throw new IllegalArgumentException("The Column of " + fieldName + " is required not null. Please get the right arguments!");
+            StringBuilder exceptionMessage = new StringBuilder();
+            exceptionMessage.append("The column ").append(fieldName);
+            exceptionMessage.append(" of the ").append(className);
+            exceptionMessage.append(" Bean is required not null. Please get the right arguments injection!").append("\n");
+            exceptionMessage.append(" Please check the program where the property ' " + fieldName + " ' is injected for " + className + " Bean !");
+            throw new IllegalArgumentException(exceptionMessage.toString());
         }
     }
 
     private String getSetMethodName(String fieldName) {
-        System.out.println("fieldName = " + fieldName);
         StringBuilder sb = new StringBuilder();
         if (fieldName != null && fieldName.length() > 0) {
             sb.append("get");
             sb.append(Character.toUpperCase(fieldName.charAt(0)));
             sb.append(fieldName.substring(1));
-            System.out.println("sb = " + sb.toString());
         }
         return sb.toString();
     }
