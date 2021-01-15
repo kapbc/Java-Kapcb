@@ -23,7 +23,7 @@ public class BeanValidation<T> {
 
     private static final String GET_SIGNATURE = "get";
 
-    private Class<? extends T> clazz;
+    private final Class<? extends T> clazz;
 
     public BeanValidation(Class<? extends T> clazz) {
         this.clazz = clazz;
@@ -38,6 +38,7 @@ public class BeanValidation<T> {
     }
 
     private void process(T data) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+
         Field[] declaredFields = clazz.getDeclaredFields();
         for (Field declaredField : declaredFields) {
             boolean flag = false;
@@ -72,7 +73,8 @@ public class BeanValidation<T> {
             exceptionMessage.append(" of the ").append(beanName);
             exceptionMessage.append(" Bean is required not null. ");
             exceptionMessage.append("Please get the right arguments injection!").append("\n");
-            exceptionMessage.append("Please check the program where the property ' " + fieldName + " ' is injected for " + beanName + " Bean !");
+            exceptionMessage.append("Please check the program where the property ' ").append(fieldName);
+            exceptionMessage.append(" ' is injected for ").append(beanName).append(" Bean !");
             throw new IllegalArgumentException(exceptionMessage.toString());
         }
     }

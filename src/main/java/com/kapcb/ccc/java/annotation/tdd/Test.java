@@ -4,6 +4,7 @@ import com.kapcb.ccc.java.annotation.bean.BeanValidation;
 import com.kapcb.ccc.java.annotation.bean.Judgement;
 import com.kapcb.ccc.java.annotation.bean.Person;
 
+import java.lang.annotation.Annotation;
 import java.time.LocalDateTime;
 
 /**
@@ -25,9 +26,10 @@ public class Test {
         person.setAge(null);
         person.setUserId(123456L);
         person.setBirthday(LocalDateTime.now());
-        Judgement<Person> personJudgement = new Judgement<>(Person.class);
-        personJudgement.valid(person);
+//        Judgement<Person> personJudgement = new Judgement<>(Person.class);
+//        personJudgement.valid(person);
 
-        //new BeanValidation<>(Person.class).validate(person);
+        new BeanValidation<>(Person.class).validate(person);
+
     }
 }
