@@ -1,6 +1,5 @@
 package com.kapcb.ccc.java.annotation;
 
-import java.lang.reflect.InvocationTargetException;
 import java.time.LocalDateTime;
 
 /**
@@ -18,17 +17,11 @@ public class Test {
 
         Person person = new Person();
         person.setUsername("kapcb");
-        person.setPassword("123456");
+        person.setPassword(null);
         person.setAge(null);
         person.setUserId(123456L);
         person.setBirthday(LocalDateTime.now());
         Judgement<Person> personJudgement = new Judgement<>(Person.class);
-        try {
-            personJudgement.judgement(person);
-        } catch (InvocationTargetException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
-
-
+        personJudgement.valid(person);
     }
 }
