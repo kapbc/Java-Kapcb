@@ -15,18 +15,18 @@ import java.time.LocalDateTime;
  */
 public class Person {
 
-    @Nullable(value = true)
+    @Nullable
     private Long userId;
 
-    @Nullable(value = true)
+    @Nullable
     private String username;
 
-    @Nullable(value = true)
+    @Nullable
     private String password;
 
+    @Nullable
     private Integer age;
 
-    @Nullable(value = true)
     private LocalDateTime birthday;
 
     public Person() {

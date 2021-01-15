@@ -20,6 +20,6 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Nullable {
 
-    boolean value() default false;
+    boolean value() default true;
 
 }

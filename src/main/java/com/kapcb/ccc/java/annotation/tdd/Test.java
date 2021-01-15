@@ -1,5 +1,6 @@
 package com.kapcb.ccc.java.annotation.tdd;
 
+import com.kapcb.ccc.java.annotation.bean.BeanValidation;
 import com.kapcb.ccc.java.annotation.bean.Judgement;
 import com.kapcb.ccc.java.annotation.bean.Person;
 
@@ -20,11 +21,13 @@ public class Test {
 
         Person person = new Person();
         person.setUsername("kapcb");
-        person.setPassword(null);
+        person.setPassword("123456");
         person.setAge(null);
         person.setUserId(123456L);
         person.setBirthday(LocalDateTime.now());
         Judgement<Person> personJudgement = new Judgement<>(Person.class);
         personJudgement.valid(person);
+
+        //new BeanValidation<>(Person.class).validate(person);
     }
 }
