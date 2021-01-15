@@ -1,4 +1,6 @@
-package com.kapcb.ccc.java.annotation;
+package com.kapcb.ccc.java.annotation.bean;
+
+import com.kapcb.ccc.java.annotation.Nullable;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;

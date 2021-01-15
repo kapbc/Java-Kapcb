@@ -1,4 +1,7 @@
-package com.kapcb.ccc.java.annotation;
+package com.kapcb.ccc.java.annotation.tdd;
+
+import com.kapcb.ccc.java.annotation.bean.Judgement;
+import com.kapcb.ccc.java.annotation.bean.Person;
 
 import java.time.LocalDateTime;
 
