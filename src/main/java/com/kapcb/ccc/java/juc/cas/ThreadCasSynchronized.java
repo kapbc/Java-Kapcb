@@ -3,7 +3,7 @@ package com.kapcb.ccc.java.juc.cas;
 import java.util.concurrent.TimeUnit;
 
 /**
- * <a>Title: ThreadCasSynchornized </a>
+ * <a>Title: ThreadCasSynchronized </a>
  * <a>Author: kapcb <a>
  * <a>Description：<a>
  *
