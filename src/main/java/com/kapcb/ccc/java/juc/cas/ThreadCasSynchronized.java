@@ -24,6 +24,9 @@ public class ThreadCasSynchronized {
                     e.printStackTrace();
                 }
                 for (int j = 0; j < 100; j++) {
+                    /**
+                     * 增加 synchronized 同步锁, count 自增变成原子性操作, 最终输出与期望值一样为 200
+                     */
                     synchronized (ThreadCasSynchronized.class) {
                         count++;
                     }
