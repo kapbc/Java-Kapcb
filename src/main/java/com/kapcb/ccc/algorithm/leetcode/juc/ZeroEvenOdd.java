@@ -38,21 +38,15 @@ public class ZeroEvenOdd {
         System.out.println("abs = " + count);
 
         new Thread(() -> {
-            for (int i = 0; i < printNumber; i++) {
-                print.Zero();
-            }
+            print.Zero();
         }).start();
 
         new Thread(() -> {
-            for (int i = 0; i < printNumber - count; i++) {
-                print.Even();
-            }
+            print.Even();
         }).start();
 
         new Thread(() -> {
-            for (int i = 0; i < count; i++) {
-                print.Odd();
-            }
+            print.Odd();
         }).start();
 
         try {
@@ -66,6 +60,8 @@ public class ZeroEvenOdd {
     }
 
     private static class Print {
+        int printNumber = 5;
+        int temp = printNumber / 2;
         private volatile String result = "";
         private volatile static int count = 1;
         private final AtomicBoolean atomicBoolean = new AtomicBoolean(true);
@@ -76,57 +72,63 @@ public class ZeroEvenOdd {
         private final Condition conditionOdd = lock.newCondition();
 
         public void Zero() {
-            lock.lock();
-            try {
-                while (count != 1) {
-                    conditionZero.await();
+            for (int i = 0; i < printNumber; i++) {
+                lock.lock();
+                try {
+                    while (count != 1) {
+                        conditionZero.await();
+                    }
+                    result += "0";
+                    if (atomicBoolean.compareAndSet(true, false)) {
+                        count = 2;
+                        conditionEven.signalAll();
+                        atomicBoolean.set(false);
+                    } else {
+                        count = 3;
+                        conditionOdd.signalAll();
+                        atomicBoolean.set(true);
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } finally {
+                    lock.unlock();
                 }
-                result += "0";
-                if (atomicBoolean.compareAndSet(true, false)) {
-                    count = 2;
-                    conditionEven.signalAll();
-                    atomicBoolean.set(false);
-                } else {
-                    count = 3;
-                    conditionOdd.signalAll();
-                    atomicBoolean.set(true);
-                }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } finally {
-                lock.unlock();
             }
         }
 
         public void Even() {
-            lock.lock();
-            try {
-                while (count != 2) {
-                    conditionEven.await();
+            for (int i = 0; i < printNumber - temp; i++) {
+                lock.lock();
+                try {
+                    while (count != 2) {
+                        conditionEven.await();
+                    }
+                    result += atomicInteger.incrementAndGet();
+                    count = 1;
+                    conditionZero.signalAll();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } finally {
+                    lock.unlock();
                 }
-                result += atomicInteger.incrementAndGet();
-                count = 1;
-                conditionZero.signalAll();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } finally {
-                lock.unlock();
             }
         }
 
         public void Odd() {
-            lock.lock();
-            try {
-                while (count != 3) {
-                    conditionOdd.await();
+            for (int i = 0; i < temp; i++) {
+                lock.lock();
+                try {
+                    while (count != 3) {
+                        conditionOdd.await();
+                    }
+                    result += atomicInteger.incrementAndGet();
+                    count = 1;
+                    conditionZero.signalAll();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } finally {
+                    lock.unlock();
                 }
-                result += atomicInteger.incrementAndGet();
-                count = 1;
-                conditionZero.signalAll();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } finally {
-                lock.unlock();
             }
         }
 
