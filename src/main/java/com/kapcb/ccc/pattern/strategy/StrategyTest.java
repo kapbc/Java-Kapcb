@@ -17,5 +17,9 @@ public class StrategyTest {
 
         couponActivity.execute();
         cashbackActivity.execute();
+        
+        String promotionKey = "COUPON";
+        PromotionActivity promotionActivity = new PromotionActivity(PromotionStrategyFactory.getPromotionStrategy(promotionKey));
+        promotionActivity.execute();
     }
 }
