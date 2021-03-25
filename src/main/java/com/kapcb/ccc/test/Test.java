@@ -4,13 +4,18 @@ import com.kapcb.ccc.java.tos.Employee;
 import com.kapcb.ccc.util.Constants;
 
 import java.io.File;
+import java.text.Collator;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.Optional;
@@ -85,5 +90,18 @@ public class Test {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd");
         String format5 = simpleDateFormat.format(date);
         System.out.println("format5 = " + format5);
+
+        String[] array = {"Work", "Rechargeable", "mergency"};
+        List<String> strings = Arrays.asList(array);
+
+        /**
+         * 根据字母 A B C D 顺序进行排序
+         */
+        Comparator comparator = Collator.getInstance(Locale.ENGLISH);
+        Collections.sort(strings, (String object1, String object2) -> {
+            return comparator.compare(object1, object2);
+        });
+        System.out.println("strings = " + strings);
+
     }
 }
