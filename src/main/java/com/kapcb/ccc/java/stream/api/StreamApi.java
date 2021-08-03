@@ -23,17 +23,19 @@ import java.util.stream.Collectors;
  * @date 2020/12/8 - 20:38
  */
 public class StreamApi {
+
     private static final Logger logger = Logger.getLogger(String.valueOf(StreamApi.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
-    public static void main(String[] args) {
-        List<Employee> employees = new ArrayList<>();
-        employees.add(new Employee("kapcb", 5000, 1997, 03, 11));
-        employees.add(new Employee("ccccc", 4000, 1998, 04, 13));
-        employees.add(new Employee("eeeee", 3000, 1999, 05, 15));
-        employees.add(new Employee("bbbbb", 2000, 1996, 06, 17));
-        employees.add(new Employee("aaaaa", 2500, 1995, 06, 23));
-        employees.add(new Employee("ddddd", 1000, 1994, 07, 12));
+    private static final List<Employee> EMPLOYEES = new ArrayList<Employee>() {{
+        add(new Employee("kapcb", 5000, 1997, 03, 11));
+        add(new Employee("ccccc", 4000, 1998, 04, 13));
+        add(new Employee("eeeee", 3000, 1999, 05, 15));
+        add(new Employee("bbbbb", 2000, 1996, 06, 17));
+        add(new Employee("aaaaa", 2500, 1995, 06, 23));
+        add(new Employee("ddddd", 1000, 1994, 07, 12));
+    }};
 
+    public static void main(String[] args) {
 
         /**
          * filter
@@ -59,52 +61,52 @@ public class StreamApi {
          * limit
          */
         System.out.println("-------------limit-------------");
-        employees.stream().filter(element -> element.getSalary() >= 3000).limit(1).map(Employee::getName).collect(Collectors.toCollection(HashSet::new)).forEach(System.out::println);
+        EMPLOYEES.stream().filter(element -> element.getSalary() >= 3000).limit(1).map(Employee::getName).collect(Collectors.toCollection(HashSet::new)).forEach(System.out::println);
 
         /**
          * map
          */
         System.out.println("-------------map-------------");
-        employees.stream().filter(element -> element.getSalary() <= 2000).map(Employee::getName).map(String::toUpperCase).collect(Collectors.toCollection(ArrayList::new)).forEach(System.out::println);
+        EMPLOYEES.stream().filter(element -> element.getSalary() <= 2000).map(Employee::getName).map(String::toUpperCase).collect(Collectors.toCollection(ArrayList::new)).forEach(System.out::println);
 
         /**
          * flatMap
          */
         System.out.println("-------------flatMap-------------");
-        employees.stream().filter(element -> element.getSalary() > 2000).map(Employee::getName).map(element -> element.split("")).distinct().flatMap(Arrays::stream).collect(Collectors.toCollection(TreeSet::new)).forEach(System.out::println);
+        EMPLOYEES.stream().filter(element -> element.getSalary() > 2000).map(Employee::getName).map(element -> element.split("")).distinct().flatMap(Arrays::stream).collect(Collectors.toCollection(TreeSet::new)).forEach(System.out::println);
 
         /**
          * anyMatch
          */
         System.out.println("-------------anyMatch-------------");
-        boolean flag = employees.stream().filter(element -> element.getSalary() > 2000).map(Employee::getName).anyMatch(element -> "kapcb".equals(element));
+        boolean flag = EMPLOYEES.stream().filter(element -> element.getSalary() > 2000).map(Employee::getName).anyMatch(element -> "kapcb".equals(element));
         System.out.println(flag);
 
         /**
          * allMatch
          */
         System.out.println("-------------allMatch-------------");
-        boolean flagTwo = employees.stream().filter(element -> element.getSalary() > 2000).map(Employee::getName).allMatch(element -> element.length() > 2);
+        boolean flagTwo = EMPLOYEES.stream().filter(element -> element.getSalary() > 2000).map(Employee::getName).allMatch(element -> element.length() > 2);
         System.out.println(flagTwo);
 
         /**
          * noneMatch
          */
         System.out.println("-------------noneMatch-------------");
-        boolean flagThree = employees.stream().filter(element -> element.getSalary() > 2000).map(Employee::getName).noneMatch(element -> "12345".equals(element));
+        boolean flagThree = EMPLOYEES.stream().filter(element -> element.getSalary() > 2000).map(Employee::getName).noneMatch(element -> "12345".equals(element));
         System.out.println(flagThree);
 
         /**
          * findAny
          */
         System.out.println("-------------findAny-------------");
-        employees.stream().filter(element -> element.getSalary() > 2000).map(Employee::getName).findAny().ifPresent(System.out::println);
+        EMPLOYEES.stream().filter(element -> element.getSalary() > 2000).map(Employee::getName).findAny().ifPresent(System.out::println);
 
         /**
          * findFirst
          */
         System.out.println("-------------findFirst-------------");
-        employees.stream().filter(element -> element.getSalary() > 2000).map(Employee::getName).findFirst().ifPresent(System.out::println);
+        EMPLOYEES.stream().filter(element -> element.getSalary() > 2000).map(Employee::getName).findFirst().ifPresent(System.out::println);
 
         /**
          * reduce
