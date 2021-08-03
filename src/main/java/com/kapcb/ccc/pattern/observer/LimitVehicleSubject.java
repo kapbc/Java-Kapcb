@@ -3,6 +3,7 @@ package com.kapcb.ccc.pattern.observer;
 import java.util.HashSet;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Optional;
 import java.util.Set;
 import java.util.logging.Logger;
 
@@ -19,12 +20,20 @@ public class LimitVehicleSubject implements Subject {
 
     private static final Logger log = Logger.getLogger(String.valueOf(LimitVehicleSubject.class));
 
+    // 定义观察者集合
     private Set<Observer> RED_LAMP_OBSERVER;
-
-    private int day;
+    // 定义周几
+    private Integer day;
 
     public LimitVehicleSubject() {
         RED_LAMP_OBSERVER = new HashSet<>();
+    }
+
+    public void setDate(Integer day) {
+        if (day < 1 || day > 7) {
+            throw new IllegalArgumentException("day only limit in 1 ~ 7");
+        }
+        this.day = day;
     }
 
     @Override
