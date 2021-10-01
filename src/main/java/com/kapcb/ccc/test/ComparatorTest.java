@@ -1,6 +1,6 @@
 package com.kapcb.ccc.test;
 
-import com.kapcb.ccc.java.compare.comparable.Person;
+import com.kapcb.ccc.code.compare.comparable.Person;
 import com.kapcb.ccc.util.Constants;
 
 import java.io.IOException;

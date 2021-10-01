@@ -38,4 +38,3 @@ public class LazyInnerClassSingleton {
         public static final LazyInnerClassSingleton LAZY_INNER_CLASS_SINGLETON = new LazyInnerClassSingleton();
     }
 }
-

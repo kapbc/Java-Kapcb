@@ -17,6 +17,7 @@ import java.util.logging.Logger;
  * link: https://leetcode-cn.com/problems/remove-element/
  */
 public class RemoveElement {
+    
     private static final Logger logger = Logger.getLogger(String.valueOf(RemoveElement.class), Constants.COMMON_LOGGER_RESOURCE_BUNDLE.getStringStatusCode());
 
     public static void main(String[] args) {
