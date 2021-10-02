@@ -23,6 +23,11 @@ public class Test {
 
         match(new Soldier());
 
+
+        String s = switchMatch("1");
+        System.out.println("s = " + s);
+        String s1 = switchMatch("2");
+        System.out.println("s1 = " + s1);
     }
 
     private static <T> void match(T t) {
@@ -39,5 +44,15 @@ public class Test {
         } else if (t instanceof Student student) {
 
         }
+    }
+
+    private static String switchMatch(String value) {
+        var num = switch (value) {
+            case "1", "2" -> "工作";
+            case "3" -> "休息1";
+            case "4" -> "休息2";
+            default -> throw new RuntimeException("aaaa");
+        };
+        return num;
     }
 }

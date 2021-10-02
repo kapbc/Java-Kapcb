@@ -1,8 +1,5 @@
 package com.kapcb.ccc.jdk17;
 
-import com.kapcb.ccc.pattern.build.SolrUtil;
-
-import java.io.FileInputStream;
 
 /**
  * <a>Title: SealedClassDemo </a>
