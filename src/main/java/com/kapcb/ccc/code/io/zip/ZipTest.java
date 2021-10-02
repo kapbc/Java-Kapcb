@@ -59,7 +59,7 @@ public class ZipTest {
      * @param zipName String
      */
     public static void showContentTwo(String zipName) throws IOException {
-        FileSystem fileSystem = FileSystems.newFileSystem(Paths.get(zipName), null);
+        FileSystem fileSystem = FileSystems.newFileSystem(Paths.get(zipName));
         Files.walkFileTree(fileSystem.getPath("/"), new SimpleFileVisitor<Path>() {
             public FileVisitResult visitResult(Path path, BasicFileAttributes attributes) throws IOException {
                 System.out.println(path);

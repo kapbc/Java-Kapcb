@@ -1,11 +1,10 @@
 package com.kapcb.ccc.pattern.build;
 
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * <a>Title: SolrUtil </a>
@@ -18,7 +17,7 @@ import java.util.Set;
  */
 public class SolrUtil {
 
-    private static final Logger log = LoggerFactory.getLogger(SolrUtil.class);
+    private static final Logger log = Logger.getLogger(String.valueOf(SolrUtil.class));
 
     private static final int INITIAL_CAPACITY = 16;
     private static final String DEFAULT_STRING_VALUE = "{}";
@@ -56,7 +55,7 @@ public class SolrUtil {
                 });
                 return solrString.toString();
             } catch (Exception e) {
-                log.error("solr utils build error, the exception message is : " + e.getMessage());
+                log.log(Level.WARNING, "solr utils build error, the exception message is : " + e.getMessage());
             }
             return DEFAULT_STRING_VALUE;
         }
