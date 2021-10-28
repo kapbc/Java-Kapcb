@@ -21,15 +21,24 @@ import java.util.Scanner;
 public class ReverseString {
 
     public static void main(String[] args) {
-        try (Scanner scanner = new Scanner(System.in);) {
-            String next = "";
-            while (true) {
-                next = scanner.next();
-                char[] arrayStr = next.toCharArray();
-                char[] reverseString = getReverseString(arrayStr);
-                System.out.println(Arrays.toString(reverseString));
-            }
-        }
+//        try (Scanner scanner = new Scanner(System.in);) {
+//            String next = "";
+//            while (true) {
+//                next = scanner.next();
+//                char[] arrayStr = next.toCharArray();
+//                char[] reverseString = getReverseString(arrayStr);
+//                System.out.println(Arrays.toString(reverseString));
+//            }
+//        }
+
+        String id = "mike_nb&12344341213231&mike_nb";
+        System.out.println("id = " + id);
+        String s = reverseString(id);
+        System.out.println("s = " + s);
+        String s1 = reverseString(s);
+        System.out.println("s1 = " + s1);
+        boolean equals = id.equals(s1);
+        System.out.println("equals = " + equals);
     }
 
     /**
@@ -50,5 +59,22 @@ public class ReverseString {
             }
         }
         return arrayStr;
+    }
+
+    private static String reverseString(String s) {
+        if (s == null || s.length() == 0) {
+            return s;
+        }
+        char[] array = s.toCharArray();
+        for (int left = 0, right = array.length - 1; left < right; left++, right--) {
+            swap(array, left, right);
+        }
+        return new String(array);
+    }
+
+    private static void swap(char[] array, int left, int right) {
+        char temp = array[left];
+        array[left] = array[right];
+        array[right] = temp;
     }
 }
