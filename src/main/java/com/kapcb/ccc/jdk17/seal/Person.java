@@ -12,11 +12,11 @@ import java.util.logging.Logger;
  * @version 1.0.0
  * @date 2021/10/2 10:02
  */
-public sealed class Person permits Teacher, Student, Soldier {
-
-    private static final Logger log = Logger.getLogger(String.valueOf(Person.class));
-
-    public void run(String message) {
-        log.log(Level.INFO, message);
-    }
-}
+//public sealed class Person permits Teacher, Student, Soldier {
+//
+//    private static final Logger log = Logger.getLogger(String.valueOf(Person.class));
+//
+//    public void run(String message) {
+//        log.log(Level.INFO, message);
+//    }
+//}

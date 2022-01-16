@@ -10,6 +10,6 @@ package com.kapcb.ccc.jdk17;
  * @version 1.0.0
  * @date 2021/10/2 9:06
  */
-public abstract class SealedClassDemo {
-
-}
+//public abstract class SealedClassDemo {
+//
+//}

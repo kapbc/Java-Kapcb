@@ -9,5 +9,5 @@ package com.kapcb.ccc.jdk17.seal;
  * @version 1.0.0
  * @date 2021/10/2 10:03
  */
-public final class Teacher extends Person {
-}
+//public final class Teacher extends Person {
+//}
