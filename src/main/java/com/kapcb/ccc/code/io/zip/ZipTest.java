@@ -30,7 +30,7 @@ public class ZipTest {
         String zipName = args[0];
         showContents(zipName);
         System.out.println("---");
-        showContentTwo(zipName);
+//        showContentTwo(zipName);
     }
 
     /**
@@ -58,16 +58,16 @@ public class ZipTest {
      *
      * @param zipName String
      */
-    public static void showContentTwo(String zipName) throws IOException {
-        FileSystem fileSystem = FileSystems.newFileSystem(Paths.get(zipName));
-        Files.walkFileTree(fileSystem.getPath("/"), new SimpleFileVisitor<Path>() {
-            public FileVisitResult visitResult(Path path, BasicFileAttributes attributes) throws IOException {
-                System.out.println(path);
-                for (String readAllLine : Files.readAllLines(path, Charset.forName("UTF-8"))) {
-                    System.out.println("    " + readAllLine);
-                }
-                return FileVisitResult.CONTINUE;
-            }
-        });
-    }
+//    public static void showContentTwo(String zipName) throws IOException {
+//        FileSystem fileSystem = FileSystems.newFileSystem(Paths.get(zipName));
+//        Files.walkFileTree(fileSystem.getPath("/"), new SimpleFileVisitor<Path>() {
+//            public FileVisitResult visitResult(Path path, BasicFileAttributes attributes) throws IOException {
+//                System.out.println(path);
+//                for (String readAllLine : Files.readAllLines(path, Charset.forName("UTF-8"))) {
+//                    System.out.println("    " + readAllLine);
+//                }
+//                return FileVisitResult.CONTINUE;
+//            }
+//        });
+//    }
 }
