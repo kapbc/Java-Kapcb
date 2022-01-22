@@ -32,7 +32,7 @@ public class CustomClassLoader extends ClassLoader {
 
     /**
      * 以二进制流的方式将指定的 class 文件读取到系统中来
-     *
+     * 如果指定路劲的字节码进行了加密, 则需要在此方法中进行解密操作, 解密之后将其还远为字节数组
      * @param classPathPrefix String
      * @return byte[]
      */
