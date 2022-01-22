@@ -18,8 +18,8 @@ import java.util.Arrays;
  */
 public class TestClassLoader {
 
-    private static final String EXT_URL = "java.ext.dirs";
     private static final String SEMICOLON = ";";
+    private static final String EXT_URL = "java.ext.dirs";
 
     public static void main(String[] args) {
         URL[] urLs = Launcher.getBootstrapClassPath().getURLs();
