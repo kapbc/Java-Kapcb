@@ -11,4 +11,29 @@ package com.kapcb.ccc.jvm.classload;
  * @since 1.0
  */
 public class HelloClassLoader {
+
+    public static void main(String[] args) {
+        Runnable runnable = () -> {
+            System.out.println(getCurrentThreadName() + "开始");
+            new DeadThread();
+            System.out.println(getCurrentThreadName() + "结束");
+        };
+
+        Thread a = new Thread(runnable, "A线程");
+        Thread b = new Thread(runnable, "B线程");
+
+        a.start();
+        b.start();
+    }
+
+    private static class DeadThread {
+        static {
+            System.out.println(getCurrentThreadName() + "正在初始化 [DeadThread] 类");
+        }
+    }
+
+    private static String getCurrentThreadName() {
+        return Thread.currentThread().getName();
+    }
+
 }
