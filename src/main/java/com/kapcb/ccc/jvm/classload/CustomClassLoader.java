@@ -30,11 +30,17 @@ public class CustomClassLoader extends ClassLoader {
         throw new ClassNotFoundException();
     }
 
+    /**
+     * 以二进制流的方式将指定的 class 文件读取到系统中来
+     *
+     * @param classPathPrefix String
+     * @return byte[]
+     */
     private static byte[] getClassFromCustomPath(String classPathPrefix) {
         if (classPathPrefix == null || "".equals(classPathPrefix)) {
             return null;
         }
-        ""
+        return null;
     }
 
 }
