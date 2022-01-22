@@ -2,6 +2,7 @@ package com.kapcb.ccc.jvm.classload;
 
 import sun.misc.Launcher;
 
+import java.net.Proxy;
 import java.net.URL;
 import java.util.Arrays;
 
@@ -25,6 +26,10 @@ public class TestClassLoader {
         Arrays.stream(urLs).forEach(System.out::println);
 
         // 从上面的路劲中随便挑选一个类, 查看其类加载器 :
+        ClassLoader proxyClassClassLoader = Proxy.class.getClassLoader();
+        // null --> BootStrap Class Loader
+        System.out.println("proxyClassClassLoader = " + proxyClassClassLoader);
+
         System.out.println("===========extension class loader spilt line===========");
         String extensionUrl = System.getProperty(EXT_URL);
         Arrays.stream(extensionUrl.split(SEMICOLON)).forEach(System.out::println);
