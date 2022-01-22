@@ -45,7 +45,7 @@ public class TestClassLoader {
         Arrays.stream(extensionUrl.split(SEMICOLON)).forEach(System.out::println);
 
         // 获取自定义类的 ClassLoader
-        ClassLoader classLoader = CustomClassLoader.class.getClassLoader();
+        ClassLoader classLoader = ParentClassLoader.class.getClassLoader();
         // sun.misc.Launcher$AppClassLoader@18b4aac2
         System.out.println("classLoader = " + classLoader);
     }

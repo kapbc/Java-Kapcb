@@ -1,16 +1,16 @@
 package com.kapcb.ccc.jvm.classload;
 
 /**
- * <a>Title: CustomClassLoader </a>
+ * <a>Title: ParentClassLoader </a>
  * <a>Author: Kapcb <a>
- * <a>Description: CustomClassLoader <a>
+ * <a>Description: ParentClassLoader <a>
  *
  * @author Kapcb
  * @version 1.0
  * @date 2022/1/22 22:48
  * @since 1.0
  */
-public class CustomClassLoader {
+public class ParentClassLoader {
 
     public static void main(String[] args) {
         // 获取系统类加载器
@@ -29,7 +29,7 @@ public class CustomClassLoader {
         System.out.println("bootStrapClassLoader = " + bootStrapClassLoader);
 
         // 获取用户自定义类使用的类加载器
-        ClassLoader classLoader = CustomClassLoader.class.getClassLoader();
+        ClassLoader classLoader = ParentClassLoader.class.getClassLoader();
         // sun.misc.Launcher$AppClassLoader@18b4aac2
         System.out.println("classLoader = " + classLoader);
 
