@@ -8,6 +8,7 @@ package com.kapcb.ccc.datastructure.data;
  * @date 2020/10/22 16:04
  */
 public class Burrito {
+
     private Spiciness degree;
 
     public Burrito(Spiciness degree) {
