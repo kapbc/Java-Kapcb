@@ -15,7 +15,9 @@ import java.lang.reflect.Method;
  */
 public class TestCustomClassLoader {
 
+    // Log 类的全类名
     private static final String ALL_PACKAGE_NAME = "com.kapcb.ccc.jvm.classload.Log";
+    // Log 类的 class 文件路径
     private static final String LOG_CLASS_PATH = "D:/DevelopTools/IDEA/IDEA-workspace/Java-Kapcb/out/production/Java-Kapcb/com/kapcb/ccc/jvm/classload/Log.class";
 
 
