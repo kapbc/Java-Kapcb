@@ -1,5 +1,6 @@
 package com.kapcb.ccc.jvm.classload;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
@@ -18,7 +19,7 @@ public class TestCustomClassLoader {
     private static final String LOG_CLASS_PATH = "D:/DevelopTools/IDEA/IDEA-workspace/Java-Kapcb/out/production/Java-Kapcb/com/kapcb/ccc/jvm/classload/Log.class";
 
 
-    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
         CustomClassLoader customClassLoader = new CustomClassLoader(LOG_CLASS_PATH);
 
         Class<?> LogClass = customClassLoader.loadClass(ALL_PACKAGE_NAME);
@@ -26,12 +27,14 @@ public class TestCustomClassLoader {
         ClassLoader classLoader = LogClass.getClassLoader();
         System.out.println("Log 类的类加载器是 : [ " + classLoader + " ]");
 
+        // 获取 Log 类中的 main 方法
         Method mainMethod = LogClass.getDeclaredMethod("main", String[].class);
+        // 实例化 Log 类
         Object object = LogClass.newInstance();
-        String[] strings = new String["ad"];
-        mainMethod.invoke(object,args)
-
+        // 随便传入一个参数
+        String[] arg = new String[]{"ad"};
+        // 反射激活 Log 类中的 main 方法
+        mainMethod.invoke(object, (Object) arg);
     }
-
 
 }
