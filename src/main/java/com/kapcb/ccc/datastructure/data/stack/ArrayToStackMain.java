@@ -20,7 +20,6 @@ public class ArrayToStackMain {
 
 
 
-
         ArrayToStack arrayToStack = null;
         boolean loop = true;
         boolean loopForStack = true;
