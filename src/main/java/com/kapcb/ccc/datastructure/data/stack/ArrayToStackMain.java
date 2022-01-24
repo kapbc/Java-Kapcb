@@ -22,7 +22,6 @@ public class ArrayToStackMain {
         Scanner scanner = new Scanner(System.in);
 
 
-
         do {
             do {
                 System.out.println("您需要自定义栈的初始容量吗？ y/n?");
