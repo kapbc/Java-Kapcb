@@ -95,4 +95,5 @@ public class ArrayToStack {
     private boolean isEmpty(int[] array) {
         return index == -1;
     }
+
 }
