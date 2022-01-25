@@ -15,7 +15,6 @@ public enum StringEnumPool implements IEnum<String> {
 
 
 
-
     ;
 
     private String value;
