@@ -18,5 +18,4 @@ public enum StringEnumPool implements IEnum<String> {
         return null;
     }
 
-
 }
