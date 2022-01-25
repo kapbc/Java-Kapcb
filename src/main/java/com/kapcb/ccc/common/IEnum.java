@@ -19,4 +19,6 @@ public interface IEnum<T> {
      */
     T value();
 
+
+
 }
