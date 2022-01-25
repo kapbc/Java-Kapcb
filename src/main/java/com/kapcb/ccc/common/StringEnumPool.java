@@ -13,9 +13,18 @@ package com.kapcb.ccc.common;
 public enum StringEnumPool implements IEnum<String> {
     ;
 
+    private String value;
+
+    private String description;
+
+    StringEnumPool(String value, String description) {
+        this.value = value;
+        this.description = description;
+    }
+
     @Override
     public String value() {
-        return null;
+        return this.value;
     }
 
 }
