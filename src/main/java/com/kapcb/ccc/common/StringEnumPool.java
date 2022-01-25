@@ -12,7 +12,6 @@ package com.kapcb.ccc.common;
  */
 public enum StringEnumPool implements IEnum<String> {
 
-
     ;
 
     private String value;
