@@ -26,4 +26,5 @@ public enum StringEnumPool implements IEnum<String> {
     public String value() {
         return this.value;
     }
+
 }
