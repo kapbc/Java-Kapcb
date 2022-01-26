@@ -13,7 +13,8 @@ package com.kapcb.ccc.jvm.pc;
 public class ProgramCounterRegister {
 
     public static void main(String[] args) {
-
+        int minus = minus();
+        System.out.println("minus = " + minus);
     }
 
     private static int minus() {
