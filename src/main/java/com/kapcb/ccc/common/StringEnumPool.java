@@ -29,6 +29,8 @@ public enum StringEnumPool implements IEnum<String> {
      */
     EXCEPTION_INFO("Exception Information : ", "Try Catch Exception Information"),
     EXCEPTION_MESSAGE("The Exception Message is : ", "The Exception Message To Log"),
+
+
     ;
 
     private String value;
