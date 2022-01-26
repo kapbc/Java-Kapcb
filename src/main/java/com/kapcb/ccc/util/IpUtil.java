@@ -11,6 +11,8 @@ package com.kapcb.ccc.util;
  */
 public class IpUtil {
 
+    private IpUtil(){}
+
 //    http://blog.sina.com.cn/s/blog_48d4cf2d0102w4mw.html
 
 //    https://www.jianshu.com/p/94eb9c0f5394?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation
