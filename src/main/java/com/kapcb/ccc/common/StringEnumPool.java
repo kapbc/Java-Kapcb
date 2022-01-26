@@ -34,6 +34,12 @@ public enum StringEnumPool implements IEnum<String> {
      * Logger
      */
     LOG_RESOURCE_BUNDLE("logmessage_en", "Java Program Log ResourceBundle Path"),
+
+    /**
+     * Thread Name
+     */
+    THREAD_NAME_A("Thread A", "Common Thread Name A"),
+    THREAD_NAME_B("Thread B", "Common Thread Name B"),
     ;
 
     private String value;
