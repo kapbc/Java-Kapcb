@@ -38,8 +38,8 @@ public enum StringEnumPool implements IEnum<String> {
     /**
      * Thread Name
      */
-    THREAD_NAME_A("Thread A", "Common Thread Name A"),
-    THREAD_NAME_B("Thread B", "Common Thread Name B"),
+    COMMON_THREAD_NAME_A("Thread A", "Common Thread Name A"),
+    COMMON_THREAD_NAME_B("Thread B", "Common Thread Name B"),
 
     /**
      * PrintStream
