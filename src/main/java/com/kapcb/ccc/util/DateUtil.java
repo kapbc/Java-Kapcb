@@ -84,4 +84,5 @@ public class DateUtil {
         String format1 = localDateTimeFormatter.format(localDateTime);
         PrintUtil.print("Convert LocalDate To LocalDateTime is : {0}\n", format1);
     }
+
 }
