@@ -108,5 +108,6 @@ public class FileListUtil {
     private static int getPackageHierarchy(String location) {
         return (location.split(ILLEGAL_CHARACTERS_REPLACEMENT).length - 1);
     }
+
 }
 
