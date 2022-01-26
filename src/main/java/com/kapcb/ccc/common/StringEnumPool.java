@@ -24,6 +24,11 @@ public enum StringEnumPool implements IEnum<String> {
     STREAM_TEST_TXT_RESOURCES_PATH("src/main/resource/txt/streamTest.txt", "Stream Optional Test Static Resources Location"),
     LOG_MESSAGE_PROPERTIES_RESOURCES_PATH("src/main/resource/logmessage_en.properties", "The Log Message Properties Resources Path"),
 
+    /**
+     * Try-Catch Error Message
+     */
+    EXCEPTION_INFO("Exception Information : ", "Try Catch Exception Information"),
+    EXCEPTION_MESSAGE("The Exception Message is : ", "The Exception Message To Log"),
     ;
 
     private String value;
