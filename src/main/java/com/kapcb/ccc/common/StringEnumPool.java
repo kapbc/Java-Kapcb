@@ -30,7 +30,10 @@ public enum StringEnumPool implements IEnum<String> {
     EXCEPTION_INFO("Exception Information : ", "Try Catch Exception Information"),
     EXCEPTION_MESSAGE("The Exception Message is : ", "The Exception Message To Log"),
 
-
+    /**
+     * Logger
+     */
+    LOG_RESOURCE_BUNDLE("logmessage_en", "Java Program Log ResourceBundle Path"),
     ;
 
     private String value;
