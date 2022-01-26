@@ -59,6 +59,9 @@ public enum StringEnumPool implements IEnum<String> {
     COMMON_STRING_SPLIT_COMMA(", ", "Common String Split Comma"),
     COMMON_STRING_SPLIT_VERTICAL_LINE("|", "Common String Split Vertical Line"),
     COMMON_STRING_SPLIT_ESCAPE_VERTICAL_LINE("\\|", "Common String Split Escape Vertical Line"),
+
+
+
     ;
 
     private String value;
