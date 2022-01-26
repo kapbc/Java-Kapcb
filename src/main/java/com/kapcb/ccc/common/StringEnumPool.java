@@ -74,7 +74,6 @@ public enum StringEnumPool implements IEnum<String> {
     COMMON_TIME_FORMATTER_PATTERN_SECOND_NANO_24AP("yyyy-MM-dd hh:mm:ss:SSS a", "LocalDateTime 24 Nano am and pm"),
 
 
-
     ;
 
     private String value;
