@@ -52,6 +52,13 @@ public enum StringEnumPool implements IEnum<String> {
     COMMON_LOCK_8_PRINT_SEND_SMS("Send SMS", "Print Send SMS"),
     COMMON_LOCK_8_PRINT_SEND_EMAIL("Send Email", "Print Send Email"),
     COMMON_LOCK_8_PRINT_SAY_HELLO("Hello Kapcb!", "Print Say Hello"),
+
+    /**
+     * String Split Comma
+     */
+    COMMON_STRING_SPLIT_COMMA(", ", "Common String Split Comma"),
+    COMMON_STRING_SPLIT_VERTICAL_LINE("|", "Common String Split Vertical Line"),
+    COMMON_STRING_SPLIT_ESCAPE_VERTICAL_LINE("\\|", "Common String Split Escape Vertical Line"),
     ;
 
     private String value;
