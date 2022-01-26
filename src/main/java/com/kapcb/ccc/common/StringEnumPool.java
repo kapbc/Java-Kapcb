@@ -40,6 +40,11 @@ public enum StringEnumPool implements IEnum<String> {
      */
     THREAD_NAME_A("Thread A", "Common Thread Name A"),
     THREAD_NAME_B("Thread B", "Common Thread Name B"),
+
+    /**
+     * PrintStream
+     */
+    COMMON_SYSTEM_OUT_PRINTLN_STRING("Kapcb Nb!", "Common System Out Println String"),
     ;
 
     private String value;
