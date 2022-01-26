@@ -27,7 +27,6 @@ public enum IntegerEnumPool implements IEnum<Integer> {
     COMMON_NUMBER_TEN(10, "Common base number constant Ten"),
     COMMON_NUMBER_STEP(1234, "Common base number constant Step");
 
-
     private Integer value;
 
     private String description;
