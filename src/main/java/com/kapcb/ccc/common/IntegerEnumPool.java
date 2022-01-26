@@ -43,5 +43,4 @@ public enum IntegerEnumPool implements IEnum<Integer> {
 
 
 
-
 }
