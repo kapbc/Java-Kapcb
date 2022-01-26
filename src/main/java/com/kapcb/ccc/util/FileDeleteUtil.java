@@ -16,6 +16,7 @@ public class FileDeleteUtil {
     private static final String OPERATION = ".#";
 
     private FileDeleteUtil() {
+
     }
 
     /**
