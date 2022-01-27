@@ -17,7 +17,6 @@ public class SlotTest {
         localVar1();
 
 
-
     }
 
     public static void localVar() {
