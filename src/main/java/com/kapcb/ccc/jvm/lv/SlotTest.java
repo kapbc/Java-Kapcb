@@ -15,7 +15,6 @@ public class SlotTest {
     public static void main(String[] args) {
         localVar();
         localVar1();
-
     }
 
     public static void localVar() {
