@@ -24,6 +24,7 @@ public class SlotTest {
             System.out.println(a);
         }
 
+        // 此时就会复用 a 的槽位
         int b = 0;
     }
 
