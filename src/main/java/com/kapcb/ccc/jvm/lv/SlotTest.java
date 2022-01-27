@@ -12,13 +12,18 @@ package com.kapcb.ccc.jvm.lv;
  */
 public class SlotTest {
 
-    public void localVar() {
+    public static void main(String[] args) {
+        localVar();
+        localVar1();
+    }
+
+    public static void localVar() {
         int a = 0;
         System.out.println(a);
         int b = 0;
     }
 
-    public void localVar1() {
+    public static void localVar1() {
         {
             int a = 0;
             System.out.println(a);
