@@ -12,12 +12,27 @@ package com.kapcb.ccc.jvm.dl;
  */
 public class Father {
 
-    public void eat(String food) {
+    public static void eat(String food) {
         System.out.println("transfer father's eat method call : " + food);
     }
 
-    public void say(String keyword) {
+    public static void say(String keyword) {
         System.out.println("transfer father's say method call : " + keyword);
+    }
+
+    public static class Son extends Father {
+
+    }
+
+    public static class VirtualMethodTest {
+
+        public static void main(String[] args) {
+
+            Son.eat("noodles");
+
+            Son.say("Hello, I'm Kapcb!");
+        }
+
     }
 
 }
