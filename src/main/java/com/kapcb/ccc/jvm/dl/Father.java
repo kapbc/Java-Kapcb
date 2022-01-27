@@ -30,7 +30,6 @@ public class Father {
 
 
 
-
     public static class VirtualMethodTest {
 
         public static void main(String[] args) {
