@@ -17,7 +17,6 @@ public class ProgramCounterRegister {
         System.out.println("minus = " + minus);
     }
 
-
     private static int minus() {
         int i = 3;
         int j = 4;
