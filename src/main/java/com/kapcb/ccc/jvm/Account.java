@@ -13,8 +13,8 @@ package com.kapcb.ccc.jvm;
 public class Account {
 
 
-
-
-
+    public Account() {
+        System.out.println("Account‘s No Arg Construt");
+    }
 
 }
