@@ -26,7 +26,6 @@ public class Customer {
         account = new Account();
     }
 
-
     1
 
 }
