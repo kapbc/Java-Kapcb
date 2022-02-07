@@ -25,7 +25,6 @@ public class Customer {
     public Customer() {
         System.out.println("Customer's No Arg Construct");
         account = new Account();
-
     }
 
     public static void main(String[] args) {
