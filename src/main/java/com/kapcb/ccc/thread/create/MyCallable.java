@@ -16,7 +16,7 @@ public class MyCallable implements Callable<String> {
 
     @Override
     public String call() throws Exception {
-        return "current thread is : " + Thread.currentThread();
+        return "current thread is : " + Thread.currentThread()+", the third way to create Thread!";
     }
 
 }
