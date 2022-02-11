@@ -5,6 +5,9 @@ import com.kapcb.ccc.thread.create.MyRunnable;
 import com.kapcb.ccc.thread.create.MyThread;
 
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.FutureTask;
 
 /**
@@ -42,7 +45,11 @@ public class JavaThreadCreateTest {
         }
         System.out.println(callableResult);
 
-
+        // 线程的第四种创建方式
+        Executor executor = Executors.newWorkStealingPool();
+        executor.execute(() -> {
+            System.out.println("current thread is : " + Thread.currentThread() + ", the fourth way to create Thread!");
+        });
     }
 
 }
