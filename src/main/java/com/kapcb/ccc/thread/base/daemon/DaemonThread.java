@@ -1,4 +1,4 @@
-package com.kapcb.ccc.thread.daemon;
+package com.kapcb.ccc.thread.base.daemon;
 
 /**
  * <a>Title: DaemonThread </a>

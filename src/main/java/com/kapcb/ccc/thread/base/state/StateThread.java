@@ -1,4 +1,4 @@
-package com.kapcb.ccc.thread.daemon;
+package com.kapcb.ccc.thread.base.state;
 
 /**
  * <a>Title: StateThread </a>
