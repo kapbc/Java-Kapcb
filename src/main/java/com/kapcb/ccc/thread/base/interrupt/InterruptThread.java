@@ -18,7 +18,8 @@ public class InterruptThread extends Thread {
         this.stopped = false;
     }
 
-    public void stopInterruptThread() {
+    public void stopInterruptThread() throws InterruptedException {
+        Thread.sleep(1);
         if (!stopped) {
             this.stopped = true;
         }
@@ -28,20 +29,18 @@ public class InterruptThread extends Thread {
     public void run() {
 
         while (!stopped) {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            System.out.println(Thread.currentThread().getName() + " is transfer Interrupt Thread's run method!");
+            int a = 1;
+            int b = 2;
+            int c = a + b;
+            System.out.println("result is : " + c);
         }
+
     }
 
     public static void main(String[] args) throws InterruptedException {
         InterruptThread interruptThread = new InterruptThread();
         interruptThread.start();
         interruptThread.interrupt();
-        Thread.sleep(500);
         interruptThread.stopInterruptThread();
         interruptThread.join();
     }
