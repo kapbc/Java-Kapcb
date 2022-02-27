@@ -41,6 +41,7 @@ public class InterruptThread extends Thread {
         InterruptThread interruptThread = new InterruptThread();
         interruptThread.start();
         interruptThread.interrupt();
+        interruptThread.isInterrupted();
         interruptThread.stopInterruptThread();
         interruptThread.join();
     }
