@@ -91,15 +91,15 @@ public class FileListUtil {
                 stringBuilder.insert(0, FILE_LIST_LOCATION_HEARD);
                 array[i] = stringBuilder.toString();
             }
-            int Hierarchy = getPackageHierarchy(array[i]);
-            if (!map.containsKey(Hierarchy)) {
+            int hierarchy = getPackageHierarchy(array[i]);
+            if (!map.containsKey(hierarchy)) {
                 treeSet = new TreeSet<>(fileListStringCompare);
                 treeSet.add(array[i]);
-                map.put(Hierarchy, treeSet);
+                map.put(hierarchy, treeSet);
             } else {
-                Set<String> strings = map.get(Hierarchy);
+                Set<String> strings = map.get(hierarchy);
                 strings.add(array[i]);
-                map.put(Hierarchy, strings);
+                map.put(hierarchy, strings);
             }
         }
         return map;

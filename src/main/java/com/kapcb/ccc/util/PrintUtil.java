@@ -23,7 +23,11 @@ public class PrintUtil {
     }
 
     public static <T> void print(String description, T num) {
-        String placeholder = Stream.of(num.getClass().getName()).map(s -> s.substring(s.lastIndexOf(".") + 1)).map(PrintUtil::getDataTypePlaceholder).findFirst().orElseThrow(IllegalArgumentException::new);
+        String placeholder = Stream.of(num.getClass().getName())
+                .map(s -> s.substring(s.lastIndexOf(".") + 1))
+                .map(PrintUtil::getDataTypePlaceholder)
+                .findFirst()
+                .orElseThrow(IllegalArgumentException::new);
         forMatter.format(MessageFormat.format(description, placeholder), num);
     }
 
