@@ -1,6 +1,7 @@
 package com.kapcb.ccc.thread.automic;
 
-import java.util.concurrent.TimeUnit;
+import com.kapcb.ccc.util.SleepHelper;
+
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicStampedReference;
 
@@ -35,11 +36,8 @@ public class AtomicStamp {
         new Thread(() -> {
             System.out.println(getCurrentThreadName() + " 第1次版本号 : " + atomicStampedReference.getStamp());
 
-            try {
-                TimeUnit.SECONDS.sleep(2);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            SleepHelper.sleep(2);
+
             boolean casSuccess = atomicStampedReference.compareAndSet(10, 12, atomicStampedReference.getStamp(), atomicStampedReference.getStamp() + 1);
 
             System.out.println(getCurrentThreadName() + " 是否修改成功 : " + casSuccess + " 当前版本为 : " + atomicStampedReference.getStamp());
