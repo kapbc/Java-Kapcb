@@ -26,7 +26,6 @@ public class LockCondition {
         Condition conditionAI = lock.newCondition();
         Condition conditionAC = lock.newCondition();
 
-
         new Thread(() -> {
             lock.lock();
             try {
@@ -36,6 +35,8 @@ public class LockCondition {
                     conditionAI.await();
                     System.out.println("thread [ " + Thread.currentThread().getName() + " ] output : [ " + c + " ]");
                 }
+
+                conditionAC.signal();
 
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
@@ -52,8 +53,13 @@ public class LockCondition {
                     conditionAI.signal();
                     conditionAC.await();
                 }
+
+                conditionAI.signal();
+
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
+            } finally {
+                lock.unlock();
             }
         }, "B").start();
     }
