@@ -59,7 +59,7 @@ public class ThreeThreadPrint {
                 while (machineNum != 1) {
                     conditionA.await();
                 }
-                System.out.println("Thread : [ " + Thread.currentThread().getName() + " ] print char : [ A ]");
+                System.out.print("A");
                 machineNum = 2;
                 conditionB.signalAll();
             } catch (InterruptedException e) {
@@ -75,7 +75,7 @@ public class ThreeThreadPrint {
                 while (machineNum != 2) {
                     conditionB.await();
                 }
-                System.out.println("Thread : [ " + Thread.currentThread().getName() + " ] print char : [ B ]");
+                System.out.print("B");
                 machineNum = 3;
                 conditionC.signalAll();
             } catch (InterruptedException e) {
@@ -91,7 +91,7 @@ public class ThreeThreadPrint {
                 while (machineNum != 3) {
                     conditionC.await();
                 }
-                System.out.println("Thread : [ " + Thread.currentThread().getName() + " ] print char : [ C ]");
+                System.out.print("C");
                 machineNum = 1;
                 conditionA.signalAll();
             } catch (InterruptedException e) {
