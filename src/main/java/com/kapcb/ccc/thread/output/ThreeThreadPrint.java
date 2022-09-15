@@ -1,5 +1,9 @@
 package com.kapcb.ccc.thread.output;
 
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * <a>Title: ThreeThreadPrint </a>
  * <a>Author: Kapcb <a>
@@ -18,9 +22,84 @@ public class ThreeThreadPrint {
      * @param args
      */
     public static void main(String[] args) {
+        PrintMachine printMachine = new PrintMachine();
 
+        new Thread(() -> {
+            for (int i = 0; i < 5; i++) {
+                printMachine.printA();
+            }
+        }, "A").start();
 
+        new Thread(() -> {
+            for (int i = 0; i < 5; i++) {
+                printMachine.printB();
+            }
+        }, "B").start();
 
+        new Thread(() -> {
+            for (int i = 0; i < 5; i++) {
+                printMachine.printC();
+            }
+        }, "C").start();
+
+    }
+
+    private static class PrintMachine {
+
+        private Lock lock = new ReentrantLock();
+        private Condition conditionA = lock.newCondition();
+        private Condition conditionB = lock.newCondition();
+        private Condition conditionC = lock.newCondition();
+
+        private static int machineNum = 1;
+
+        private void printA() {
+            lock.lock();
+            try {
+                while (machineNum != 1) {
+                    conditionA.await();
+                }
+                System.out.println("Thread : [ " + Thread.currentThread().getName() + " ] print char : [ A ]");
+                machineNum = 2;
+                conditionB.signalAll();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            } finally {
+                lock.unlock();
+            }
+        }
+
+        private void printB() {
+            lock.lock();
+            try {
+                while (machineNum != 2) {
+                    conditionB.await();
+                }
+                System.out.println("Thread : [ " + Thread.currentThread().getName() + " ] print char : [ B ]");
+                machineNum = 3;
+                conditionC.signalAll();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            } finally {
+                lock.unlock();
+            }
+        }
+
+        private void printC() {
+            lock.lock();
+            try {
+                while (machineNum != 3) {
+                    conditionC.await();
+                }
+                System.out.println("Thread : [ " + Thread.currentThread().getName() + " ] print char : [ C ]");
+                machineNum = 1;
+                conditionA.signalAll();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            } finally {
+                lock.unlock();
+            }
+        }
     }
 
 }
