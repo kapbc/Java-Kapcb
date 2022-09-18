@@ -1,4 +1,4 @@
-package com.kapcb.ccc.algorithm.leetcode.junior;
+package com.kapcb.ccc.algorithm.primary.array;
 
 import java.util.Arrays;
 
@@ -7,6 +7,7 @@ import java.util.Arrays;
  * <a>Description: MergeSortedArray <a>
  * <a href="https://leetcode.cn/problems/merge-sorted-array/">...</a>
  *
+ * @author kapcb
  * @version 1.0
  * @date 2022/8/31 21:29
  * @since 1.0

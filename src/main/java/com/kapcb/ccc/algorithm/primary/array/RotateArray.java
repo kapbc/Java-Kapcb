@@ -1,4 +1,4 @@
-package com.kapcb.ccc.algorithm.leetcode.junior;
+package com.kapcb.ccc.algorithm.primary.array;
 
 import java.util.Arrays;
 
@@ -7,6 +7,7 @@ import java.util.Arrays;
  * <a>Description: RotateArray <a>
  * <a href="https://leetcode.cn/problems/rotate-array/">...</a>
  *
+ * @author kapcb
  * @version 1.0
  * @date 2022/8/27 12:38
  * @since 1.0

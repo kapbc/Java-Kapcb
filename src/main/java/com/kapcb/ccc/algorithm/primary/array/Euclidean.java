@@ -1,4 +1,4 @@
-package com.kapcb.ccc.algorithm.book;
+package com.kapcb.ccc.algorithm.primary.array;
 
 /**
  * <a>Title: aaa </a>

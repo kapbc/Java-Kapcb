@@ -7,6 +7,7 @@ import java.util.Set;
  * <a>Title: MaxSubsequenceModM </a>
  * <a>Description: MaxSubsequenceModM <a>
  *
+ * @author kapcb
  * @version 1.0
  * @date 2022/9/10 10:57
  * @since 1.0

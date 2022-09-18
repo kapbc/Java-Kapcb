@@ -1,6 +1,7 @@
-package com.kapcb.ccc.algorithm.thread.ali;
+package com.kapcb.ccc.thread;
 
-import com.kapcb.ccc.algorithm.util.SleepHelper;
+
+import com.kapcb.ccc.util.SleepHelper;
 
 /**
  * <a>Title: AsyncCallbackCancel </a>

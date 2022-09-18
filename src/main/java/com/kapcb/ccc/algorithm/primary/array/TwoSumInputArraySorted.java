@@ -1,4 +1,4 @@
-package com.kapcb.ccc.algorithm.leetcode.junior;
+package com.kapcb.ccc.algorithm.primary.array;
 
 import java.util.Arrays;
 

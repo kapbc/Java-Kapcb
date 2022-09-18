@@ -1,4 +1,4 @@
-package com.kapcb.ccc.algorithm.leetcode.junior;
+package com.kapcb.ccc.algorithm.primary.array;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -9,6 +9,7 @@ import java.util.Map;
  * <a>Description: tesst <a>
  * <a href="https://leetcode.cn/problems/two-sum/">...</a>
  *
+ * @author kapcb
  * @version 1.0
  * @date 2022/8/28 13:29
  * @since 1.0

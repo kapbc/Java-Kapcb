@@ -36,7 +36,7 @@ public class AtomicStamp {
         new Thread(() -> {
             System.out.println(getCurrentThreadName() + " 第1次版本号 : " + atomicStampedReference.getStamp());
 
-            SleepHelper.sleep(2);
+            SleepHelper.sleepSeconds(2);
 
             boolean casSuccess = atomicStampedReference.compareAndSet(10, 12, atomicStampedReference.getStamp(), atomicStampedReference.getStamp() + 1);
 

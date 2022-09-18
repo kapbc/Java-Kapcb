@@ -1,4 +1,4 @@
-package com.kapcb.ccc.algorithm;
+package com.kapcb.ccc.algorithm.primary.array;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

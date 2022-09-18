@@ -1,4 +1,4 @@
-package com.kapcb.ccc.algorithm.leetcode;
+package com.kapcb.ccc.algorithm.primary.array;
 
 /**
  * <a>Title: OddTimesNum </a>

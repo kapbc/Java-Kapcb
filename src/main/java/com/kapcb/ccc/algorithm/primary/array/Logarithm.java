@@ -1,4 +1,4 @@
-package com.kapcb.ccc.algorithm.logarithm;
+package com.kapcb.ccc.algorithm.primary.array;
 
 import java.util.Arrays;
 

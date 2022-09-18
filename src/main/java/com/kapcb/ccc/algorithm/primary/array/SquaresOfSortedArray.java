@@ -1,4 +1,4 @@
-package com.kapcb.ccc.algorithm.leetcode.junior;
+package com.kapcb.ccc.algorithm.primary.array;
 
 import java.util.Arrays;
 
@@ -7,6 +7,7 @@ import java.util.Arrays;
  * <a>Description: SquaresOfSortedArray <a>
  * <a href="https://leetcode.cn/problems/squares-of-a-sorted-array/">...</a>
  *
+ * @author kapcb
  * @version 1.0
  * @date 2022/8/26 17:09
  * @since 1.0

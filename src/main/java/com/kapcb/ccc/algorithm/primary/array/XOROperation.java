@@ -1,4 +1,4 @@
-package com.kapcb.ccc.algorithm.operation;
+package com.kapcb.ccc.algorithm.primary.array;
 
 /**
  * <a>Title: XOROperation </a>

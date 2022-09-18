@@ -1,10 +1,11 @@
-package com.kapcb.ccc.algorithm.leetcode.junior;
+package com.kapcb.ccc.algorithm.primary.array;
 
 /**
  * <a>Title: FirstBadVersion </a>
  * <a>Description: FirstBadVersion <a>
  * <a href="https://leetcode.cn/problems/first-bad-version/">...</a>
  *
+ * @author kapcb
  * @version 1.0
  * @date 2022/8/26 12:07
  * @since 1.0

@@ -17,7 +17,7 @@ public class SleepHelper {
     private SleepHelper() {
     }
 
-    public static void sleep(int seconds) {
+    public static void sleepSeconds(int seconds) {
         try {
             TimeUnit.SECONDS.sleep(seconds);
         } catch (InterruptedException e) {

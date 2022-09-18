@@ -1,10 +1,11 @@
-package com.kapcb.ccc.algorithm.leetcode.junior;
+package com.kapcb.ccc.algorithm.primary.array;
 
 /**
  * <a>Title: GuessNumberHigherOrLower </a>
  * <a>Description: GuessNumberHigherOrLower <a>
  * <a href="https://leetcode.cn/problems/guess-number-higher-or-lower/">...</a>
  *
+ * @author kapcb
  * @version 1.0
  * @date 2022/8/28 13:11
  * @since 1.0
