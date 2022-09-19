@@ -4,42 +4,46 @@ import java.util.Arrays;
 
 /**
  * <a>Title: ReverseString </a>
+ * <a>Author: Kapcb <a>
  * <a>Description: ReverseString <a>
- * <a href="https://leetcode.cn/problems/reverse-string/">...</a>
  *
+ * @author Kapcb
  * @version 1.0
- * @date 2022/8/28 11:17
+ * @date 2022/9/19 9:52 PM
  * @since 1.0
  */
 public class ReverseString {
 
     public static void main(String[] args) {
-        char[] s = new char[]{'h', 'e', 'l', 'l', 'o'};
-        reverseString(s);
-        String result = Arrays.toString(s);
-        System.out.println("result = " + result);
+        String str = "abcd";
+        String solve = solve(str);
+        System.out.println("solve = " + solve);
     }
 
-    public static void reverseString(char[] s) {
-        int len = s.length;
+    private static String solve(String str) {
+        // write code here
 
-        if (len <= 1) {
-            return;
+        if (str == null || str.length() < 2) {
+            return str;
         }
+
+        char[] strArray = str.toCharArray();
 
         int l = 0;
-        int r = len - 1;
+        int r = strArray.length - 1;
 
         while (l < r) {
-            swap(s, l++, r--);
+            swap(strArray, l++, r--);
         }
+
+        return String.valueOf(strArray);
 
     }
 
-    private static void swap(char[] s, int l, int r) {
-        char temp = s[l];
-        s[l] = s[r];
-        s[r] = temp;
+    private static void swap(char[] chars, int l, int r) {
+        char temp = chars[l];
+        chars[l] = chars[r];
+        chars[r] = temp;
     }
 
 }
