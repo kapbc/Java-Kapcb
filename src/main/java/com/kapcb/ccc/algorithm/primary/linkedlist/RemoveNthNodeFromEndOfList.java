@@ -4,6 +4,7 @@ package com.kapcb.ccc.algorithm.primary.linkedlist;
  * <a>Title: RemoveNthNodeFromEndOfList </a>
  * <a>Description: RemoveNthNodeFromEndOfList <a>
  * <a href="https://leetcode.cn/problems/remove-nth-node-from-end-of-list/">...</a>
+ * <a href="https://www.nowcoder.com/practice/f95dcdafbde44b22a6d741baf71653f6?tpId=295&tqId=727&ru=/exam/oj&qru=/ta/format-top101/question-ranking&sourceUrl=%2Fexam%2Foj">...</a>
  *
  * @author kapcb
  * @version 1.0
