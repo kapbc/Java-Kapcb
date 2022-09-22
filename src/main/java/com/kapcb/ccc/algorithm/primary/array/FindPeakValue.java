@@ -14,7 +14,7 @@ package com.kapcb.ccc.algorithm.primary.array;
 public class FindPeakValue {
 
     public static void main(String[] args) {
-        int[] nums = {2, 4, 1, 2, 7, 8, 4};
+        int[] nums = {8, 9, 8, 7, 6, 5, 4, 3, 2, 1};
         int peakElement = findPeakElement(nums);
         System.out.println("peakElement = " + peakElement);
     }
