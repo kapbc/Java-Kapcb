@@ -1,5 +1,7 @@
 package com.kapcb.ccc.algorithm.primary.str;
 
+import java.util.HashMap;
+
 /**
  * <a>Title: LongestSubstringWithoutRepeatingCharacters </a>
  * <a>Description: 无重复字符的最长字串 <a>
@@ -14,7 +16,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
 
     public static void main(String[] args) {
         String s = "abcabcbb";
-        int i = lengthOfLongestSubstring(s);
+        int i = lengthOfLongestSubstring1(s);
         System.out.println("i = " + i);
     }
 
@@ -33,6 +35,9 @@ public class LongestSubstringWithoutRepeatingCharacters {
 
         // 无需全量初始化数组
         int[] last = new int[128];
+        for (int i = 0; i < last.length; i++) {
+            last[i] = -1;
+        }
 
         int n = s.length();
 
@@ -52,6 +57,33 @@ public class LongestSubstringWithoutRepeatingCharacters {
 
         return max;
 
+    }
+
+    /**
+     * 使用HashMap辅助
+     *
+     * @param s String
+     * @return int
+     */
+    private static int lengthOfLongestSubstring1(String s) {
+        // 边界条件判断
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }
+
+        int max = 1;
+        int preMax = 1;
+
+        HashMap<Character, Integer> map = new HashMap<>(s.length() << 2);
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            Integer last = map.getOrDefault(c, -1);
+            preMax = Math.min(preMax + 1, i - last);
+            max = Math.max(max, preMax);
+            map.put(c, i);
+        }
+
+        return max;
     }
 
 }

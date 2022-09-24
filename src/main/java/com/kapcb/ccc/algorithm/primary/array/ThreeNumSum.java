@@ -20,10 +20,6 @@ public class ThreeNumSum {
     }
 
     public List<List<Integer>> threeSum(int[] nums) {
-<<<<<<< HEAD
-=======
-
->>>>>>> f0bca2258bd793c46c1a2109f06e8bd5c5e2253d
         return null;
     }
 
