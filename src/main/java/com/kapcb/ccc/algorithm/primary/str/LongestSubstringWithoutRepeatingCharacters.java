@@ -2,9 +2,10 @@ package com.kapcb.ccc.algorithm.primary.str;
 
 /**
  * <a>Title: LongestSubstringWithoutRepeatingCharacters </a>
- * <a>Description: LongestSubstringWithoutRepeatingCharacters <a>
+ * <a>Description: 无重复字符的最长字串 <a>
  * <a href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/">...</a>
  *
+ * @author kapcb
  * @version 1.0
  * @date 2022/8/30 9:31
  * @since 1.0
@@ -17,75 +18,40 @@ public class LongestSubstringWithoutRepeatingCharacters {
         System.out.println("i = " + i);
     }
 
-    public static int lengthOfLongestSubstring(String s) {
+    /**
+     * 滑动窗口
+     *
+     * @param s String
+     * @return int
+     */
+    private static int lengthOfLongestSubstring(String s) {
 
         // 边界条件判断
-        if (s == null || s.length() == 0) {
+        if (s == null || s.isEmpty()) {
             return 0;
         }
-        if (s.length() == 1) {
-            return 1;
-        }
 
-        return 0;
+        // 无需全量初始化数组
+        int[] last = new int[128];
 
+        int n = s.length();
 
-    }
-
-    private static void selectionSort(int[] nums) {
-        if (nums == null || nums.length < 2) {
-            return;
-        }
-
-        int n = nums.length;
+        // 无重复字串的最大长度
+        int max = 0;
+        // 窗口开始的位置
+        int start = 0;
 
         for (int i = 0; i < n; i++) {
-            int minValueIndex = 0;
-            for (int j = i + 1; j < n; j++) {
-                minValueIndex = nums[minValueIndex] > nums[j] ? j : minValueIndex;
-            }
-            if (i != minValueIndex) {
-                swap(nums, i, minValueIndex);
-            }
+            int index = s.charAt(i);
+            // last[index] + 1：因为last[index]代表当前字符上一次出现位置的，无重复字符字串不能出现相同的字符所以要+1取下一个
+            // start：代表滑动窗口开始的位置，所以必须要要看start与last[index] + 1谁大，保证区间内不包含重复字符
+            start = Math.max(start, last[index] + 1);
+            max = Math.max(max, i - start + 1);
+            last[index] = i;
         }
 
-    }
+        return max;
 
-    private static void bubbleSort(int[] nums) {
-        if (nums == null || nums.length < 2) {
-            return;
-        }
-
-        int n = nums.length;
-
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n - 1 - i; j++) {
-                if (nums[j] > nums[j + 1]) {
-                    swap(nums, j, j + 1);
-                }
-            }
-        }
-    }
-
-    private static void insertionSort(int[] nums) {
-        if (nums == null || nums.length < 2) {
-            return;
-        }
-
-        int n = nums.length;
-
-        for (int j = 1; j < n; j++) {
-            for (int i = j; i >= 0 && nums[i - 1] > nums[i]; i--) {
-                swap(nums, i - 1, i);
-            }
-        }
-
-    }
-
-    private static void swap(int[] nums, int l, int r) {
-        nums[l] = nums[l] ^ nums[r];
-        nums[r] = nums[l] ^ nums[r];
-        nums[l] = nums[l] ^ nums[r];
     }
 
 }
