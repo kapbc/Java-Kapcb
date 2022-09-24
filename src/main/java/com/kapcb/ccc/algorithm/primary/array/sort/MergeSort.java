@@ -1,4 +1,4 @@
-package com.kapcb.ccc.algorithm.primary.array;
+package com.kapcb.ccc.algorithm.primary.array.sort;
 
 import java.util.Arrays;
 
