@@ -20,6 +20,7 @@ public class ReverseInteger {
 
     private static int reverse(int x) {
 
+        return 0;
     }
 
 }
