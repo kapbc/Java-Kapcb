@@ -1,4 +1,4 @@
-package com.kapcb.ccc.algorithm.book.stack;
+package com.kapcb.ccc.algorithm.primary.stack;
 
 import java.util.Stack;
 

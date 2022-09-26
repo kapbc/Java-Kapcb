@@ -1,4 +1,4 @@
-package com.kapcb.ccc.algorithm.primary;
+package com.kapcb.ccc.algorithm.primary.num;
 
 /**
  * <a>Title: ReverseInteger </a>
