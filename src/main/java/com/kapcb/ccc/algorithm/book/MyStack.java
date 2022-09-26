@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
  * <a>Title: MyStack </a>
  * <a>Author: Kapcb <a>
- * <a>Description: MyStack <a>
+ * <a>Description: 设计一个有getMin功能的栈 <a>
  *
  * @author Kapcb
  * @version 1.0
