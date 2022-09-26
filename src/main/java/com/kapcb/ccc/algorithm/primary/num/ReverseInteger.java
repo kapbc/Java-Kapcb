@@ -14,6 +14,7 @@ package com.kapcb.ccc.algorithm.primary.num;
 public class ReverseInteger {
 
     public static void main(String[] args) {
+
         int reverse = reverse(-1200);
         System.out.println("reverse = " + reverse);
 
