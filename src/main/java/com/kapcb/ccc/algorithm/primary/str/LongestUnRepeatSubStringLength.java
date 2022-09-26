@@ -4,6 +4,7 @@ package com.kapcb.ccc.algorithm.primary.str;
  * <a>Title: L </a>
  * <a>Description: LongestUnRepeatSubStringLength <a>
  *
+ * @author kapcb
  * @version 1.0
  * @date 2022/9/10 8:39
  * @since 1.0
