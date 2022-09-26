@@ -1,7 +1,9 @@
 package com.kapcb.ccc.algorithm.primary.tree;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * <a>Title: BinaryTreePreorderTraversal </a>
@@ -16,11 +18,34 @@ import java.util.List;
 public class BinaryTreePreorderTraversal {
 
     public static void main(String[] args) {
-
+        TreeNode treeNode = new TreeNode(1, new TreeNode(3, new TreeNode(1), new TreeNode(2)), new TreeNode(6, new TreeNode(5), new TreeNode(6)));
+        int[] ints = preorderTraversal(treeNode);
+        System.out.println(Arrays.toString(ints));
     }
 
-    private int[] preorderTraversal(TreeNode root) {
-        return null;
+    private static int[] preorderTraversal(TreeNode root) {
+        List<Integer> resList = new ArrayList<>();
+        if (root != null) {
+            Stack<TreeNode> stack = new Stack<>();
+            stack.add(root);
+            while (!stack.empty()) {
+                root = stack.pop();
+                resList.add(root.val);
+                if (root.right != null) {
+                    stack.push(root.right);
+                }
+                if (root.left != null) {
+                    stack.push(root.left);
+                }
+            }
+
+        }
+        int[] res = new int[resList.size()];
+
+        for (int i = 0; i < resList.size(); i++) {
+            res[i] = resList.get(i);
+        }
+        return res;
     }
 
     /**
@@ -29,7 +54,7 @@ public class BinaryTreePreorderTraversal {
      * @param root {@link TreeNode}
      * @return int[]
      */
-    private int[] preorderTraversalByRecursion(TreeNode root) {
+    private static int[] preorderTraversalByRecursion(TreeNode root) {
 
         if (root == null) {
             return new int[]{};
