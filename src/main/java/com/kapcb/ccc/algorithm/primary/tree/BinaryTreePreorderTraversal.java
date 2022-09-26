@@ -29,7 +29,7 @@ public class BinaryTreePreorderTraversal {
      * @param root {@link TreeNode}
      * @return int[]
      */
-    private int[] preorderTraversalRecursion(TreeNode root) {
+    private int[] preorderTraversalByRecursion(TreeNode root) {
 
         if (root == null) {
             return new int[]{};

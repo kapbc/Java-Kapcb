@@ -17,11 +17,11 @@ import java.util.List;
 public class BinaryTreePostorderTraversal {
 
     public static void main(String[] args) {
-        int[] ints = postorderTraversal(null);
+        int[] ints = postorderTraversalByRecursion(null);
         System.out.println("ints = " + ints);
     }
 
-    private static int[] postorderTraversal(TreeNode root) {
+    private static int[] postorderTraversalByRecursion(TreeNode root) {
         if (root == null) {
             return new int[]{};
         }

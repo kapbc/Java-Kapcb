@@ -20,11 +20,11 @@ public class BinaryTreeInorderTraversal {
     public static void main(String[] args) {
 
         TreeNode treeNode = new TreeNode(1, new TreeNode(2, null, new TreeNode(3, null, null)), null);
-        int[] ints = inorderTraversal(treeNode);
+        int[] ints = inorderTraversalByRecursion(treeNode);
         System.out.println(Arrays.toString(ints));
     }
 
-    private static int[] inorderTraversal(TreeNode root) {
+    private static int[] inorderTraversalByRecursion(TreeNode root) {
         // write code here
 
         if (root == null) {
