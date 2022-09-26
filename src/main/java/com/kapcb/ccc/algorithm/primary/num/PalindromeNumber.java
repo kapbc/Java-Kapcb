@@ -17,7 +17,8 @@ public class PalindromeNumber {
         System.out.println(isPalindrome(-121));
         System.out.println(isPalindrome(1221));
 
-
+        System.out.println(isPalindrome1(-121));
+        System.out.println(isPalindrome1(1221));
     }
 
     /**
