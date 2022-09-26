@@ -14,12 +14,34 @@ import java.util.Stack;
  */
 public class StackSort {
 
-    private static void sort(Stack<Integer> stack) {
+    private static void sortStackByStack(Stack<Integer> stack) {
+        Stack<Integer> help = new Stack<>();
+
+        while (!stack.empty()) {
+            int val = stack.pop();
+            while (!help.empty() && help.peek() < val) {
+                stack.push(help.pop());
+            }
+            help.push(val);
+        }
+
+        while (!help.empty()) {
+            stack.push(help.pop());
+        }
 
     }
 
     public static void main(String[] args) {
+        int[] arr = {2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19};
+        Stack<Integer> stack = new Stack<>();
 
+        for (int i = 0; i < arr.length; i++) {
+            stack.push(arr[i]);
+        }
+
+        System.out.println("stack = " + stack);
+        sortStackByStack(stack);
+        System.out.println("stack = " + stack);
     }
 
 }
