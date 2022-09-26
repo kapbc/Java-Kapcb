@@ -5,9 +5,10 @@ import java.util.List;
 
 /**
  * <a>Title: BinaryTreePreorderTraversal </a>
- * <a>Description: BinaryTreePreorderTraversal <a>
+ * <a>Description: 二叉树前序遍历 <a>
  * <a href="https://www.nowcoder.com/practice/5e2135f4d2b14eb8a5b06fab4c938635?tpId=295&tqId=2291302&ru=/exam/oj&qru=/ta/format-top101/question-ranking&sourceUrl=%2Fexam%2Foj">...</a>
  *
+ * @author kapcb
  * @version 1.0
  * @date 2022/9/8 10:05
  * @since 1.0
@@ -19,6 +20,16 @@ public class BinaryTreePreorderTraversal {
     }
 
     private int[] preorderTraversal(TreeNode root) {
+        return null;
+    }
+
+    /**
+     * 递归方式实现二叉树
+     *
+     * @param root {@link TreeNode}
+     * @return int[]
+     */
+    private int[] preorderTraversalRecursion(TreeNode root) {
 
         if (root == null) {
             return new int[]{};
