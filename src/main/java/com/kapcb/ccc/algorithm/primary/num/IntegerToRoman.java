@@ -19,6 +19,41 @@ public class IntegerToRoman {
 
     public static String intToRoman(int num) {
 
+        num
+    }
+
+    private static String caseNum(int num) {
+        String res = "";
+        switch (num) {
+            case 1:
+                res = "I";
+                break;
+            case 4:
+                res = "IV";
+                break;
+            case 5:
+                res = "V";
+                break;
+            case 10:
+                res = "X";
+                break;
+            case 50:
+                res = "L";
+                break;
+            case 100:
+                res = "C";
+                break;
+            case 500:
+                res = "D";
+                break;
+            case 1000:
+                res = "M";
+                break;
+            default:
+                break;
+        }
+        return res;
+
     }
 
 }

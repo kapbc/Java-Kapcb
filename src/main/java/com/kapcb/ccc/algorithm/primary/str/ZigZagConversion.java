@@ -4,7 +4,7 @@ package com.kapcb.ccc.algorithm.primary.str;
  * <a>Title: ZTransformation </a>
  * <a>Author: Kapcb <a>
  * <a>Description: Z字形变换 <a>
- * https://leetcode.cn/problems/zigzag-conversion/
+ * <a href="https://leetcode.cn/problems/zigzag-conversion/">...</a>
  *
  * @author Kapcb
  * @version 1.0
