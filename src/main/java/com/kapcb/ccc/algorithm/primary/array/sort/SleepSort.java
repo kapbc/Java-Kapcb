@@ -34,7 +34,6 @@ public class SleepSort {
         }
 
         int len = array.length;
-
         for (int i = 0; i < len; i++) {
             int j = i;
             Thread thread = new Thread(() -> {
@@ -43,7 +42,6 @@ public class SleepSort {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
                 queue.offer(array[j]);
             });
             thread.start();
