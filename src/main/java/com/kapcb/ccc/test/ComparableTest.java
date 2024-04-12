@@ -14,7 +14,6 @@ import java.util.stream.Stream;
  */
 public class ComparableTest {
 
-    1
     public static void main(String[] args) {
         Student[] students = {
                 new Student("liusan", 20, 90.0F),
