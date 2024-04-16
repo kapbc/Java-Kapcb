@@ -35,7 +35,6 @@ public class ComparatorTest {
         1
             1
             1
-            1
         try (Stream<String> lines = Files.lines(path, StandardCharsets.UTF_8)) {
 
             Comparator<Person> comparator = Comparator.comparing(Person::getPrevWeekAddPoint).thenComparing(Person::getLastUpdateDate).thenComparing(Person::getUserId);
