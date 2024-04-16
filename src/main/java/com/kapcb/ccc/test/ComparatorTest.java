@@ -32,7 +32,6 @@ public class ComparatorTest {
     private static final Path path = Paths.get(Constants.COMMON_EMAIL_HANDLER_RESOURCES_PATH.getStringStatusCode());
 
     public static void main(String[] args) {
-        1
             1
         try (Stream<String> lines = Files.lines(path, StandardCharsets.UTF_8)) {
 
